@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#14353b" />
+  <meta name="description" content="Sea Breeze Paradise — Halkidiki by Namaste Homes. A secluded seaside escape with Aegean views, garden and space to slow down together." />
+  <title>Sea Breeze Paradise — Halkidiki | Namaste Homes</title>
+
+  <style>
+    :root{
+      --ink:#203037;
+      --deep:#14353b;
+      --deep-2:#0f2b30;
+      --sea:#2e7f8c;
+      --sea-soft:#dfeef0;
+      --sand:#ede1cc;
+      --gold:#caa664;
+      --gold-soft:#e6cf9c;
+      --paper:#fffdf9;
+      --ivory:#f8f4ec;
+      --white:#ffffff;
+      --muted:#6e7779;
+      --line:rgba(32,48,55,.13);
+      --shadow:0 24px 70px rgba(18,43,48,.15);
+      --radius:26px;
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:var(--sans);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    body.locked{overflow:hidden}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,select{font:inherit}
+    button{cursor:pointer}
+    .container{width:min(1180px,calc(100% - 44px));margin-inline:auto}
+    .section{padding:108px 0}
+    .anchor{scroll-margin-top:92px}
+
+    h1,h2,h3,h4{
+      margin:0;
+      font-family:var(--serif);
+      font-weight:500;
+      line-height:1.04;
+    }
+    h2{font-size:clamp(2.55rem,5.3vw,5rem);letter-spacing:-.048em}
+    h3{font-size:clamp(2rem,3.5vw,3.2rem)}
+    p{margin-top:0}
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin:0 0 18px;
+      color:#7d6845;
+      font-size:.76rem;
+      font-weight:850;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .eyebrow::before{content:"";width:36px;height:1px;background:currentColor}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
+      padding:0 22px;
+      border-radius:999px;
+      border:0;
+      font-size:.88rem;
+      font-weight:850;
+      letter-spacing:.025em;
+      transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--gold);color:#221a0f}
+    .btn-dark{background:var(--deep);color:#fff}
+    .btn-light{background:#fff;color:var(--ink)}
+    .btn-outline{border:1px solid var(--line);background:transparent;color:var(--ink)}
+    .btn-ghost{border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.07);color:#fff}
+
+    .reveal{
+      opacity:0;
+      transform:translateY(22px);
+      transition:opacity .72s ease,transform .72s ease;
+    }
+    .reveal.visible{opacity:1;transform:none}
+
+    /* HEADER */
+    .site-header{
+      position:fixed;
+      inset:0 0 auto;
+      z-index:60;
+      height:86px;
+      display:flex;
+      align-items:center;
+      transition:background .28s ease,box-shadow .28s ease,height .28s ease;
+    }
+    .site-header.scrolled{
+      height:74px;
+      background:rgba(255,253,249,.95);
+      backdrop-filter:blur(16px);
+      box-shadow:0 8px 30px rgba(20,35,39,.08);
+    }
+    .nav-wrap{
+      width:min(1320px,calc(100% - 34px));
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand img{
+      width:146px;
+      max-height:66px;
+      object-fit:contain;
+      filter:drop-shadow(0 6px 16px rgba(0,0,0,.12));
+    }
+    .site-header:not(.scrolled) .brand img{
+      background:rgba(255,255,255,.94);
+      border-radius:12px;
+      padding:5px 8px;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      color:#fff;
+      font-size:.89rem;
+      font-weight:750;
+    }
+    .site-header.scrolled .nav-links{color:var(--ink)}
+    .nav-links a{position:relative;padding:8px 0}
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;right:100%;bottom:1px;
+      height:1px;background:var(--gold);
+      transition:right .25s ease;
+    }
+    .nav-links a:hover::after{right:0}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .home-btn{
+      min-height:42px;
+      padding:0 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.46);
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      display:inline-flex;
+      align-items:center;
+      font-size:.8rem;
+      font-weight:850;
+    }
+    .site-header.scrolled .home-btn{
+      color:var(--ink);
+      border-color:var(--gold);
+      background:transparent;
+    }
+    .language-indicator{
+      min-width:42px;height:42px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.34);
+      background:rgba(0,0,0,.11);
+      color:#fff;
+      font-size:.7rem;
+      font-weight:900;
+      pointer-events:none;
+    }
+    .site-header.scrolled .language-indicator{
+      color:var(--ink);
+      background:#fff;
+      border-color:var(--line);
+    }
+    .menu-toggle{
+      display:none;
+      width:43px;height:43px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.42);
+      background:rgba(0,0,0,.12);
+      padding:0;
+      place-items:center;
+    }
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after{
+      content:"";
+      width:18px;height:1.5px;
+      display:block;
+      background:#fff;
+    }
+    .menu-toggle::before{transform:translateY(-5px)}
+    .menu-toggle::after{transform:translateY(5px)}
+    .site-header.scrolled .menu-toggle{background:#fff;border-color:var(--line)}
+    .site-header.scrolled .menu-toggle span,
+    .site-header.scrolled .menu-toggle::before,
+    .site-header.scrolled .menu-toggle::after{background:var(--ink)}
+
+    .mobile-nav{
+      position:fixed;
+      inset:0;
+      z-index:59;
+      background:var(--deep-2);
+      color:#fff;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    .mobile-nav.open{display:flex}
+    .mobile-nav nav{display:grid;gap:20px}
+    .mobile-nav a{font-family:var(--serif);font-size:1.9rem}
+
+    /* HERO */
+    .hero{
+      min-height:100svh;
+      position:relative;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      background:var(--deep);
+    }
+    .hero img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform 1.1s ease;
+    }
+    .hero:hover img{transform:scale(1.025)}
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to top,rgba(9,29,33,.92) 0%,rgba(9,29,33,.38) 57%,rgba(9,29,33,.1) 100%),
+        linear-gradient(to right,rgba(8,27,31,.23),transparent 50%);
+    }
+    .hero-content{
+      position:relative;
+      z-index:2;
+      padding-bottom:68px;
+      max-width:980px;
+    }
+    .hero .eyebrow{color:#f3dfb5}
+    .hero h1{
+      font-size:clamp(3.7rem,8.8vw,8.2rem);
+      letter-spacing:-.06em;
+      text-shadow:0 12px 42px rgba(0,0,0,.35);
+    }
+    .hero-tagline{
+      max-width:860px;
+      margin:22px 0 0;
+      color:#f4dfb6;
+      font-family:var(--serif);
+      font-size:clamp(1.4rem,3vw,2.25rem);
+      line-height:1.22;
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+    /* INTRO */
+    .intro{background:var(--paper)}
+    .intro-grid{
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:72px;
+      align-items:start;
+    }
+    .intro-title{position:sticky;top:118px}
+    .intro-copy{color:#56666a;font-size:1.075rem}
+    .intro-copy p{margin-bottom:22px}
+    .facts{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:40px;
+    }
+    .fact{
+      border-top:1px solid var(--line);
+      padding-top:16px;
+    }
+    .fact strong{
+      display:block;
+      font-family:var(--serif);
+      font-weight:500;
+      font-size:1.55rem;
+    }
+    .fact span{font-size:.78rem;color:var(--muted)}
+
+    /* EXPERIENCE */
+    .experience{background:var(--ivory)}
+    .experience-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:64px;
+      align-items:center;
+    }
+    .experience-photo{
+      min-height:650px;
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+    .experience-photo img{
+      position:absolute;
+      inset:0;
+      width:100%;height:100%;
+      object-fit:cover;
+    }
+    .experience-copy p{color:#58676a;font-size:1.05rem;margin-bottom:20px}
+    .experience-list{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:28px;
+    }
+    .experience-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+    }
+    .experience-card strong{
+      display:block;
+      font-family:var(--serif);
+      font-size:1.3rem;
+      font-weight:500;
+      margin-bottom:5px;
+    }
+    .experience-card span{font-size:.8rem;color:var(--muted)}
+
+    /* GALLERY */
+    .gallery-section{background:var(--paper)}
+    .gallery-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:28px;
+    }
+    .gallery-head p{margin:0;color:var(--muted);font-size:.84rem}
+    .gallery{
+      display:grid;
+      grid-template-columns:1.35fr .85fr .85fr;
+      grid-template-rows:270px 270px;
+      gap:10px;
+    }
+    .gallery button{
+      border:0;
+      padding:0;
+      border-radius:17px;
+      overflow:hidden;
+      background:#ddd;
+      position:relative;
+    }
+    .gallery button:first-child{grid-row:1/3}
+    .gallery img{
+      width:100%;height:100%;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+    .gallery button:hover img{transform:scale(1.04)}
+    .gallery-more{
+      position:absolute;
+      right:14px;bottom:14px;
+      padding:8px 11px;
+      border-radius:999px;
+      background:rgba(0,0,0,.64);
+      color:#fff;
+      font-size:.72rem;
+      font-weight:800;
+      backdrop-filter:blur(8px);
+    }
+
+    /* RECONNECT */
+    .reconnect{
+      background:var(--deep);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    .reconnect::before{
+      content:"";
+      position:absolute;
+      width:580px;height:580px;
+      left:-240px;bottom:-240px;
+      border:1px solid rgba(202,166,100,.15);
+      border-radius:50%;
+      box-shadow:0 0 0 80px rgba(202,166,100,.035),0 0 0 160px rgba(202,166,100,.02);
+    }
+    .reconnect-grid{
+      position:relative;z-index:1;
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:70px;
+      align-items:center;
+    }
+    .reconnect-copy .eyebrow{color:var(--gold-soft)}
+    .reconnect-copy h2{margin-bottom:26px}
+    .reconnect-copy p{color:rgba(255,255,255,.76);font-size:1.06rem;margin-bottom:20px}
+    .reconnect-photo{
+      min-height:650px;
+      border-radius:var(--radius);
+      overflow:hidden;
+      position:relative;
+    }
+    .reconnect-photo img{
+      position:absolute;
+      inset:0;
+      width:100%;height:100%;
+      object-fit:cover;
+    }
+
+    /* PLAN */
+    .plan{background:linear-gradient(135deg,#eef6f6,#fffdf9 62%)}
+    .plan-grid{
+      display:grid;
+      grid-template-columns:1fr .88fr;
+      gap:55px;
+      align-items:start;
+    }
+    .plan-copy p{color:#59696c;font-size:1.05rem}
+    .stay-panel{
+      position:sticky;
+      top:108px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:30px;
+      box-shadow:0 16px 50px rgba(18,43,48,.08);
+    }
+    .stay-panel h3{font-size:2rem;margin-bottom:9px}
+    .stay-panel p{color:var(--muted);font-size:.86rem}
+    .quick-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin:20px 0 8px;
+    }
+    .quick{
+      border:1px solid var(--line);
+      border-radius:15px;
+      padding:13px 14px;
+    }
+    .quick small{
+      display:block;
+      color:#8a9293;
+      font-size:.66rem;
+      font-weight:850;
+      text-transform:uppercase;
+      letter-spacing:.09em;
+    }
+    .quick strong{display:block;margin-top:4px;font-size:.9rem}
+    .stay-panel .btn{width:100%;margin-top:12px}
+
+    /* LOCATION */
+    .location{background:var(--paper)}
+    .location-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:60px;
+      align-items:start;
+    }
+    .location-copy p{color:#5c696c;font-size:1.04rem}
+    .location-card{
+      padding:30px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:var(--ivory);
+    }
+    .place{
+      font-family:var(--serif);
+      font-size:1.9rem;
+      margin-bottom:8px;
+    }
+    .location-card p{color:var(--muted);margin-bottom:20px}
+    .location-points{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:22px;
+    }
+    .location-point{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:17px;
+    }
+    .location-point strong{
+      display:block;
+      font-family:var(--serif);
+      font-weight:500;
+      font-size:1.15rem;
+      margin-bottom:4px;
+    }
+    .location-point span{font-size:.78rem;color:var(--muted)}
+
+    /* FINAL */
+    .final{
+      min-height:690px;
+      position:relative;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      color:#fff;
+      overflow:hidden;
+    }
+    .final img{
+      position:absolute;inset:0;
+      width:100%;height:100%;
+      object-fit:cover;
+    }
+    .final::after{content:"";position:absolute;inset:0;background:rgba(8,28,32,.62)}
+    .final-inner{
+      position:relative;
+      z-index:2;
+      width:min(900px,calc(100% - 36px));
+    }
+    .final h2{font-size:clamp(3.1rem,7vw,6.5rem)}
+    .final p{
+      margin:20px 0 0;
+      color:#f0d8a8;
+      font-family:var(--serif);
+      font-size:1.42rem;
+    }
+    .final-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+    /* FOOTER */
+    footer{
+      background:#0e2529;
+      color:rgba(255,255,255,.72);
+      padding:58px 0 28px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr .85fr;
+      gap:48px;
+      align-items:start;
+    }
+    .footer-logo{width:220px;border-radius:12px;margin-bottom:18px}
+    footer h4{
+      margin:0 0 14px;color:#fff;
+      font-size:.86rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+    }
+    footer a{display:block;margin:8px 0;font-size:.9rem}
+    .footer-bottom{
+      margin-top:42px;
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,.1);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      font-size:.78rem;
+    }
+    .footer-tagline{color:var(--gold-soft)}
+
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      z-index:100;
+      display:none;
+      background:rgba(5,19,22,.96);
+      color:#fff;
+    }
+    .lightbox.open{display:grid;grid-template-rows:auto 1fr auto}
+    .lightbox-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 22px;
+      gap:16px;
+    }
+    .lightbox-title{font-family:var(--serif);font-size:1.3rem}
+    .lightbox-close{
+      width:44px;height:44px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.25);
+      background:transparent;
+      color:#fff;
+      font-size:1.35rem;
+    }
+    .lightbox-stage{
+      position:relative;
+      display:grid;
+      place-items:center;
+      min-height:0;
+      padding:0 84px;
+    }
+    .lightbox-stage img{
+      max-width:100%;
+      max-height:78vh;
+      object-fit:contain;
+      border-radius:10px;
+    }
+    .lightbox-nav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:48px;height:48px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.28);
+      background:rgba(0,0,0,.25);
+      color:#fff;
+      font-size:1.7rem;
+    }
+    .lightbox-prev{left:20px}
+    .lightbox-next{right:20px}
+    .lightbox-bottom{
+      display:flex;
+      justify-content:center;
+      padding:15px 20px 20px;
+      color:rgba(255,255,255,.65);
+      font-size:.8rem;
+    }
+
+    /* CALENDAR */
+    .calendar-modal{
+      position:fixed;
+      inset:0;
+      z-index:110;
+      display:none;
+      place-items:center;
+      padding:22px;
+      background:rgba(7,26,30,.74);
+      backdrop-filter:blur(8px);
+    }
+    .calendar-modal.open{display:grid}
+    .calendar-card{
+      width:min(920px,100%);
+      max-height:92vh;
+      overflow:auto;
+      background:#fffdf9;
+      border-radius:26px;
+      box-shadow:0 30px 90px rgba(0,0,0,.28);
+      padding:28px;
+    }
+    .calendar-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:20px;
+      margin-bottom:20px;
+    }
+    .calendar-top h3{font-size:2rem}
+    .calendar-top p{margin:7px 0 0;color:var(--muted);font-size:.86rem}
+    .calendar-close{
+      width:42px;height:42px;
+      border-radius:50%;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--ink);
+    }
+    .calendar-summary{
+      display:grid;
+      grid-template-columns:1fr 1fr .8fr;
+      gap:10px;
+      margin:20px 0;
+    }
+    .summary-box{
+      border:1px solid var(--line);
+      border-radius:15px;
+      padding:13px 14px;
+      background:#fff;
+    }
+    .summary-box small{
+      display:block;
+      color:#8d9697;
+      text-transform:uppercase;
+      font-size:.66rem;
+      font-weight:850;
+      letter-spacing:.09em;
+    }
+    .summary-box strong{display:block;margin-top:4px;font-size:.9rem}
+    .summary-box select{
+      width:100%;
+      border:0;
+      background:transparent;
+      margin-top:4px;
+      font-weight:800;
+      outline:none;
+    }
+    .months{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .month{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      background:#fff;
+    }
+    .month-title{
+      text-align:center;
+      font-family:var(--serif);
+      font-size:1.2rem;
+      margin-bottom:12px;
+    }
+    .weekdays,.days{
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      gap:5px;
+    }
+    .weekday{
+      text-align:center;
+      color:#9aa1a2;
+      font-size:.64rem;
+      font-weight:850;
+      text-transform:uppercase;
+      padding-bottom:5px;
+    }
+    .day{
+      aspect-ratio:1;
+      border:0;
+      border-radius:50%;
+      background:transparent;
+      color:var(--ink);
+      display:grid;
+      place-items:center;
+      font-size:.8rem;
+    }
+    .day:hover:not(:disabled){background:var(--sea-soft)}
+    .day:disabled{color:#d2d8d8;cursor:default}
+    .day.selected{background:var(--deep);color:#fff}
+    .day.in-range{background:#dcecef;border-radius:10px}
+    .calendar-footer{
+      margin-top:18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+    }
+    .calendar-disclaimer{max-width:540px;color:var(--muted);font-size:.77rem;margin:0}
+    .calendar-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+
+    @media(max-width:1020px){
+      .nav-links{display:none}
+      .menu-toggle{display:grid}
+      .intro-grid,.experience-grid,.reconnect-grid,.plan-grid,.location-grid{grid-template-columns:1fr}
+      .intro-title{position:static}
+      .stay-panel{position:static}
+      .facts{grid-template-columns:1fr 1fr}
+      .gallery{grid-template-columns:1fr 1fr;grid-template-rows:360px 250px 250px}
+      .gallery button:first-child{grid-column:1/3;grid-row:auto}
+      .experience-photo,.reconnect-photo{min-height:520px}
+    }
+
+    @media(max-width:720px){
+      .container{width:min(100% - 28px,1180px)}
+      .section{padding:78px 0}
+      .site-header{height:74px}
+      .nav-wrap{width:calc(100% - 22px)}
+      .brand img{width:118px;max-height:54px}
+      .home-btn{display:none}
+      .hero-content{padding-bottom:48px}
+      .hero h1{font-size:clamp(3.05rem,15vw,5.5rem)}
+      .facts{grid-template-columns:1fr}
+      .experience-list,.location-points{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr;grid-template-rows:300px 220px 220px 220px 220px}
+      .gallery button:first-child{grid-column:auto}
+      .quick-row{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-bottom{flex-direction:column}
+      .months{grid-template-columns:1fr}
+      .calendar-summary{grid-template-columns:1fr}
+      .calendar-footer{align-items:flex-start;flex-direction:column}
+      .calendar-actions{width:100%}
+      .calendar-actions .btn{flex:1}
+      .lightbox-stage{padding:0 10px}
+      .lightbox-nav{width:42px;height:42px;background:rgba(0,0,0,.5)}
+      .lightbox-prev{left:8px}
+      .lightbox-next{right:8px}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap">
+      <a class="brand home-link" href="index.html" aria-label="Namaste Homes home">
+        <img src="assets/images/logo1.png" alt="Namaste Homes" />
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#story">The Escape</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reconnect">Reconnect</a>
+        <a href="#plan">Plan Your Stay</a>
+        <a href="#location">Location</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="language-indicator" id="languageIndicator" aria-label="Language selected on homepage">EN</div>
+        <a class="home-btn home-link" href="index.html">Namaste Homes</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav>
+      <a class="home-link" href="index.html">Namaste Homes</a>
+      <a href="#story">The Escape</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reconnect">Reconnect</a>
+      <a href="#plan">Plan Your Stay</a>
+      <a href="#location">Location</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <img src="assets/images/breeze_hero.webp" alt="Sea Breeze Paradise overlooking the Aegean Sea" />
+      <div class="container hero-content">
+        <div class="eyebrow">Namaste Homes · Halkidiki</div>
+        <h1>Sea Breeze Paradise</h1>
+        <div class="hero-tagline">Wake Up to the Aegean. Slow Down. Be Together.</div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#story">Discover the Escape</a>
+          <button class="btn btn-ghost calendar-open">Plan Your Stay</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="section intro anchor" id="story">
+      <div class="container intro-grid">
+        <div class="intro-title reveal">
+          <div class="eyebrow">Sea Breeze Paradise — Halkidiki</div>
+          <h2>A secluded seaside escape made for slowing down.</h2>
+
+          <div class="facts">
+            <div class="fact"><strong>5</strong><span>Guests</span></div>
+            <div class="fact"><strong>2</strong><span>Bedrooms</span></div>
+            <div class="fact"><strong>3</strong><span>Beds</span></div>
+            <div class="fact"><strong>1.5</strong><span>Bathrooms</span></div>
+          </div>
+        </div>
+
+        <div class="intro-copy reveal">
+          <p>Sea Breeze Paradise is a secluded seaside escape in Halkidiki, surrounded by nature and blessed with endless views of the Aegean Sea.</p>
+
+          <p>Wake up to the gentle sound of the waves and birds in the garden, step outside and feel the fresh sea breeze, and start your day with nothing but the sea stretching out before you. Enjoy slow mornings, relaxing afternoons and spectacular sunsets from the comfort of your own private retreat.</p>
+
+          <p>The beautiful garden and BBQ area create the perfect setting for family time and memorable evenings — preparing a meal together, sharing stories, watching the children play or simply enjoying each other's company under the Greek sky.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section experience">
+      <div class="container experience-grid">
+        <div class="experience-photo reveal">
+          <img src="assets/images/breeze_out.webp" alt="Sea Breeze Paradise garden and home" />
+        </div>
+
+        <div class="experience-copy reveal">
+          <div class="eyebrow">The atmosphere</div>
+          <h2>Sea views outside. Calm spaces inside.</h2>
+          <p>The home combines bright, relaxed interiors with a natural seaside setting. Soft neutral tones, warm textures and touches of Aegean blue keep the experience easy, informal and connected to the landscape outside.</p>
+          <p>Whether you are starting the morning on the balcony, sharing a meal inside, relaxing in the garden or watching the light change over the sea, the property is designed around time together.</p>
+
+          <div class="experience-list">
+            <div class="experience-card"><strong>Aegean views</strong><span>Sea-facing moments from the property and balcony.</span></div>
+            <div class="experience-card"><strong>Private retreat</strong><span>A quieter setting surrounded by greenery and open space.</span></div>
+            <div class="experience-card"><strong>Garden & BBQ</strong><span>Outdoor space for slow afternoons and shared meals.</span></div>
+            <div class="experience-card"><strong>Family time</strong><span>A home designed for up to five guests to stay together.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section gallery-section anchor" id="gallery">
+      <div class="container">
+        <div class="gallery-head reveal">
+          <div>
+            <div class="eyebrow">Inside & outside</div>
+            <h2>Explore Sea Breeze Paradise</h2>
+          </div>
+          <p>Tap any image to view it full screen.</p>
+        </div>
+
+        <div class="gallery reveal" data-gallery="breeze">
+          <button data-src="assets/images/breeze_in.webp"><img src="assets/images/breeze_in.webp" alt="Sea Breeze Paradise living area"></button>
+          <button data-src="assets/images/breeze_bedroom.webp"><img src="assets/images/breeze_bedroom.webp" alt="Sea Breeze Paradise bedroom"></button>
+          <button data-src="assets/images/breeze_out1.webp"><img src="assets/images/breeze_out1.webp" alt="Sea Breeze Paradise exterior"></button>
+          <button data-src="assets/images/breeze_in1.webp"><img src="assets/images/breeze_in1.webp" alt="Sea Breeze Paradise interior"></button>
+          <button data-src="assets/images/breeze_out2.webp"><img src="assets/images/breeze_out2.webp" alt="Sea Breeze Paradise sea view"><span class="gallery-more">Open gallery</span></button>
+        </div>
+
+        <div hidden>
+          <span data-gallery-src="breeze" data-src="assets/images/breeze_bathroom.webp"></span>
+          <span data-gallery-src="breeze" data-src="assets/images/breeze_bathroom1.webp"></span>
+          <span data-gallery-src="breeze" data-src="assets/images/breeze_bathroom2.webp"></span>
+          <span data-gallery-src="breeze" data-src="assets/images/breeze_bedroom1.webp"></span>
+          <span data-gallery-src="breeze" data-src="assets/images/breeze_bedroom2.webp"></span>
+          <span data-gallery-src="breeze" data-src="assets/images/breeze_in2.webp"></span>
+          <span data-gallery-src="breeze" data-src="assets/images/breeze_in3.webp"></span>
+          <span data-gallery-src="breeze" data-src="assets/images/breeze_small_bedroom.webp"></span>
+          <span data-gallery-src="breeze" data-src="assets/images/breeze_small_bedroom1.webp"></span>
+          <span data-gallery-src="breeze" data-src="assets/images/breeze_small_bedroom2.webp"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECONNECT -->
+    <section class="section reconnect anchor" id="reconnect">
+      <div class="container reconnect-grid">
+        <div class="reconnect-copy reveal">
+          <div class="eyebrow">A Place to Reconnect</div>
+          <h2>More time. Less rush.</h2>
+
+          <p>At Sea Breeze Paradise, we believe the best holidays are about more than sightseeing. They are about having time to slow down, breathe, reconnect and enjoy the people you are with.</p>
+
+          <p>Whether you're looking for a peaceful family holiday, a relaxing escape with friends or simply a chance to disconnect and recharge, Sea Breeze Paradise offers a special way to experience Halkidiki.</p>
+
+          <p style="font-family:var(--serif);font-size:1.35rem;color:#f0d8a8;margin-top:30px;">Endless sea views. Gentle waves. Nature. Family time. Unforgettable memories.</p>
+        </div>
+
+        <div class="reconnect-photo reveal">
+          <img src="assets/images/breeze_out2.webp" alt="Aegean view from Sea Breeze Paradise" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAN -->
+    <section class="section plan anchor" id="plan">
+      <div class="container plan-grid">
+        <div class="plan-copy reveal">
+          <div class="eyebrow">Your Aegean Escape Awaits</div>
+          <h2>Plan a stay at Sea Breeze Paradise.</h2>
+          <p>Choose the dates that work for you and send a stay request directly to Namaste Homes. The calendar below is for selecting your preferred period; final availability is confirmed by the property.</p>
+          <p>The home accommodates up to 5 guests and includes 2 bedrooms, 3 beds and 1.5 bathrooms.</p>
+        </div>
+
+        <aside class="stay-panel reveal">
+          <h3>Sea Breeze Paradise</h3>
+          <p>Select your preferred dates and number of guests.</p>
+
+          <div class="quick-row">
+            <div class="quick"><small>Guests</small><strong>Up to 5</strong></div>
+            <div class="quick"><small>Bedrooms</small><strong>2 bedrooms</strong></div>
+            <div class="quick"><small>Beds</small><strong>3 beds</strong></div>
+            <div class="quick"><small>Bathrooms</small><strong>1.5 bathrooms</strong></div>
+          </div>
+
+          <button class="btn btn-primary calendar-open">Open calendar</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="section location anchor" id="location">
+      <div class="container location-grid">
+        <div class="location-copy reveal">
+          <div class="eyebrow">Halkidiki</div>
+          <h2>Between nature and the Aegean.</h2>
+          <p>Sea Breeze Paradise is the Namaste Homes seaside property in the Paliouri area of Halkidiki, set apart from the city experience of Namaste Lofts in Thessaloniki.</p>
+          <p>This is the slower side of the Namaste experience: open views, greenery, outdoor space and the sea as the backdrop to the stay.</p>
+        </div>
+
+        <div class="location-card reveal">
+          <div class="place">Sea Breeze Paradise — Halkidiki</div>
+          <p>Ξυνά 630 85, Greece</p>
+
+          <div class="location-points">
+            <div class="location-point"><strong>Paliouri area</strong><span>Halkidiki, Greece</span></div>
+            <div class="location-point"><strong>Seaside setting</strong><span>Aegean views and surrounding nature</span></div>
+          </div>
+
+          <a class="btn btn-dark" target="_blank" rel="noopener" href="https://www.google.com/maps?q=39.930760771591814,23.732413768653213" style="margin-top:20px;">View on map →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="final">
+      <img src="assets/images/breeze_out2.webp" alt="Sea Breeze Paradise Aegean view" />
+      <div class="final-inner reveal">
+        <div class="eyebrow" style="color:#f1d9a8;">Sea Breeze Paradise — Halkidiki</div>
+        <h2>Your Aegean Escape Awaits.</h2>
+        <p>Wake up to the sea. Slow down. Be together.</p>
+        <div class="final-actions">
+          <button class="btn btn-primary calendar-open">Plan Your Stay</button>
+          <a class="btn btn-ghost home-link" href="index.html">Back to Namaste Homes</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img class="footer-logo" src="assets/images/logo.png" alt="Namaste Homes" />
+          <div>Distinctive stays in Thessaloniki and Halkidiki.</div>
+        </div>
+
+        <div>
+          <h4>Sea Breeze Paradise</h4>
+          <a href="#story">The Escape</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reconnect">A Place to Reconnect</a>
+          <a href="#plan">Plan Your Stay</a>
+        </div>
+
+        <div>
+          <h4>Namaste Homes</h4>
+          <a class="home-link" href="index.html">Home</a>
+          <a href="thessaloniki.html" id="thessalonikiLink">Namaste Lofts — Thessaloniki</a>
+          <a href="#location">Location</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Namaste Homes</span>
+        <span class="footer-tagline">Two Destinations. One Namaste Experience.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-top">
+      <div class="lightbox-title">Sea Breeze Paradise</div>
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">×</button>
+    </div>
+    <div class="lightbox-stage">
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+      <img id="lightboxImage" src="" alt="" />
+      <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+    </div>
+    <div class="lightbox-bottom"><span id="lightboxCounter"></span></div>
+  </div>
+
+  <!-- CALENDAR -->
+  <div class="calendar-modal" id="calendarModal" aria-hidden="true">
+    <div class="calendar-card">
+      <div class="calendar-top">
+        <div>
+          <div class="eyebrow">Plan your stay</div>
+          <h3>Sea Breeze Paradise</h3>
+          <p>Select your preferred check-in and check-out dates.</p>
+        </div>
+        <button class="calendar-close" id="calendarClose" aria-label="Close calendar">×</button>
+      </div>
+
+      <div class="calendar-summary">
+        <div class="summary-box">
+          <small>Check-in</small>
+          <strong id="checkinSummary">Select a date</strong>
+        </div>
+        <div class="summary-box">
+          <small>Check-out</small>
+          <strong id="checkoutSummary">Select a date</strong>
+        </div>
+        <div class="summary-box">
+          <small>Guests</small>
+          <select id="guestSelect" aria-label="Guests">
+            <option value="1">1 guest</option>
+            <option value="2">2 guests</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+            <option value="5">5 guests</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="months" id="months"></div>
+
+      <div class="calendar-footer">
+        <p class="calendar-disclaimer">This calendar is for selecting preferred dates only. Live availability is not yet connected, so your dates are confirmed after Namaste Homes replies to your request.</p>
+        <div class="calendar-actions">
+          <button class="btn btn-outline" id="clearDates">Clear</button>
+          <button class="btn btn-primary" id="requestDates" disabled>Request these dates</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* Language is selected only on index.html */
+    const supportedLanguages = ['en','el','de','ro','sr','bg'];
+    const params = new URLSearchParams(window.location.search);
+    let selectedLanguage = params.get('lang') || localStorage.getItem('namasteLanguage') || 'en';
+    if(!supportedLanguages.includes(selectedLanguage)) selectedLanguage = 'en';
+
+    localStorage.setItem('namasteLanguage', selectedLanguage);
+    document.documentElement.lang = selectedLanguage;
+
+    const languageLabels = {en:'EN',el:'GR',de:'DE',ro:'RO',sr:'SR',bg:'BG'};
+    document.getElementById('languageIndicator').textContent = languageLabels[selectedLanguage];
+
+    document.querySelectorAll('.home-link').forEach(link => {
+      link.href = `index.html?lang=${selectedLanguage}`;
+    });
+    document.getElementById('thessalonikiLink').href = `thessaloniki.html?lang=${selectedLanguage}`;
+
+    /* Header */
+    const header = document.getElementById('siteHeader');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+
+    const handleScroll = () => header.classList.toggle('scrolled', window.scrollY > 30);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, {passive:true});
+
+    menuToggle.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      document.body.classList.toggle('locked', open);
+      menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        document.body.classList.remove('locked');
+      });
+    });
+
+    /* Reveal */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* Gallery */
+    const visibleGallery = [...document.querySelectorAll('.gallery[data-gallery="breeze"] button[data-src]')].map(btn => btn.dataset.src);
+    const hiddenGallery = [...document.querySelectorAll('[data-gallery-src="breeze"]')].map(el => el.dataset.src);
+    const galleryImages = [...visibleGallery, ...hiddenGallery];
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    let imageIndex = 0;
+
+    document.querySelectorAll('.gallery[data-gallery="breeze"] button[data-src]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        imageIndex = galleryImages.indexOf(btn.dataset.src);
+        openLightbox();
+      });
+    });
+
+    function openLightbox(){
+      updateLightbox();
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden','false');
+      document.body.classList.add('locked');
+    }
+
+    function updateLightbox(){
+      lightboxImage.src = galleryImages[imageIndex];
+      lightboxImage.alt = `Sea Breeze Paradise photo ${imageIndex + 1}`;
+      lightboxCounter.textContent = `${imageIndex + 1} / ${galleryImages.length}`;
+    }
+
+    function changeImage(step){
+      imageIndex = (imageIndex + step + galleryImages.length) % galleryImages.length;
+      updateLightbox();
+    }
+
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
+      document.body.classList.remove('locked');
+    }
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxPrev').addEventListener('click', () => changeImage(-1));
+    document.getElementById('lightboxNext').addEventListener('click', () => changeImage(1));
+
+    /* Calendar */
+    const calendarModal = document.getElementById('calendarModal');
+    const monthsEl = document.getElementById('months');
+    const checkinSummary = document.getElementById('checkinSummary');
+    const checkoutSummary = document.getElementById('checkoutSummary');
+    const requestDatesBtn = document.getElementById('requestDates');
+    const guestSelect = document.getElementById('guestSelect');
+
+    let checkin = null;
+    let checkout = null;
+
+    document.querySelectorAll('.calendar-open').forEach(btn => {
+      btn.addEventListener('click', openCalendar);
+    });
+
+    function openCalendar(){
+      checkin = null;
+      checkout = null;
+      renderCalendar();
+      updateDateSummary();
+      calendarModal.classList.add('open');
+      calendarModal.setAttribute('aria-hidden','false');
+      document.body.classList.add('locked');
+    }
+
+    function closeCalendar(){
+      calendarModal.classList.remove('open');
+      calendarModal.setAttribute('aria-hidden','true');
+      document.body.classList.remove('locked');
+    }
+
+    document.getElementById('calendarClose').addEventListener('click', closeCalendar);
+    calendarModal.addEventListener('click', e => { if(e.target === calendarModal) closeCalendar(); });
+
+    document.getElementById('clearDates').addEventListener('click', () => {
+      checkin = null;
+      checkout = null;
+      renderCalendar();
+      updateDateSummary();
+    });
+
+    function isoDate(date){
+      const y = date.getFullYear();
+      const m = String(date.getMonth()+1).padStart(2,'0');
+      const d = String(date.getDate()).padStart(2,'0');
+      return `${y}-${m}-${d}`;
+    }
+
+    function displayDate(date){
+      return date ? date.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) : 'Select a date';
+    }
+
+    function normalizeDate(date){
+      return new Date(date.getFullYear(),date.getMonth(),date.getDate());
+    }
+
+    function sameDate(a,b){
+      return a && b &&
+        a.getFullYear()===b.getFullYear() &&
+        a.getMonth()===b.getMonth() &&
+        a.getDate()===b.getDate();
+    }
+
+    function handleDateClick(date){
+      const clicked = normalizeDate(date);
+
+      if(!checkin || (checkin && checkout)){
+        checkin = clicked;
+        checkout = null;
+      } else if(clicked <= checkin){
+        checkin = clicked;
+        checkout = null;
+      } else {
+        checkout = clicked;
+      }
+
+      renderCalendar();
+      updateDateSummary();
+    }
+
+    function updateDateSummary(){
+      checkinSummary.textContent = displayDate(checkin);
+      checkoutSummary.textContent = displayDate(checkout);
+      requestDatesBtn.disabled = !(checkin && checkout);
+    }
+
+    function renderMonth(baseDate){
+      const year = baseDate.getFullYear();
+      const month = baseDate.getMonth();
+      const today = normalizeDate(new Date());
+      const first = new Date(year,month,1);
+      const last = new Date(year,month+1,0);
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'month';
+
+      const title = document.createElement('div');
+      title.className = 'month-title';
+      title.textContent = first.toLocaleDateString('en-GB',{month:'long',year:'numeric'});
+      wrapper.appendChild(title);
+
+      const weekdays = document.createElement('div');
+      weekdays.className = 'weekdays';
+
+      ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach(day => {
+        const el = document.createElement('div');
+        el.className = 'weekday';
+        el.textContent = day;
+        weekdays.appendChild(el);
+      });
+
+      wrapper.appendChild(weekdays);
+
+      const days = document.createElement('div');
+      days.className = 'days';
+
+      const mondayFirstOffset = (first.getDay()+6)%7;
+      for(let i=0;i<mondayFirstOffset;i++){
+        days.appendChild(document.createElement('div'));
+      }
+
+      for(let d=1;d<=last.getDate();d++){
+        const date = new Date(year,month,d);
+        const btn = document.createElement('button');
+        btn.className = 'day';
+        btn.textContent = d;
+
+        if(date < today){
+          btn.disabled = true;
+        } else {
+          btn.addEventListener('click', () => handleDateClick(date));
+        }
+
+        if(sameDate(date,checkin) || sameDate(date,checkout)){
+          btn.classList.add('selected');
+        } else if(checkin && checkout && date > checkin && date < checkout){
+          btn.classList.add('in-range');
+        }
+
+        days.appendChild(btn);
+      }
+
+      wrapper.appendChild(days);
+      return wrapper;
+    }
+
+    function renderCalendar(){
+      monthsEl.innerHTML = '';
+      const now = new Date();
+      monthsEl.appendChild(renderMonth(new Date(now.getFullYear(),now.getMonth(),1)));
+      monthsEl.appendChild(renderMonth(new Date(now.getFullYear(),now.getMonth()+1,1)));
+    }
+
+    requestDatesBtn.addEventListener('click', () => {
+      if(!(checkin && checkout)) return;
+
+      const guests = guestSelect.value;
+      const subject = encodeURIComponent('Namaste Homes availability request — Sea Breeze Paradise');
+      const body = encodeURIComponent(
+`Hello Namaste Homes,
+
+I would like to request availability for:
+
+Property: Sea Breeze Paradise
+Check-in: ${isoDate(checkin)}
+Check-out: ${isoDate(checkout)}
+Guests: ${guests}
+
+Thank you.`
+      );
+
+      window.location.href = `mailto:namastehomes.gr@gmail.com?subject=${subject}&body=${body}`;
+    });
+
+    document.addEventListener('keydown', e => {
+      if(e.key === 'Escape'){
+        if(lightbox.classList.contains('open')) closeLightbox();
+        if(calendarModal.classList.contains('open')) closeCalendar();
+      }
+      if(lightbox.classList.contains('open')){
+        if(e.key === 'ArrowLeft') changeImage(-1);
+        if(e.key === 'ArrowRight') changeImage(1);
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
