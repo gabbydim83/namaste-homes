@@ -49,8 +49,7 @@ h1,h2,h3{margin:0;font-family:var(--serif);font-weight:500;line-height:1.04}h2{f
 .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}.fact{border:1px solid var(--line);background:linear-gradient(180deg,#fff,#f9fcfc);border-radius:16px;padding:14px;min-height:92px;box-shadow:0 8px 20px rgba(18,43,48,.045)}.fact strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.08rem;line-height:1.14}.fact span{display:block;margin-top:4px;color:var(--muted);font-size:.7rem}
 
 /* atmosphere */
-.atmosphere{background:var(--ivory)}.atmosphere-grid{grid-template-columns:1.08fr .92fr;align-items:center}.atmosphere-photo{min-height:470px;border-radius:24px;overflow:hidden;position:relative;box-shadow:var(--shadow)}.atmosphere-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}.feature{border:1px solid var(--line);background:#fff;border-radius:16px;padding:15px}.feature strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.12rem}.feature span{display:block;margin-top:4px;color:var(--muted);font-size:.74rem}
+.atmosphere{background:var(--ivory)}.atmosphere-grid{grid-template-columns:1fr;gap:26px;align-items:start}.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}.feature{border:1px solid var(--line);background:#fff;border-radius:16px;padding:15px}.feature strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.12rem}.feature span{display:block;margin-top:4px;color:var(--muted);font-size:.74rem}
 
 /* booking */
 .booking{background:linear-gradient(135deg,#eaf4f4,#fffdf9 64%)}.booking-grid{grid-template-columns:.9fr 1.1fr}.booking-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 16px 48px rgba(18,43,48,.08)}
@@ -76,9 +75,9 @@ h1,h2,h3{margin:0;font-family:var(--serif);font-weight:500;line-height:1.04}h2{f
 .field input[readonly]{cursor:default;background:#fffdf9}
 
 /* reviews */
-.reviews{background:var(--deep);color:#fff;overflow:hidden}.reviews .eyebrow{color:var(--goldsoft)}.reviews-wrap{max-width:920px;margin:auto;text-align:center}.review-stage{position:relative;min-height:270px;margin-top:24px}
+.reviews{background:var(--deep);color:#fff;overflow:hidden}.reviews .eyebrow{color:#d9c08a}.reviews-wrap{max-width:920px;margin:auto;text-align:center}.review-stage{position:relative;min-height:235px;margin-top:18px}
 .review{position:absolute;inset:0;opacity:0;transform:translateX(24px);pointer-events:none;transition:opacity .55s ease,transform .55s ease}.review.active{opacity:1;transform:none;pointer-events:auto}
-.stars{color:#e5bd70;letter-spacing:.14em;font-size:.92rem;margin-bottom:12px}.review blockquote{margin:0 auto;max-width:760px;font-family:var(--serif);font-size:clamp(1rem,2.05vw,1.45rem);line-height:1.55}.review-author{margin-top:14px;font-weight:850;color:#f0d8a8}.review-meta{margin-top:4px;color:rgba(255,255,255,.56);font-size:.74rem}
+.stars{color:#e5bd70;letter-spacing:.14em;font-size:.86rem;margin-bottom:10px}.review blockquote{margin:0 auto;max-width:760px;font-family:var(--serif);font-size:clamp(.94rem,1.8vw,1.22rem);line-height:1.52}.review-author{margin-top:12px;font-weight:850;color:#f0d8a8;font-size:.95rem}.review-meta{margin-top:3px;color:rgba(255,255,255,.56);font-size:.7rem}
 .review-dots{display:flex;justify-content:center;gap:8px;margin-top:22px}.review-dot{width:9px;height:9px;border:0;border-radius:50%;padding:0;background:rgba(255,255,255,.25)}.review-dot.active{background:var(--gold)}
 
 /* gallery */
@@ -99,20 +98,30 @@ footer{background:#0e2529;color:rgba(255,255,255,.72);padding:50px 0 24px}.foote
 @media(max-width:980px){.nav-links{display:none}.menu-toggle{display:flex}.intro-grid,.atmosphere-grid,.booking-grid,.essentials-grid{grid-template-columns:1fr}}
 @media(max-width:720px){
   .container{width:min(100% - 24px,1180px)}.section{padding:58px 0}.site-header{height:64px}.brand img{width:92px;max-height:42px}.menu-toggle{min-width:80px;height:38px}
-  .hero{min-height:76svh}.hero-content{padding-bottom:28px}.hero h1{font-size:clamp(2.9rem,13.5vw,4.7rem)}.hero-tagline{font-size:1.06rem;margin-top:12px}.hero-actions{margin-top:18px}.hero-actions .btn{min-height:43px;padding:0 14px;font-size:.77rem}
-  .intro-grid,.atmosphere-grid,.booking-grid,.essentials-grid{gap:24px}.intro h2,.atmosphere h2,.booking h2,.essentials h2,.reviews-wrap h2,.gallery-head h2{font-size:2.45rem}
+  .hero{min-height:100svh}
+  .hero:after{background:linear-gradient(to top,rgba(9,29,33,.72),rgba(9,29,33,.18) 56%,rgba(9,29,33,.03)),linear-gradient(to right,rgba(8,27,31,.10),transparent 64%)}
+  .hero-content{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:124px;padding-bottom:14px}
+  .hero h1{font-size:clamp(2.95rem,13.5vw,4.7rem)}
+  .hero-tagline{font-size:1rem;margin-top:12px;max-width:92%}
+  .hero-actions{margin-top:18px;padding-top:8px}
+  .hero-actions .btn{min-height:43px;padding:0 14px;font-size:.77rem}
+  .intro-grid,.atmosphere-grid,.booking-grid,.essentials-grid{gap:24px}.intro h2,.atmosphere h2,.booking h2,.essentials h2,.reviews-wrap h2,.gallery-head h2{font-size:2.28rem}
   .intro-copy p,.atmosphere-copy p,.booking-copy p,.essentials-copy p{font-size:.92rem}
-  .facts{grid-template-columns:repeat(4,1fr);gap:6px}.fact{padding:10px 7px;min-height:76px;border-radius:12px;text-align:center}.fact strong{font-size:.9rem}.fact span{font-size:.59rem;line-height:1.2}
-  .atmosphere-photo{min-height:280px}.feature-grid{gap:7px}.feature{padding:11px}.feature strong{font-size:.96rem}.feature span{font-size:.66rem}
-  .booking-card{padding:19px}.booking-fields{grid-template-columns:1fr 1fr}.field:last-child{grid-column:1/3}.field input,.field select{height:45px}
-  .review-stage{min-height:470px;margin-top:22px}.review blockquote{font-size:1.16rem;line-height:1.42}.review-author{margin-top:16px}.review-meta{font-size:.72rem}
-  .gallery-head{margin-bottom:18px}.gallery-head p{font-size:.84rem}.gallery{display:flex;gap:9px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}.gallery::-webkit-scrollbar{display:none}.gallery button{flex:0 0 84%;height:300px;scroll-snap-align:center}.gallery button:first-child{grid-row:auto}
-  .essentials-list{gap:7px}.essential{padding:11px}.essential strong{font-size:.96rem}.essential span{font-size:.66rem}
-  .final{min-height:430px}.final h2{font-size:2.9rem}.final p{font-size:1.08rem}
+  .facts{grid-template-columns:repeat(2,1fr);gap:7px}.fact{padding:10px 8px;min-height:78px;border-radius:12px;text-align:center}.fact strong{font-size:.94rem}.fact span{font-size:.6rem;line-height:1.2}
+  .feature-grid{grid-template-columns:1fr 1fr;gap:8px}.feature{padding:12px}.feature strong{font-size:.96rem}.feature span{font-size:.67rem}
+  .booking-card{padding:16px}.booking-card h3{font-size:1.55rem}.booking-card>p{font-size:.76rem;margin-bottom:12px}
+  .calendar-shell{border-radius:16px}.calendar-head{padding:10px 10px 7px}.calendar-month{font-size:1rem}.calendar-weekdays,.calendar-days{padding-left:8px;padding-right:8px;gap:2px}.calendar-day{font-size:.72rem}
+  .booking-fields{grid-template-columns:1fr 1fr;gap:8px}.field:last-child{grid-column:1/3}.field input,.field select{height:43px}
+  .review-stage{min-height:270px;margin-top:16px}.review blockquote{font-size:.9rem;line-height:1.46}.review-author{margin-top:12px;font-size:.84rem}.review-meta{font-size:.65rem}
+  .gallery-head{margin-bottom:18px}.gallery-head p{font-size:.82rem}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:115px 115px 115px;gap:7px}
+  .gallery button{height:auto;min-height:0;border-radius:12px}
+  .gallery button:first-child,.gallery button:nth-child(4),.gallery button:nth-child(5){grid-row:auto;grid-column:auto}
+  .essentials-list{grid-template-columns:1fr 1fr;gap:8px}.essential{padding:12px}.essential strong{font-size:.92rem}.essential span{font-size:.66rem}
   .footer-grid{grid-template-columns:1fr;gap:26px}.footer-bottom{flex-direction:column}
   .lightbox-stage{padding:0 8px}.lightbox-nav{width:40px;height:40px;background:rgba(0,0,0,.5)}.lightbox-prev{left:6px}.lightbox-next{right:6px}
 }
-@media(max-width:390px){.facts{grid-template-columns:1fr 1fr}.booking-fields{grid-template-columns:1fr}.field:last-child{grid-column:auto}.review-stage{min-height:380px}.essentials-list{grid-template-columns:1fr 1fr}.hero-content{padding-bottom:18px}.hero-tagline{max-width:100%}}
+@media(max-width:390px){.facts{grid-template-columns:1fr 1fr}.booking-fields{grid-template-columns:1fr}.field:last-child{grid-column:auto}.review-stage{min-height:300px}.essentials-list{grid-template-columns:1fr 1fr}.hero-content{padding-bottom:12px}.hero-tagline{max-width:100%}.gallery{grid-template-columns:repeat(2,1fr);grid-template-rows:110px 110px 110px 110px}}
 </style>
 </head>
 <body>
@@ -131,7 +140,7 @@ footer{background:#0e2529;color:rgba(255,255,255,.72);padding:50px 0 24px}.foote
   <nav>
     <a href="#story">Overview</a>
     <a href="#booking">Book Your Stay</a>
-    <a href="#reviews">Guest Reviews</a>
+    <a href="#reviews">Google Reviews</a>
     <a href="#gallery">Gallery</a>
     <a href="#details">About the House</a>
     <a class="back-link home-link" href="index.html">Back to Namaste Homes</a>
@@ -174,24 +183,28 @@ footer{background:#0e2529;color:rgba(255,255,255,.72);padding:50px 0 24px}.foote
 
 <section class="section gallery-section anchor" id="gallery">
   <div class="container">
-    <div class="gallery-head reveal"><div class="eyebrow">Inside & outside</div><h2>Explore Sea Breeze Paradise.</h2><p>Tap any image to view the full gallery.</p></div>
+    <div class="gallery-head reveal">
+      <div class="eyebrow">Explore Sea Breeze Paradise</div>
+      <h2>Inside & outside.</h2>
+      <p>Tap any image to view the full gallery.</p>
+    </div>
     <div class="gallery reveal" data-gallery="breeze">
       <button data-src="assets/images/breeze_in.webp"><img src="assets/images/breeze_in.webp" alt="Sea Breeze Paradise living area"></button>
       <button data-src="assets/images/breeze_bedroom.webp"><img src="assets/images/breeze_bedroom.webp" alt="Sea Breeze Paradise bedroom"></button>
       <button data-src="assets/images/house.webp"><img src="assets/images/house.webp" alt="Sea Breeze Paradise accommodation area on the property"></button>
       <button data-src="assets/images/breeze_in1.webp"><img src="assets/images/breeze_in1.webp" alt="Sea Breeze Paradise interior"></button>
-      <button data-src="assets/images/breeze_out2.webp"><img src="assets/images/breeze_out2.webp" alt="Sea Breeze Paradise sea view"><span class="gallery-more">View all</span></button>
+      <button data-src="assets/images/breeze_out2.webp"><img src="assets/images/breeze_out2.webp" alt="Sea Breeze Paradise sea view"></button>
+      <button data-src="assets/images/breeze_small_bedroom.webp"><img src="assets/images/breeze_small_bedroom.webp" alt="Sea Breeze Paradise smaller bedroom"></button>
+      <button data-src="assets/images/breeze_bathroom.webp"><img src="assets/images/breeze_bathroom.webp" alt="Sea Breeze Paradise bathroom"><span class="gallery-more">View all</span></button>
     </div>
     <div hidden>
       <span data-gallery-src="breeze" data-src="assets/images/breeze_out1.webp"></span>
-      <span data-gallery-src="breeze" data-src="assets/images/breeze_bathroom.webp"></span>
       <span data-gallery-src="breeze" data-src="assets/images/breeze_bathroom1.webp"></span>
       <span data-gallery-src="breeze" data-src="assets/images/breeze_bathroom2.webp"></span>
       <span data-gallery-src="breeze" data-src="assets/images/breeze_bedroom1.webp"></span>
       <span data-gallery-src="breeze" data-src="assets/images/breeze_bedroom2.webp"></span>
       <span data-gallery-src="breeze" data-src="assets/images/breeze_in2.webp"></span>
       <span data-gallery-src="breeze" data-src="assets/images/breeze_in3.webp"></span>
-      <span data-gallery-src="breeze" data-src="assets/images/breeze_small_bedroom.webp"></span>
       <span data-gallery-src="breeze" data-src="assets/images/breeze_small_bedroom1.webp"></span>
       <span data-gallery-src="breeze" data-src="assets/images/breeze_small_bedroom2.webp"></span>
     </div>
@@ -235,8 +248,8 @@ footer{background:#0e2529;color:rgba(255,255,255,.72);padding:50px 0 24px}.foote
 
 <section class="section reviews anchor" id="reviews">
   <div class="container reviews-wrap reveal">
-    <div class="eyebrow">Guest reviews</div>
-    <h2>What guests say about Sea Breeze Paradise.</h2>
+    <div class="eyebrow">Google Reviews</div>
+    <h2>What guests say.</h2>
     <div class="review-stage">
       <article class="review active">
         <div class="stars">★★★★★</div>
@@ -267,28 +280,24 @@ footer{background:#0e2529;color:rgba(255,255,255,.72);padding:50px 0 24px}.foote
 
 <section class="section atmosphere anchor" id="details">
   <div class="container atmosphere-grid">
-    <div class="atmosphere-photo reveal"><img src="assets/images/breeze_out2.webp" alt="Sea Breeze Paradise outdoor dining and sea view"></div>
     <div class="atmosphere-copy reveal">
-      <div class="eyebrow">Sea Breeze Paradise</div>
+      <div class="eyebrow">About the house</div>
+      <h2>Simple, comfortable and made for time together.</h2>
+      <div class="essentials-list">
+        <div class="essential"><strong>2 Bedrooms</strong><span>Comfortable sleeping spaces for the stay.</span></div>
+        <div class="essential"><strong>3 Beds</strong><span>Sleeping arrangements for up to five guests.</span></div>
+        <div class="essential"><strong>1.5 Bathrooms</strong><span>A practical layout for families and small groups.</span></div>
+        <div class="essential"><strong>Kitchen</strong><span>Equipped for everyday meals and longer stays.</span></div>
+        <div class="essential"><strong>Sea View</strong><span>Beautiful Aegean views from the property.</span></div>
+        <div class="essential"><strong>Private Accommodation</strong><span>Your own indoor spaces for the stay.</span></div>
+        <div class="essential"><strong>Shared Garden</strong><span>Outdoor garden area shared on the property.</span></div>
+        <div class="essential"><strong>Shared Barbecue</strong><span>Barbecue area available in the shared garden.</span></div>
+      </div>
+
+      <div class="eyebrow" style="margin-top:26px">Sea Breeze Paradise</div>
       <h2>Sea views outside. Calm spaces inside.</h2>
       <p>Sea Breeze Paradise combines beautiful Aegean views, relaxed indoor spaces and a simple, comfortable atmosphere designed for quiet time together.</p>
       <p>The accommodation itself is private, while the garden and barbecue area are shared on the property.</p>
-      <div class="feature-grid">
-        <div class="feature"><strong>Aegean views</strong><span>Sea-facing moments throughout the stay.</span></div>
-        <div class="feature"><strong>Private accommodation</strong><span>Your own indoor spaces for the stay.</span></div>
-        <div class="feature"><strong>Shared garden</strong><span>Outdoor garden area shared on the property.</span></div>
-        <div class="feature"><strong>Shared BBQ</strong><span>Barbecue area available in the shared garden.</span></div>
-      </div>
-      <div class="eyebrow" style="margin-top:26px">About the house</div>
-      <p>Simple, comfortable and made for time together.</p>
-      <div class="essentials-list">
-        <div class="essential"><strong>2 bedrooms</strong><span>Private sleeping spaces for the stay.</span></div>
-        <div class="essential"><strong>3 beds</strong><span>Sleeping arrangements for up to five guests.</span></div>
-        <div class="essential"><strong>1.5 bathrooms</strong><span>A practical layout for families and small groups.</span></div>
-        <div class="essential"><strong>Kitchen</strong><span>Equipped for everyday meals and longer stays.</span></div>
-        <div class="essential"><strong>Sea views</strong><span>Aegean views from the property.</span></div>
-        <div class="essential"><strong>Shared garden & BBQ</strong><span>Outdoor area shared on the property.</span></div>
-      </div>
     </div>
   </div>
 </section>
@@ -298,7 +307,7 @@ footer{background:#0e2529;color:rgba(255,255,255,.72);padding:50px 0 24px}.foote
   <div class="container">
     <div class="footer-grid">
       <div><img class="footer-logo" src="assets/images/logo.png" alt="Namaste Homes"><div>Distinctive stays in Thessaloniki and Halkidiki.</div></div>
-      <div><h4>Sea Breeze Paradise</h4><a href="#story">Overview</a><a href="#gallery">Gallery</a><a href="#booking">Book Your Stay</a><a href="#reviews">Guest Reviews</a><a href="#details">About the House</a></div>
+      <div><h4>Sea Breeze Paradise</h4><a href="#story">Overview</a><a href="#gallery">Gallery</a><a href="#booking">Book Your Stay</a><a href="#reviews">Google Reviews</a><a href="#details">About the House</a></div>
       <div><h4>Contact</h4><a href="tel:+306944428858">+30 694 442 8858</a><a href="mailto:namastehomes.gr@gmail.com">namastehomes.gr@gmail.com</a><a target="_blank" rel="noopener" href="https://www.google.com/maps?q=39.930760771591814,23.732413768653213">View location</a></div>
     </div>
     <div class="footer-bottom"><span>© <span id="year"></span> Namaste Homes</span><span class="footer-tagline">Sea Breeze Paradise · Halkidiki</span></div>
