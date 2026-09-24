@@ -261,16 +261,17 @@
     .overview-copy p{color:#5b534b;font-size:1.03rem;margin-bottom:18px}
     .facts{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(4,1fr);
       gap:10px;
       margin-top:26px;
     }
     .fact{
       border:1px solid var(--line);
-      background:#fff;
+      background:linear-gradient(180deg,#fff,#fbf7ef);
       border-radius:16px;
-      padding:15px;
-      min-height:96px;
+      padding:15px 14px;
+      min-height:98px;
+      box-shadow:0 8px 22px rgba(38,27,15,.045);
     }
     .fact strong{
       display:block;
@@ -375,6 +376,82 @@
       color:#8c837b;
       font-size:.72rem;
       text-align:center;
+    }
+
+
+    .calendar-shell{
+      margin:4px 0 18px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      background:#fffdf9;
+    }
+    .calendar-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 14px 10px;
+    }
+    .calendar-month{
+      font-family:var(--serif);
+      font-size:1.15rem;
+      color:var(--ink);
+    }
+    .calendar-nav{
+      width:36px;height:36px;
+      border:1px solid var(--line);
+      border-radius:50%;
+      background:#fff;
+      color:var(--ink);
+      display:grid;
+      place-items:center;
+      font-size:1rem;
+    }
+    .calendar-nav:disabled{opacity:.28;cursor:not-allowed}
+    .calendar-weekdays,.calendar-days{
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      gap:4px;
+      padding:0 12px 12px;
+    }
+    .calendar-weekdays span{
+      text-align:center;
+      color:#9b9187;
+      font-size:.63rem;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      padding:5px 0;
+    }
+    .calendar-day{
+      aspect-ratio:1;
+      border:0;
+      border-radius:50%;
+      background:transparent;
+      color:var(--ink);
+      display:grid;
+      place-items:center;
+      font-size:.78rem;
+      position:relative;
+    }
+    .calendar-day:hover:not(:disabled){background:#f3eadc}
+    .calendar-day:disabled{color:#c9c1b8;cursor:not-allowed}
+    .calendar-day.in-range{background:#f1e5d2;border-radius:10px}
+    .calendar-day.start,.calendar-day.end{
+      background:var(--gold);
+      color:#21190d;
+      font-weight:900;
+    }
+    .calendar-help{
+      padding:0 14px 14px;
+      color:#8c837b;
+      font-size:.72rem;
+      text-align:center;
+    }
+    .field input[readonly]{
+      cursor:default;
+      background:#fffdf9;
     }
 
     /* LOCATION */
@@ -509,29 +586,32 @@
       .overview-grid{gap:26px}
       .overview h2{font-size:2.55rem}
       .overview-copy p{font-size:.94rem}
-      .facts{grid-template-columns:1fr 1fr 1fr;gap:7px}
-      .fact{padding:11px;min-height:82px;border-radius:13px}
-      .fact strong{font-size:.95rem}
-      .fact span{font-size:.63rem}
+      .facts{grid-template-columns:1fr 1fr;gap:7px}
+      .fact{padding:11px;min-height:78px;border-radius:13px}
+      .fact strong{font-size:.94rem}
+      .fact span{font-size:.62rem}
+      .calendar-shell{border-radius:16px}
+      .calendar-head{padding:12px 12px 8px}
+      .calendar-weekdays,.calendar-days{padding-left:9px;padding-right:9px;gap:3px}
+      .calendar-day{font-size:.74rem}
 
       .gallery-head{margin-bottom:18px}
       .gallery-head h2{font-size:2.55rem}
       .gallery-head p{font-size:.85rem}
       .gallery{
-        display:flex;
-        gap:9px;
-        overflow-x:auto;
-        scroll-snap-type:x mandatory;
-        padding-bottom:8px;
-        scrollbar-width:none;
+        display:grid;
+        grid-template-columns:1.25fr .75fr;
+        grid-template-rows:175px 175px 150px;
+        gap:7px;
       }
-      .gallery::-webkit-scrollbar{display:none}
       .gallery button{
-        flex:0 0 84%;
-        height:310px;
-        scroll-snap-align:center;
+        height:auto;
+        min-height:0;
+        border-radius:13px;
       }
-      .gallery button:first-child{grid-row:auto}
+      .gallery button:first-child{grid-row:1/3}
+      .gallery button:nth-child(4){grid-column:1/2}
+      .gallery button:nth-child(5){grid-column:2/3}
 
       .booking-grid{gap:26px}
       .booking-copy h2{font-size:2.55rem}
@@ -609,21 +689,23 @@
       <div class="container overview-grid">
         <div class="reveal">
           <div class="eyebrow">Boho Loft · Thessaloniki</div>
-          <h2>Inspired by the relaxed spirit of the Greek islands.</h2>
+          <h2>A warm, relaxed loft with natural textures and an easy-going city feel.</h2>
 
           <div class="facts">
             <div class="fact"><strong>Up to 3</strong><span>Guests</span></div>
+            <div class="fact"><strong>Sleeping loft</strong><span>Upper level</span></div>
+            <div class="fact"><strong>Sofa bed</strong><span>Lower level</span></div>
             <div class="fact"><strong>Private</strong><span>Kitchen</span></div>
             <div class="fact"><strong>Private</strong><span>Bathroom</span></div>
             <div class="fact"><strong>Wi-Fi</strong><span>Included</span></div>
             <div class="fact"><strong>A/C</strong><span>Air conditioning</span></div>
-            <div class="fact"><strong>Designer</strong><span>Interior</span></div>
+            <div class="fact"><strong>Natural style</strong><span>Warm, thoughtful interior</span></div>
           </div>
         </div>
 
         <div class="overview-copy reveal">
-          <p>Boho Loft brings together soft neutral tones, natural textures, warm wood and woven details to create a calm urban retreat with the easy-going character of a Greek island stay.</p>
-          <p>The high-ceiling living area, private kitchen, elevated sleeping zone and carefully layered lighting give the loft an open, distinctive feel while keeping everything needed for a comfortable Thessaloniki stay close at hand.</p>
+          <p>Boho Loft combines soft neutral tones, natural textures, warm wood and woven details to create a calm, comfortable stay with a relaxed character.</p>
+          <p>The sleeping area is arranged on the upper level, while a sofa bed on the lower level provides an additional sleeping space. Together with the private kitchen, bathroom and open living area, the layout works especially well for up to three guests.</p>
         </div>
       </div>
     </section>
@@ -667,17 +749,30 @@
 
         <div class="booking-card reveal">
           <h3>Boho Loft</h3>
-          <p>Up to 3 guests · Thessaloniki</p>
+          <p>Choose your dates directly from the calendar.</p>
+
+          <div class="calendar-shell" id="calendarShell">
+            <div class="calendar-head">
+              <button class="calendar-nav" id="prevMonth" type="button" aria-label="Previous month">‹</button>
+              <div class="calendar-month" id="calendarMonth"></div>
+              <button class="calendar-nav" id="nextMonth" type="button" aria-label="Next month">›</button>
+            </div>
+            <div class="calendar-weekdays">
+              <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+            <div class="calendar-days" id="calendarDays"></div>
+            <div class="calendar-help" id="calendarHelp">Select your check-in date, then your check-out date.</div>
+          </div>
 
           <div class="booking-fields">
             <div class="field">
               <label for="checkin">Check-in</label>
-              <input type="date" id="checkin">
+              <input type="text" id="checkin" readonly placeholder="Select from calendar">
             </div>
 
             <div class="field">
               <label for="checkout">Check-out</label>
-              <input type="date" id="checkout">
+              <input type="text" id="checkout" readonly placeholder="Select from calendar">
             </div>
 
             <div class="field">
@@ -704,7 +799,7 @@
             <div class="place">Boho Loft — Namaste Lofts</div>
             <p>Amalias 66, Thessaloniki 546 40, Greece</p>
           </div>
-          <a class="btn btn-dark" target="_blank" rel="noopener" href="https://www.google.com/maps?q=40.616090718512545,22.95741438596926">View on map →</a>
+          <a class="btn btn-dark" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=40.616090718512545,22.95741438596926">Take me there →</a>
         </div>
       </div>
     </section>
@@ -812,7 +907,10 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
     const lightboxCounter = document.getElementById('lightboxCounter');
+    const lightboxStage = document.querySelector('.lightbox-stage');
     let imageIndex = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
 
     function updateLightbox(){
       lightboxImage.src = galleryImages[imageIndex];
@@ -851,6 +949,21 @@
       if(e.target === lightbox) closeLightbox();
     });
 
+    lightboxStage.addEventListener('touchstart', e => {
+      if(!e.touches.length) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, {passive:true});
+
+    lightboxStage.addEventListener('touchend', e => {
+      if(!e.changedTouches.length) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if(Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)){
+        changeImage(dx < 0 ? 1 : -1);
+      }
+    }, {passive:true});
+
     document.addEventListener('keydown', e => {
       if(e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
       if(lightbox.classList.contains('open')){
@@ -864,6 +977,17 @@
     const checkout = document.getElementById('checkout');
     const guests = document.getElementById('guests');
     const sendRequest = document.getElementById('sendRequest');
+    const calendarMonth = document.getElementById('calendarMonth');
+    const calendarDays = document.getElementById('calendarDays');
+    const calendarHelp = document.getElementById('calendarHelp');
+    const prevMonth = document.getElementById('prevMonth');
+    const nextMonth = document.getElementById('nextMonth');
+
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    let visibleMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+    let selectedCheckin = null;
+    let selectedCheckout = null;
 
     function toISO(date){
       const y = date.getFullYear();
@@ -872,31 +996,87 @@
       return `${y}-${m}-${d}`;
     }
 
-    const today = new Date();
-    today.setHours(0,0,0,0);
-    const todayISO = toISO(today);
-    checkin.min = todayISO;
-    checkout.min = todayISO;
+    function formatDate(date){
+      return new Intl.DateTimeFormat('en-GB', {
+        day:'2-digit', month:'short', year:'numeric'
+      }).format(date);
+    }
 
-    checkin.addEventListener('change', () => {
-      if(!checkin.value){
-        checkout.min = todayISO;
-        return;
+    function sameDay(a,b){
+      return a && b &&
+        a.getFullYear()===b.getFullYear() &&
+        a.getMonth()===b.getMonth() &&
+        a.getDate()===b.getDate();
+    }
+
+    function renderCalendar(){
+      calendarMonth.textContent = new Intl.DateTimeFormat('en-US', {
+        month:'long', year:'numeric'
+      }).format(visibleMonth);
+
+      calendarDays.innerHTML = '';
+      const year = visibleMonth.getFullYear();
+      const month = visibleMonth.getMonth();
+      const firstDay = new Date(year, month, 1);
+      const mondayOffset = (firstDay.getDay() + 6) % 7;
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      for(let i=0;i<mondayOffset;i++){
+        calendarDays.appendChild(document.createElement('span'));
       }
 
-      const nextDay = new Date(checkin.value + 'T00:00:00');
-      nextDay.setDate(nextDay.getDate() + 1);
-      const minCheckout = toISO(nextDay);
-      checkout.min = minCheckout;
+      for(let day=1;day<=daysInMonth;day++){
+        const date = new Date(year, month, day);
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'calendar-day';
+        btn.textContent = day;
+        btn.disabled = date < today;
 
-      if(checkout.value && checkout.value < minCheckout){
+        if(selectedCheckin && selectedCheckout && date > selectedCheckin && date < selectedCheckout){
+          btn.classList.add('in-range');
+        }
+        if(sameDay(date, selectedCheckin)) btn.classList.add('start');
+        if(sameDay(date, selectedCheckout)) btn.classList.add('end');
+
+        btn.addEventListener('click', () => chooseDate(date));
+        calendarDays.appendChild(btn);
+      }
+
+      const currentMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+      prevMonth.disabled = visibleMonth <= currentMonthStart;
+    }
+
+    function chooseDate(date){
+      if(!selectedCheckin || selectedCheckout || date <= selectedCheckin){
+        selectedCheckin = new Date(date);
+        selectedCheckout = null;
+        checkin.value = formatDate(selectedCheckin);
         checkout.value = '';
+        calendarHelp.textContent = 'Now select your check-out date.';
+      }else{
+        selectedCheckout = new Date(date);
+        checkout.value = formatDate(selectedCheckout);
+        calendarHelp.textContent = 'Dates selected. Choose a new date to start again.';
       }
+      renderCalendar();
+    }
+
+    prevMonth.addEventListener('click', () => {
+      visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth()-1, 1);
+      renderCalendar();
     });
 
+    nextMonth.addEventListener('click', () => {
+      visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth()+1, 1);
+      renderCalendar();
+    });
+
+    renderCalendar();
+
     sendRequest.addEventListener('click', () => {
-      if(!checkin.value || !checkout.value){
-        alert('Please select your check-in and check-out dates.');
+      if(!selectedCheckin || !selectedCheckout){
+        alert('Please select your check-in and check-out dates from the calendar.');
         return;
       }
 
@@ -906,8 +1086,8 @@
 I would like to request availability for:
 
 Property: Boho Loft — Thessaloniki
-Check-in: ${checkin.value}
-Check-out: ${checkout.value}
+Check-in: ${toISO(selectedCheckin)}
+Check-out: ${toISO(selectedCheckout)}
 Guests: ${guests.value}
 
 Thank you.`;

@@ -176,6 +176,15 @@
       font-size:.72rem;
       letter-spacing:.04em;
     }
+    .lang-toggle img{
+      width:20px;
+      height:15px;
+      object-fit:cover;
+      border-radius:2px;
+      flex:0 0 auto;
+    }
+    .lang-toggle span{display:block}
+
     .site-header.scrolled .lang-toggle{
       color:var(--ink);
       border-color:var(--line);
@@ -401,8 +410,8 @@
 
     /* JOURNEY */
     .journey{
-      background:var(--charcoal);
-      color:#fff;
+      background:linear-gradient(180deg,#f6efe5 0%,#f1e6d8 52%,#eadcc9 100%);
+      color:var(--ink);
       position:relative;
       overflow:hidden;
     }
@@ -410,24 +419,24 @@
       content:"";
       position:absolute;
       width:520px;height:520px;
-      border:1px solid rgba(202,166,100,.14);
+      border:1px solid rgba(202,166,100,.18);
       border-radius:50%;
       left:-180px;top:-190px;
-      box-shadow:0 0 0 70px rgba(202,166,100,.035),0 0 0 140px rgba(202,166,100,.02);
+      box-shadow:0 0 0 70px rgba(202,166,100,.05),0 0 0 140px rgba(202,166,100,.03);
     }
     .journey-inner{position:relative;z-index:1;text-align:center}
-    .journey .eyebrow{color:var(--gold-soft)}
+    .journey .eyebrow{color:#9b7945}
     .journey h2{max-width:920px;margin:auto}
     .journey .question{
       margin-top:24px;
-      color:var(--gold-soft);
+      color:#8e6f45;
       font-family:var(--serif);
       font-size:clamp(1.45rem,3vw,2.25rem);
     }
     .journey-copy{
       max-width:760px;
       margin:15px auto 0;
-      color:rgba(255,255,255,.76);
+      color:#5f564c;
       font-size:1.05rem;
     }
     .journey-cards{
@@ -442,7 +451,7 @@
       position:relative;
       overflow:hidden;
       border-radius:24px;
-      border:1px solid rgba(255,255,255,.12);
+      border:1px solid rgba(97,76,43,.10);
       color:#fff;
       text-align:left;
       box-shadow:0 18px 50px rgba(0,0,0,.18);
@@ -461,7 +470,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(to top,rgba(10,9,8,.82),rgba(10,9,8,.08) 68%);
+      background:linear-gradient(to top,rgba(10,9,8,.66),rgba(10,9,8,.03) 72%);
       z-index:-1;
     }
     .journey-card-content{
@@ -514,7 +523,7 @@
     .spirit-logo img{width:min(330px,85%);height:auto;object-fit:contain}
 
     /* ABOUT — intentionally near the footer */
-    .about{background:var(--ivory)}
+    .about{background:linear-gradient(180deg,#eee5d7 0%,var(--ivory) 18%,var(--ivory) 100%)}
     .about-shell{
       max-width:1040px;
       margin:0 auto;
@@ -682,8 +691,8 @@
       .spirit-logo img{width:min(220px,78%)}
 
       .about-title-row{gap:12px;margin-bottom:24px;flex-wrap:nowrap}
-      .about-title-row h2{font-size:clamp(2rem,9.5vw,2.65rem);text-align:left}
-      .about-logo{width:92px}
+      .about-title-row h2{font-size:clamp(1.95rem,8.8vw,2.55rem);text-align:left}
+      .about-logo{width:138px}
       .about-copy p{font-size:.94rem;line-height:1.55;margin-bottom:15px}
       .brand-since{font-size:.64rem;letter-spacing:.08em;gap:8px;margin-top:24px}
       .brand-since::before,.brand-since::after{width:22px}
@@ -704,7 +713,7 @@
       .journey-card{min-height:220px}
       .journey-card h3{font-size:1.28rem}
       .about-title-row h2{font-size:1.95rem}
-      .about-logo{width:82px}
+      .about-logo{width:123px}
     }
   </style>
 </head>
@@ -715,7 +724,6 @@
         <a href="#journey">The Journey</a>
         <a href="thessaloniki.html">Thessaloniki</a>
         <a href="halkidiki.html">Halkidiki</a>
-        <a href="#philosophy">Philosophy</a>
         <a href="#about">Our Story</a>
       </nav>
 
@@ -723,7 +731,7 @@
         <a class="book-btn" href="#journey">Choose Your Stay</a>
 
         <div class="language">
-          <button class="lang-toggle" id="langToggle" aria-label="Choose language" aria-expanded="false">EN</button>
+          <button class="lang-toggle" id="langToggle" aria-label="Choose language" aria-expanded="false"><img id="langFlag" src="assets/icons/flag_en.webp" alt=""><span id="langCode">EN</span></button>
           <div class="lang-menu" id="langMenu">
             <button data-lang="en"><img src="assets/icons/flag_en.webp" alt=""> English</button>
             <button data-lang="el"><img src="assets/icons/flag_el.webp" alt=""> Ελληνικά</button>
@@ -748,7 +756,6 @@
       <div class="menu-kicker">Namaste Homes</div>
       <nav>
         <a href="#journey">The Namaste Journey</a>
-        <a href="#philosophy">Our Philosophy</a>
         <a href="#about">Our Story</a>
       </nav>
       <div class="menu-destinations">
@@ -815,22 +822,6 @@
       </div>
     </section>
 
-    <!-- PHILOSOPHY -->
-    <section class="section spirit" id="philosophy">
-      <div class="container spirit-grid">
-        <div class="spirit-copy reveal">
-          <div class="eyebrow">Our philosophy</div>
-          <h2>The Spirit of Namaste</h2>
-          <p>At Namaste Homes, we bring together the warmth of Greek hospitality and the welcoming spirit of India to create stays where every guest feels comfortable, valued and at home.</p>
-          <div class="welcome">Welcome to Namaste Homes.</div>
-        </div>
-
-        <div class="spirit-logo reveal">
-          <img src="assets/images/logo.png" alt="Namaste Homes logo" />
-        </div>
-      </div>
-    </section>
-
     <!-- OUR STORY — moved near the footer -->
     <section class="section about" id="about">
       <div class="container">
@@ -875,8 +866,7 @@
         <div>
           <h4>Namaste Homes</h4>
           <a href="#journey">The Namaste Journey</a>
-          <a href="#philosophy">Our Philosophy</a>
-          <a href="#about">Our Story</a>
+            <a href="#about">Our Story</a>
         </div>
       </div>
 
@@ -893,6 +883,8 @@
     const mobileNav = document.getElementById('mobileNav');
     const langToggle = document.getElementById('langToggle');
     const langMenu = document.getElementById('langMenu');
+    const langFlag = document.getElementById('langFlag');
+    const langCode = document.getElementById('langCode');
     const menuText = menuToggle.querySelector('.menu-text');
 
     const handleScroll = () => {
@@ -950,7 +942,17 @@
       document.documentElement.lang = lang;
 
       const labelMap = {en:'EN',el:'GR',de:'DE',ro:'RO',sr:'SR',bg:'BG'};
-      langToggle.textContent = labelMap[lang];
+      const flagMap = {
+        en:'assets/icons/flag_en.webp',
+        el:'assets/icons/flag_el.webp',
+        de:'assets/icons/flag_de.webp',
+        ro:'assets/icons/flag_ro.webp',
+        sr:'assets/icons/flag_sr.webp',
+        bg:'assets/icons/flag_bg.webp'
+      };
+      langCode.textContent = labelMap[lang];
+      langFlag.src = flagMap[lang];
+      langFlag.alt = labelMap[lang];
 
       document.querySelectorAll('a[href^="thessaloniki.html"],a[href^="halkidiki.html"]').forEach(link => {
         const rawHref = link.getAttribute('href');
