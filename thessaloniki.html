@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#171513" />
-  <meta name="description" content="Namaste Lofts Thessaloniki — Boho Loft, Industrial Loft and Luxe Loft. Three designer lofts, three personalities, one Namaste experience." />
+  <meta name="description" content="Namaste Lofts Thessaloniki — Boho Loft, Industrial Loft and Luxe Loft. Three designer lofts, three personalities, one address." />
   <title>Namaste Lofts Thessaloniki | Namaste Homes</title>
 
   <style>
@@ -16,11 +16,10 @@
       --gold-soft:#dfc48c;
       --ivory:#f7f3eb;
       --paper:#fffdf9;
-      --sand:#e9dfcf;
       --muted:#786f64;
       --line:rgba(36,32,28,.13);
       --shadow:0 24px 70px rgba(25,19,12,.16);
-      --radius:26px;
+      --radius:24px;
       --serif:Georgia,"Times New Roman",serif;
       --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     }
@@ -36,61 +35,58 @@
       overflow-x:hidden;
     }
     body.locked{overflow:hidden}
-    img{max-width:100%;display:block}
+    img{display:block;max-width:100%}
     a{color:inherit;text-decoration:none}
-    button,input,select{font:inherit}
-    button{cursor:pointer}
+    button{font:inherit;cursor:pointer}
     .container{width:min(1180px,calc(100% - 44px));margin-inline:auto}
-    .section{padding:108px 0}
+    .section{padding:96px 0}
     .anchor{scroll-margin-top:92px}
 
-    h1,h2,h3,h4{
+    h1,h2,h3{
       margin:0;
       font-family:var(--serif);
       font-weight:500;
       line-height:1.04;
     }
-    h2{font-size:clamp(2.55rem,5.3vw,5rem);letter-spacing:-.048em}
-    h3{font-size:clamp(2rem,3.5vw,3.2rem)}
+    h2{font-size:clamp(2.45rem,5vw,4.8rem);letter-spacing:-.045em}
+    h3{font-size:clamp(1.95rem,3.8vw,3.2rem)}
     p{margin-top:0}
 
     .eyebrow{
       display:inline-flex;
       align-items:center;
       gap:10px;
-      margin:0 0 18px;
+      margin:0 0 16px;
       color:#9b7945;
-      font-size:.76rem;
+      font-size:.75rem;
       font-weight:850;
       letter-spacing:.18em;
       text-transform:uppercase;
     }
-    .eyebrow::before{content:"";width:36px;height:1px;background:currentColor}
+    .eyebrow::before{content:"";width:32px;height:1px;background:currentColor}
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:50px;
-      padding:0 22px;
+      min-height:48px;
+      padding:0 20px;
       border-radius:999px;
       border:0;
-      font-size:.88rem;
       font-weight:850;
-      letter-spacing:.025em;
-      transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease;
+      font-size:.86rem;
+      letter-spacing:.02em;
+      transition:transform .2s ease,background .2s ease,color .2s ease;
     }
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{background:var(--gold);color:#21190d}
     .btn-dark{background:var(--charcoal);color:#fff}
-    .btn-light{background:#fff;color:var(--ink)}
-    .btn-outline{border:1px solid var(--line);background:transparent;color:var(--ink)}
-    .btn-ghost{border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.07);color:#fff}
+    .btn-ghost{border:1px solid rgba(255,255,255,.54);color:#fff;background:rgba(255,255,255,.08)}
 
     .reveal{
       opacity:0;
-      transform:translateY(22px);
-      transition:opacity .72s ease,transform .72s ease;
+      transform:translateY(18px);
+      transition:opacity .65s ease,transform .65s ease;
     }
     .reveal.visible{opacity:1;transform:none}
 
@@ -99,128 +95,134 @@
       position:fixed;
       inset:0 0 auto;
       z-index:60;
-      height:86px;
+      height:78px;
       display:flex;
       align-items:center;
-      transition:background .28s ease,box-shadow .28s ease,height .28s ease;
+      transition:background .25s ease,box-shadow .25s ease,height .25s ease;
     }
     .site-header.scrolled{
-      height:74px;
-      background:rgba(255,253,249,.95);
+      height:68px;
+      background:rgba(255,253,249,.96);
       backdrop-filter:blur(16px);
       box-shadow:0 8px 30px rgba(20,15,10,.08);
     }
     .nav-wrap{
-      width:min(1320px,calc(100% - 34px));
+      width:min(1320px,calc(100% - 30px));
       margin:auto;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:24px;
+      gap:20px;
+    }
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:#fff;
+      font-family:var(--serif);
+      font-size:1.1rem;
     }
     .brand img{
-      width:146px;
-      max-height:66px;
+      width:120px;
+      max-height:52px;
       object-fit:contain;
-      filter:drop-shadow(0 6px 16px rgba(0,0,0,.12));
+      filter:drop-shadow(0 5px 16px rgba(0,0,0,.18));
     }
-    .site-header:not(.scrolled) .brand img{
-      background:rgba(255,255,255,.94);
-      border-radius:12px;
-      padding:5px 8px;
-    }
+    .site-header.scrolled .brand{color:var(--ink)}
     .nav-links{
       display:flex;
       align-items:center;
       gap:24px;
+      margin-left:auto;
       color:#fff;
-      font-size:.89rem;
+      font-size:.86rem;
       font-weight:750;
     }
     .site-header.scrolled .nav-links{color:var(--ink)}
-    .nav-links a{position:relative;padding:8px 0}
+    .nav-links a{position:relative;padding:7px 0}
     .nav-links a::after{
       content:"";
       position:absolute;
-      left:0;right:100%;bottom:1px;
-      height:1px;background:var(--gold);
-      transition:right .25s ease;
+      left:0;right:100%;bottom:0;
+      height:1px;
+      background:var(--gold);
+      transition:right .2s ease;
     }
     .nav-links a:hover::after{right:0}
-    .nav-actions{display:flex;align-items:center;gap:10px}
-    .home-btn{
-      min-height:42px;
-      padding:0 16px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.46);
-      background:rgba(255,255,255,.08);
-      color:#fff;
-      display:inline-flex;
-      align-items:center;
-      font-size:.8rem;
-      font-weight:850;
-    }
-    .site-header.scrolled .home-btn{
-      color:var(--ink);
-      border-color:var(--gold);
-      background:transparent;
-    }
+
     .menu-toggle{
       display:none;
-      width:43px;height:43px;
-      border-radius:50%;
+      min-width:88px;
+      height:42px;
+      border-radius:999px;
+      padding:0 14px;
       border:1px solid rgba(255,255,255,.42);
-      background:rgba(0,0,0,.12);
-      padding:0;
-      place-items:center;
-    }
-    .menu-toggle span,
-    .menu-toggle::before,
-    .menu-toggle::after{
-      content:"";
-      width:18px;height:1.5px;
-      display:block;
-      background:#fff;
-    }
-    .menu-toggle::before{transform:translateY(-5px)}
-    .menu-toggle::after{transform:translateY(5px)}
-    .site-header.scrolled .menu-toggle{background:#fff;border-color:var(--line)}
-    .site-header.scrolled .menu-toggle span,
-    .site-header.scrolled .menu-toggle::before,
-    .site-header.scrolled .menu-toggle::after{background:var(--ink)}
-
-    .language-indicator{
-      min-width:42px;height:42px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      border:1px solid rgba(255,255,255,.34);
-      background:rgba(0,0,0,.11);
+      background:rgba(0,0,0,.14);
       color:#fff;
-      font-size:.7rem;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      font-size:.72rem;
       font-weight:900;
-      pointer-events:none;
+      letter-spacing:.12em;
+      text-transform:uppercase;
     }
-    .site-header.scrolled .language-indicator{
-      color:var(--ink);
-      background:#fff;
+    .menu-toggle .menu-icon{
+      width:14px;height:10px;position:relative;display:block;
+    }
+    .menu-toggle .menu-icon::before,
+    .menu-toggle .menu-icon::after{
+      content:"";
+      position:absolute;
+      left:0;
+      width:14px;
+      height:1.5px;
+      background:currentColor;
+      border-radius:2px;
+    }
+    .menu-toggle .menu-icon::before{top:1px}
+    .menu-toggle .menu-icon::after{bottom:1px}
+    .site-header.scrolled .menu-toggle{
       border-color:var(--line);
+      background:#fff;
+      color:var(--ink);
     }
 
     .mobile-nav{
       position:fixed;
       inset:0;
       z-index:59;
+      display:none;
       background:#151310;
       color:#fff;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
+      padding:100px 28px 40px;
+      overflow:auto;
     }
-    .mobile-nav.open{display:flex}
-    .mobile-nav nav{display:grid;gap:20px}
-    .mobile-nav a{font-family:var(--serif);font-size:1.9rem}
+    .mobile-nav.open{display:block}
+    .mobile-nav nav{
+      width:min(100%,420px);
+      margin:auto;
+      display:grid;
+      gap:8px;
+    }
+    .mobile-nav a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:58px;
+      border-bottom:1px solid rgba(255,255,255,.12);
+      font-family:var(--serif);
+      font-size:1.35rem;
+    }
+    .mobile-nav a::after{content:"→";color:var(--gold);font-family:var(--sans)}
+    .mobile-home{
+      margin-top:22px;
+      font-size:.78rem !important;
+      font-family:var(--sans) !important;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:rgba(255,255,255,.62);
+    }
 
     /* HERO */
     .hero{
@@ -236,645 +238,400 @@
       position:absolute;
       inset:0;
       display:grid;
-      grid-template-columns:1.05fr .95fr 1fr;
+      grid-template-columns:1fr 1fr 1fr;
     }
     .hero-photo{position:relative;overflow:hidden}
-    .hero-photo img{
-      width:100%;height:100%;
-      object-fit:cover;
-      transition:transform 1.1s ease;
-    }
-    .hero:hover .hero-photo img{transform:scale(1.025)}
+    .hero-photo img{width:100%;height:100%;object-fit:cover}
     .hero::after{
       content:"";
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to top,rgba(13,11,9,.9) 0%,rgba(13,11,9,.37) 58%,rgba(13,11,9,.16) 100%),
-        linear-gradient(to right,rgba(13,11,9,.2),transparent 50%);
+        linear-gradient(to top,rgba(13,11,9,.92) 0%,rgba(13,11,9,.36) 58%,rgba(13,11,9,.14) 100%),
+        linear-gradient(to right,rgba(13,11,9,.22),transparent 50%);
     }
     .hero-content{
       position:relative;
       z-index:2;
-      padding-bottom:68px;
-      max-width:1040px;
+      padding-bottom:66px;
+      max-width:980px;
     }
     .hero .eyebrow{color:#f1ddb4}
     .hero h1{
-      font-size:clamp(3.65rem,8.6vw,8rem);
-      letter-spacing:-.06em;
-      text-shadow:0 12px 42px rgba(0,0,0,.36);
+      font-size:clamp(3.5rem,8vw,7.7rem);
+      letter-spacing:-.058em;
+      text-shadow:0 12px 42px rgba(0,0,0,.35);
     }
     .hero-tagline{
-      max-width:930px;
-      margin:22px 0 0;
+      max-width:900px;
+      margin:20px 0 0;
       color:#f1ddb4;
       font-family:var(--serif);
-      font-size:clamp(1.35rem,3vw,2.2rem);
-      line-height:1.22;
+      font-size:clamp(1.25rem,2.8vw,2.05rem);
+      line-height:1.24;
     }
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 
-    /* COLLECTION INTRO */
+    /* COLLECTION */
     .collection{background:var(--paper)}
     .collection-grid{
       display:grid;
-      grid-template-columns:.82fr 1.18fr;
-      gap:72px;
+      grid-template-columns:.85fr 1.15fr;
+      gap:64px;
       align-items:start;
     }
-    .collection-title{
-      position:sticky;
-      top:118px;
-    }
-    .collection-copy{color:#554d45;font-size:1.075rem}
-    .collection-copy p{margin-bottom:22px}
+    .collection-title{position:sticky;top:105px}
+    .collection-copy{color:#554d45;font-size:1.04rem}
+    .collection-copy p{margin-bottom:18px}
     .collection-facts{
       display:grid;
       grid-template-columns:repeat(4,1fr);
-      gap:12px;
-      margin-top:40px;
+      gap:10px;
+      margin-top:34px;
     }
     .fact-card{
       border-top:1px solid var(--line);
-      padding-top:16px;
+      padding-top:13px;
     }
     .fact-card strong{
       display:block;
       font-family:var(--serif);
       font-weight:500;
+      font-size:1.35rem;
+      line-height:1.1;
+    }
+    .fact-card span{font-size:.72rem;color:var(--muted)}
+    .choose-line{
+      margin-top:26px;
+      font-family:var(--serif);
+      color:#8e6a38;
       font-size:1.55rem;
     }
-    .fact-card span{font-size:.78rem;color:var(--muted)}
 
-    /* LOFT SECTIONS */
-    .loft{
-      padding:0 0 116px;
-      background:var(--paper);
-    }
-    .loft:nth-of-type(even){background:var(--ivory)}
-    .loft-hero{
+    /* LOFT PREVIEWS */
+    .lofts{background:var(--ivory)}
+    .lofts-head{max-width:760px;margin-bottom:34px}
+    .lofts-head p{color:var(--muted);margin:14px 0 0}
+    .loft-stack{display:grid;gap:20px}
+    .loft-preview{
+      min-height:500px;
       position:relative;
-      min-height:690px;
       overflow:hidden;
+      border-radius:var(--radius);
+      color:#fff;
+      box-shadow:var(--shadow);
+      isolation:isolate;
     }
-    .loft-hero > img{
-      position:absolute;inset:0;
+    .loft-preview img{
+      position:absolute;
+      inset:0;
       width:100%;height:100%;
       object-fit:cover;
+      z-index:-2;
+      transition:transform .55s ease;
     }
-    .loft-hero::after{
+    .loft-preview:hover img{transform:scale(1.035)}
+    .loft-preview::after{
       content:"";
-      position:absolute;inset:0;
-      background:linear-gradient(to top,rgba(12,10,8,.72),rgba(12,10,8,.05) 66%);
-    }
-    .loft-hero-content{
       position:absolute;
-      z-index:2;
-      inset:auto 0 0;
-      padding-bottom:48px;
-      color:#fff;
+      inset:0;
+      background:linear-gradient(to top,rgba(12,10,8,.86),rgba(12,10,8,.12) 72%);
+      z-index:-1;
     }
-    .loft-hero .eyebrow{color:#f2ddb4}
-    .loft-hero h2{
-      font-size:clamp(3.5rem,7.5vw,7.1rem);
-      text-shadow:0 10px 35px rgba(0,0,0,.27);
+    .loft-preview-content{
+      position:absolute;
+      left:34px;right:34px;bottom:30px;
+      max-width:700px;
     }
-    .loft-hero p{
-      margin:16px 0 0;
-      max-width:760px;
-      color:rgba(255,255,255,.91);
-      font-size:1.1rem;
-    }
-
-    .loft-body{padding-top:54px}
-    .loft-body-grid{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:55px;
-      align-items:start;
-    }
-    .loft-description h3{margin-bottom:18px}
-    .loft-description p{color:#5b534b;font-size:1.03rem;margin-bottom:18px}
-    .loft-chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:9px;
-      margin-top:24px;
-    }
-    .chip{
-      padding:9px 13px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(255,255,255,.52);
-      color:#5b534b;
-      font-size:.78rem;
-      font-weight:800;
-    }
-
-    .stay-panel{
-      position:sticky;
-      top:108px;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:28px;
-      background:#fff;
-      box-shadow:0 16px 50px rgba(28,20,12,.08);
-    }
-    .stay-panel .panel-title{
-      font-family:var(--serif);
-      font-size:1.6rem;
-      margin-bottom:6px;
-    }
-    .stay-panel .panel-note{color:var(--muted);font-size:.84rem;margin-bottom:20px}
-    .panel-row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-      margin-bottom:10px;
-    }
-    .panel-mini{
-      border:1px solid var(--line);
-      border-radius:15px;
-      padding:13px 14px;
-    }
-    .panel-mini small{
-      display:block;
-      color:#8a8178;
-      font-size:.67rem;
-      font-weight:800;
+    .loft-number{
+      margin-bottom:9px;
+      color:#f2d7a0;
+      font-size:.74rem;
+      font-weight:900;
+      letter-spacing:.15em;
       text-transform:uppercase;
-      letter-spacing:.09em;
     }
-    .panel-mini strong{
-      display:block;
-      margin-top:4px;
-      font-size:.9rem;
+    .loft-preview h3{font-size:clamp(2.6rem,5.2vw,5.2rem)}
+    .loft-preview p{
+      max-width:670px;
+      margin:12px 0 0;
+      color:rgba(255,255,255,.88);
+      font-size:1rem;
     }
-    .stay-panel .btn{width:100%;margin-top:12px}
-
-    /* GALLERY */
-    .gallery-block{margin-top:60px}
-    .gallery-head{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:20px;
-      margin-bottom:22px;
-    }
-    .gallery-head h3{font-size:clamp(1.8rem,3vw,2.6rem)}
-    .gallery-head p{margin:0;color:var(--muted);font-size:.84rem}
-    .gallery{
-      display:grid;
-      grid-template-columns:1.35fr .85fr .85fr;
-      grid-template-rows:260px 260px;
+    .loft-link{
+      display:inline-flex;
+      align-items:center;
       gap:10px;
-    }
-    .gallery button{
-      border:0;
-      padding:0;
-      border-radius:16px;
-      overflow:hidden;
-      position:relative;
-      background:#ddd;
-    }
-    .gallery button:first-child{grid-row:1/3}
-    .gallery img{
-      width:100%;height:100%;object-fit:cover;
-      transition:transform .45s ease;
-    }
-    .gallery button:hover img{transform:scale(1.04)}
-    .gallery-more{
-      position:absolute;
-      right:14px;bottom:14px;
-      padding:8px 11px;
-      border-radius:999px;
-      background:rgba(0,0,0,.64);
-      color:#fff;
-      font-size:.72rem;
-      font-weight:800;
-      backdrop-filter:blur(8px);
+      margin-top:18px;
+      color:#f1d9a8;
+      font-weight:850;
+      font-size:.83rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
     }
 
-    /* STAY TOGETHER */
-    .together{
+    /* REVIEWS */
+    .reviews{
       background:var(--charcoal);
       color:#fff;
-      position:relative;
       overflow:hidden;
     }
-    .together::before{
-      content:"";
-      position:absolute;
-      width:560px;height:560px;
-      right:-220px;top:-190px;
-      border:1px solid rgba(202,166,100,.15);
-      border-radius:50%;
-      box-shadow:0 0 0 80px rgba(202,166,100,.035),0 0 0 160px rgba(202,166,100,.02);
+    .reviews .eyebrow{color:var(--gold-soft)}
+    .reviews-wrap{max-width:900px;margin:auto;text-align:center}
+    .review-stage{
+      position:relative;
+      min-height:300px;
+      margin-top:34px;
     }
+    .review{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transform:translateX(24px);
+      pointer-events:none;
+      transition:opacity .55s ease,transform .55s ease;
+    }
+    .review.active{
+      opacity:1;
+      transform:none;
+      pointer-events:auto;
+    }
+    .stars{
+      color:#e5bd70;
+      letter-spacing:.14em;
+      font-size:1rem;
+      margin-bottom:20px;
+    }
+    .review blockquote{
+      margin:0 auto;
+      max-width:820px;
+      font-family:var(--serif);
+      font-size:clamp(1.45rem,3vw,2.35rem);
+      line-height:1.35;
+      color:#fff;
+    }
+    .review-author{
+      margin-top:22px;
+      font-weight:850;
+      color:#f0d8a8;
+    }
+    .review-meta{
+      margin-top:4px;
+      color:rgba(255,255,255,.56);
+      font-size:.8rem;
+    }
+    .review-dots{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      margin-top:24px;
+    }
+    .review-dot{
+      width:9px;height:9px;
+      border:0;
+      border-radius:50%;
+      background:rgba(255,255,255,.25);
+      padding:0;
+    }
+    .review-dot.active{background:var(--gold)}
+
+    /* TOGETHER */
+    .together{background:var(--paper)}
     .together-grid{
-      position:relative;z-index:1;
       display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      gap:70px;
+      grid-template-columns:1.05fr .95fr;
+      gap:56px;
       align-items:center;
     }
     .together-photo{
-      min-height:650px;
+      min-height:560px;
       border-radius:var(--radius);
       overflow:hidden;
+      box-shadow:var(--shadow);
       position:relative;
+      background:#ddd;
     }
     .together-photo img{
-      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+      position:absolute;
+      inset:0;
+      width:100%;height:100%;
+      object-fit:cover;
     }
-    .together-copy .eyebrow{color:var(--gold-soft)}
-    .together-copy h2{margin-bottom:26px}
-    .together-copy p{color:rgba(255,255,255,.75);font-size:1.05rem;margin-bottom:20px}
-    .group-grid{
+    .together-copy p{color:#5b534b;font-size:1.02rem}
+    .together-points{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-      margin-top:28px;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:24px;
     }
-    .group-card{
-      border:1px solid rgba(255,255,255,.13);
-      border-radius:18px;
-      padding:18px;
-      background:rgba(255,255,255,.035);
+    .together-point{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:15px;
+      background:#fff;
     }
-    .group-card strong{
+    .together-point strong{
       display:block;
-      color:#efd5a0;
       font-family:var(--serif);
-      font-size:1.35rem;
+      font-size:1.16rem;
       font-weight:500;
+      margin-bottom:3px;
     }
-    .group-card span{display:block;margin-top:4px;color:rgba(255,255,255,.58);font-size:.8rem}
+    .together-point span{font-size:.76rem;color:var(--muted)}
 
-    /* MORE THAN */
-    .more{
-      background:linear-gradient(135deg,#f7f1e6,#fffdf9 62%);
-      text-align:center;
-    }
-    .more-inner{max-width:900px;margin:auto}
-    .more p{color:#5c544c;font-size:1.07rem;margin:22px auto 0}
-    .more-closer{
-      margin-top:31px;
-      font-family:var(--serif);
-      color:#8e6a38;
-      font-size:clamp(1.7rem,3vw,2.7rem);
-    }
-
-    /* THESSALONIKI */
-    .city{background:var(--paper)}
+    /* CITY */
+    .city{background:linear-gradient(135deg,#f7f1e6,#fffdf9 64%)}
     .city-grid{
       display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      gap:64px;
+      grid-template-columns:.95fr 1.05fr;
+      gap:56px;
       align-items:start;
     }
-    .city-copy p{color:#5c544c;font-size:1.05rem}
-    .city-points{
+    .city-copy p{color:#5c544c;font-size:1.02rem}
+    .city-cards{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
     }
     .city-card{
+      min-height:140px;
+      border-radius:18px;
       border:1px solid var(--line);
-      border-radius:20px;
-      padding:23px;
       background:#fff;
-      min-height:160px;
+      padding:18px;
     }
-    .city-card span{
+    .city-card small{
       display:block;
       color:#9b7945;
-      font-size:.7rem;
+      font-size:.67rem;
       font-weight:900;
       text-transform:uppercase;
       letter-spacing:.12em;
-      margin-bottom:9px;
+      margin-bottom:8px;
     }
     .city-card strong{
       display:block;
       font-family:var(--serif);
-      font-size:1.35rem;
+      font-size:1.25rem;
       font-weight:500;
-      margin-bottom:7px;
     }
-    .city-card p{margin:0;color:var(--muted);font-size:.84rem}
-
-    /* LOCATION */
-    .location{background:var(--ivory)}
-    .location-card{
-      display:grid;
-      grid-template-columns:1fr auto;
-      align-items:center;
-      gap:30px;
-      padding:34px;
-      border:1px solid var(--line);
-      border-radius:22px;
-      background:#fff;
-    }
-    .location-card .place{
-      font-family:var(--serif);
-      font-size:1.9rem;
-      margin-bottom:8px;
-    }
-    .location-card p{margin:0;color:var(--muted)}
-    .map-link{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:48px;
-      padding:0 18px;
-      border-radius:999px;
-      background:var(--charcoal);
-      color:#fff;
-      font-weight:850;
-      font-size:.83rem;
-    }
-
-    /* FINAL */
-    .final{
-      min-height:680px;
-      position:relative;
-      display:grid;
-      place-items:center;
-      text-align:center;
-      overflow:hidden;
-      color:#fff;
-    }
-    .final img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .final::after{content:"";position:absolute;inset:0;background:rgba(12,10,8,.62)}
-    .final-inner{
-      position:relative;z-index:2;
-      width:min(900px,calc(100% - 36px));
-    }
-    .final h2{font-size:clamp(3rem,7vw,6.4rem)}
-    .final p{
-      margin:20px 0 0;
-      color:#f0d8a8;
-      font-family:var(--serif);
-      font-size:1.4rem;
-    }
-    .final-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .city-card span{display:block;margin-top:6px;color:var(--muted);font-size:.77rem}
 
     /* FOOTER */
     footer{
       background:#11100f;
       color:rgba(255,255,255,.72);
-      padding:58px 0 28px;
+      padding:52px 0 24px;
     }
     .footer-grid{
       display:grid;
-      grid-template-columns:1.15fr .85fr .85fr;
-      gap:48px;
+      grid-template-columns:1.1fr .9fr .9fr;
+      gap:42px;
       align-items:start;
     }
-    .footer-logo{width:220px;border-radius:12px;margin-bottom:18px}
+    .footer-logo{width:205px;margin-bottom:16px}
     footer h4{
-      margin:0 0 14px;color:#fff;
-      font-size:.86rem;
+      margin:0 0 12px;
+      color:#fff;
+      font-size:.82rem;
       text-transform:uppercase;
       letter-spacing:.14em;
     }
-    footer a{display:block;margin:8px 0;font-size:.9rem}
+    footer a{display:block;margin:7px 0;font-size:.88rem}
+    .contact-line{margin:7px 0;font-size:.9rem}
     .footer-bottom{
-      margin-top:42px;
-      padding-top:22px;
+      margin-top:36px;
+      padding-top:18px;
       border-top:1px solid rgba(255,255,255,.1);
       display:flex;
       justify-content:space-between;
-      gap:20px;
-      font-size:.78rem;
+      gap:18px;
+      font-size:.76rem;
     }
     .footer-tagline{color:var(--gold-soft)}
 
-    /* LIGHTBOX */
-    .lightbox{
-      position:fixed;
-      inset:0;
-      z-index:100;
-      display:none;
-      background:rgba(8,7,6,.95);
-      color:#fff;
-    }
-    .lightbox.open{display:grid;grid-template-rows:auto 1fr auto}
-    .lightbox-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 22px;
-      gap:16px;
-    }
-    .lightbox-title{font-family:var(--serif);font-size:1.3rem}
-    .lightbox-close{
-      width:44px;height:44px;
-      border-radius:50%;
-      border:1px solid rgba(255,255,255,.25);
-      background:transparent;
-      color:#fff;
-      font-size:1.35rem;
-    }
-    .lightbox-stage{
-      position:relative;
-      display:grid;
-      place-items:center;
-      min-height:0;
-      padding:0 84px;
-    }
-    .lightbox-stage img{
-      max-width:100%;
-      max-height:78vh;
-      object-fit:contain;
-      border-radius:10px;
-    }
-    .lightbox-nav{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      width:48px;height:48px;
-      border-radius:50%;
-      border:1px solid rgba(255,255,255,.28);
-      background:rgba(0,0,0,.25);
-      color:#fff;
-      font-size:1.7rem;
-    }
-    .lightbox-prev{left:20px}
-    .lightbox-next{right:20px}
-    .lightbox-bottom{
-      display:flex;
-      justify-content:center;
-      padding:15px 20px 20px;
-      color:rgba(255,255,255,.65);
-      font-size:.8rem;
-    }
-
-    /* CALENDAR MODAL */
-    .calendar-modal{
-      position:fixed;
-      inset:0;
-      z-index:110;
-      display:none;
-      place-items:center;
-      padding:22px;
-      background:rgba(12,10,8,.72);
-      backdrop-filter:blur(8px);
-    }
-    .calendar-modal.open{display:grid}
-    .calendar-card{
-      width:min(920px,100%);
-      max-height:92vh;
-      overflow:auto;
-      background:#fffdf9;
-      border-radius:26px;
-      box-shadow:0 30px 90px rgba(0,0,0,.28);
-      padding:28px;
-    }
-    .calendar-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap:20px;
-      margin-bottom:20px;
-    }
-    .calendar-top h3{font-size:2rem}
-    .calendar-top p{margin:7px 0 0;color:var(--muted);font-size:.86rem}
-    .calendar-close{
-      width:42px;height:42px;
-      border-radius:50%;
-      border:1px solid var(--line);
-      background:#fff;
-      color:var(--ink);
-    }
-    .calendar-summary{
-      display:grid;
-      grid-template-columns:1fr 1fr .8fr;
-      gap:10px;
-      margin:20px 0;
-    }
-    .summary-box{
-      border:1px solid var(--line);
-      border-radius:15px;
-      padding:13px 14px;
-      background:#fff;
-    }
-    .summary-box small{
-      display:block;
-      color:#8d8379;
-      text-transform:uppercase;
-      font-size:.66rem;
-      font-weight:850;
-      letter-spacing:.09em;
-    }
-    .summary-box strong{display:block;margin-top:4px;font-size:.9rem}
-    .summary-box select{
-      width:100%;
-      border:0;
-      background:transparent;
-      margin-top:4px;
-      font-weight:800;
-      outline:none;
-    }
-    .months{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-    }
-    .month{
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:16px;
-      background:#fff;
-    }
-    .month-title{
-      text-align:center;
-      font-family:var(--serif);
-      font-size:1.2rem;
-      margin-bottom:12px;
-    }
-    .weekdays,.days{
-      display:grid;
-      grid-template-columns:repeat(7,1fr);
-      gap:5px;
-    }
-    .weekday{
-      text-align:center;
-      color:#9b9187;
-      font-size:.64rem;
-      font-weight:850;
-      text-transform:uppercase;
-      padding-bottom:5px;
-    }
-    .day{
-      aspect-ratio:1;
-      border:0;
-      border-radius:50%;
-      background:transparent;
-      color:var(--ink);
-      display:grid;
-      place-items:center;
-      font-size:.8rem;
-    }
-    .day:hover:not(:disabled){background:var(--ivory)}
-    .day:disabled{color:#d0c8bf;cursor:default}
-    .day.selected{background:var(--charcoal);color:#fff}
-    .day.in-range{background:#efe2ca;border-radius:10px}
-    .calendar-footer{
-      margin-top:18px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:18px;
-    }
-    .calendar-disclaimer{max-width:540px;color:var(--muted);font-size:.77rem;margin:0}
-    .calendar-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-
-    @media(max-width:1020px){
+    @media(max-width:980px){
       .nav-links{display:none}
-      .menu-toggle{display:grid}
+      .menu-toggle{display:flex}
       .collection-grid,.together-grid,.city-grid{grid-template-columns:1fr}
       .collection-title{position:static}
-      .loft-body-grid{grid-template-columns:1fr}
-      .stay-panel{position:static}
-      .collection-facts{grid-template-columns:1fr 1fr}
-      .gallery{grid-template-columns:1fr 1fr;grid-template-rows:360px 250px 250px}
-      .gallery button:first-child{grid-column:1/3;grid-row:auto}
-      .together-photo{min-height:520px}
+      .city-cards{grid-template-columns:repeat(3,1fr)}
     }
 
     @media(max-width:720px){
-      .container{width:min(100% - 28px,1180px)}
-      .section{padding:78px 0}
-      .site-header{height:74px}
-      .nav-wrap{width:calc(100% - 22px)}
-      .brand img{width:118px;max-height:54px}
-      .home-btn{display:none}
+      .container{width:min(100% - 24px,1180px)}
+      .section{padding:62px 0}
+      .site-header{height:66px}
+      .nav-wrap{width:calc(100% - 18px)}
+      .brand img{width:96px;max-height:44px}
+      .menu-toggle{min-width:82px;height:38px;padding:0 12px}
+
+      .hero{min-height:86svh}
       .hero-grid{grid-template-columns:1fr}
       .hero-photo:nth-child(2),.hero-photo:nth-child(3){display:none}
-      .hero-content{padding-bottom:48px}
-      .hero h1{font-size:clamp(3.05rem,15vw,5.5rem)}
-      .collection-facts{grid-template-columns:1fr}
-      .loft{padding-bottom:82px}
-      .loft-hero{min-height:540px}
-      .loft-hero-content{padding-bottom:30px}
-      .gallery{grid-template-columns:1fr;grid-template-rows:300px 220px 220px 220px 220px}
-      .gallery button:first-child{grid-column:auto}
-      .group-grid,.city-points{grid-template-columns:1fr}
-      .location-card{grid-template-columns:1fr}
-      .footer-grid{grid-template-columns:1fr}
+      .hero-content{padding-bottom:34px}
+      .hero h1{font-size:clamp(2.85rem,13.5vw,4.7rem)}
+      .hero-tagline{font-size:1.12rem;margin-top:14px}
+      .hero-actions{margin-top:22px}
+      .hero-actions .btn{min-height:44px;padding:0 16px;font-size:.8rem}
+
+      .collection-grid{gap:26px}
+      .collection-copy{font-size:.95rem}
+      .collection-facts{
+        grid-template-columns:1fr 1fr;
+        gap:10px 14px;
+        margin-top:24px;
+      }
+      .fact-card{padding-top:9px}
+      .fact-card strong{font-size:1.05rem}
+      .fact-card span{font-size:.66rem}
+      .choose-line{font-size:1.3rem;margin-top:20px}
+
+      .lofts-head{margin-bottom:24px}
+      .loft-stack{gap:14px}
+      .loft-preview{min-height:330px;border-radius:18px}
+      .loft-preview-content{left:20px;right:20px;bottom:20px}
+      .loft-preview h3{font-size:2.55rem}
+      .loft-preview p{
+        margin-top:8px;
+        font-size:.88rem;
+        line-height:1.48;
+      }
+      .loft-link{margin-top:12px;font-size:.74rem}
+
+      .reviews-wrap h2{font-size:2.55rem}
+      .review-stage{min-height:350px;margin-top:24px}
+      .review blockquote{font-size:1.3rem}
+      .review-author{margin-top:18px}
+      .review-meta{font-size:.72rem}
+
+      .together-grid{gap:28px}
+      .together-photo{min-height:320px}
+      .together-copy h2{font-size:2.55rem}
+      .together-copy p{font-size:.94rem}
+      .together-points{grid-template-columns:1fr 1fr;gap:8px}
+      .together-point{padding:12px}
+      .together-point strong{font-size:1rem}
+      .together-point span{font-size:.69rem}
+
+      .city-grid{gap:28px}
+      .city-copy h2{font-size:2.55rem}
+      .city-copy p{font-size:.94rem}
+      .city-cards{grid-template-columns:1fr 1fr 1fr;gap:7px}
+      .city-card{min-height:118px;padding:12px;border-radius:14px}
+      .city-card small{font-size:.56rem}
+      .city-card strong{font-size:.95rem}
+      .city-card span{font-size:.65rem;line-height:1.35}
+
+      .footer-grid{grid-template-columns:1fr;gap:28px}
       .footer-bottom{flex-direction:column}
-      .months{grid-template-columns:1fr}
-      .calendar-summary{grid-template-columns:1fr}
-      .calendar-footer{align-items:flex-start;flex-direction:column}
-      .calendar-actions{width:100%}
-      .calendar-actions .btn{flex:1}
-      .lightbox-stage{padding:0 10px}
-      .lightbox-nav{width:42px;height:42px;background:rgba(0,0,0,.5)}
-      .lightbox-prev{left:8px}
-      .lightbox-next{right:8px}
+    }
+
+    @media(max-width:390px){
+      .hero h1{font-size:2.65rem}
+      .hero-tagline{font-size:1rem}
+      .city-cards{grid-template-columns:1fr}
+      .review-stage{min-height:390px}
     }
   </style>
 </head>
@@ -883,40 +640,35 @@
   <header class="site-header" id="siteHeader">
     <div class="nav-wrap">
       <a class="brand home-link" href="index.html" aria-label="Namaste Homes home">
-        <img src="assets/images/logo1.png" alt="Namaste Homes" />
+        <img src="assets/images/logo1.png" alt="Namaste Homes" onerror="this.src='assets/images/logo.png'">
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#boho">Boho</a>
-        <a href="#industrial">Industrial</a>
-        <a href="#luxe">Luxe</a>
+        <a href="#lofts">The Lofts</a>
+        <a href="#reviews">Reviews</a>
         <a href="#together">Stay Together</a>
-        <a href="#thessaloniki">Thessaloniki</a>
-        <a href="#location">Location</a>
+        <a href="#city">Thessaloniki</a>
+        <a href="#contact">Contact</a>
       </nav>
 
-      <div class="nav-actions">
-        <div class="language-indicator" id="languageIndicator" aria-label="Language selected on homepage">EN</div>
-        <a class="home-btn home-link" href="index.html">Namaste Homes</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span></button>
-      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span>Menu</span><span class="menu-icon" aria-hidden="true"></span>
+      </button>
     </div>
   </header>
 
-  <div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
     <nav>
-      <a class="home-link" href="index.html">Namaste Homes</a>
-      <a href="#boho">Boho Loft</a>
-      <a href="#industrial">Industrial Loft</a>
-      <a href="#luxe">Luxe Loft</a>
+      <a href="#lofts">The Lofts</a>
+      <a href="#reviews">Guest Reviews</a>
       <a href="#together">Stay Together</a>
-      <a href="#thessaloniki">Explore Thessaloniki</a>
-      <a href="#location">Location</a>
+      <a href="#city">Explore Thessaloniki</a>
+      <a href="#contact">Contact</a>
+      <a class="mobile-home home-link" href="index.html">Back to Namaste Homes</a>
     </nav>
   </div>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-grid" aria-hidden="true">
         <div class="hero-photo"><img src="assets/images/boho_hero.webp" alt=""></div>
@@ -929,13 +681,12 @@
         <h1>Namaste Lofts Thessaloniki</h1>
         <div class="hero-tagline">Three Unique Lofts. Three Different Personalities. One Memorable Thessaloniki Experience.</div>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#boho">Meet the Lofts</a>
+          <a class="btn btn-primary" href="#lofts">Meet the Lofts</a>
           <a class="btn btn-ghost" href="#together">Travel Together</a>
         </div>
       </div>
     </section>
 
-    <!-- COLLECTION -->
     <section class="section collection">
       <div class="container collection-grid">
         <div class="collection-title reveal">
@@ -952,350 +703,162 @@
 
         <div class="collection-copy reveal">
           <p>Namaste Lofts is a collection of three unique designer loft apartments in the eastern side of Thessaloniki, each created with its own distinctive character, atmosphere and story.</p>
-
-          <p>Located just a 5-minute walk from the Thessaloniki waterfront, and close to the city centre, White Tower, Aristotelous Square, Thessaloniki Exhibition Centre and major universities, Namaste Lofts offers a stylish and comfortable base for exploring the city, working, studying or simply enjoying a longer stay.</p>
-
-          <p>Each spacious, high-ceiling loft combines thoughtful design, modern comforts and carefully selected details, creating an experience that feels different from a conventional apartment stay.</p>
+          <p>Located just a short walk from the waterfront and within easy reach of the city centre, the three lofts offer a stylish base for a city break, a longer stay or a trip with friends and family.</p>
+          <div class="choose-line">Which one is yours? Choose your stay.</div>
         </div>
       </div>
     </section>
 
-    <!-- BOHO -->
-    <section class="loft anchor" id="boho" data-loft="Boho Loft">
-      <div class="loft-hero">
-        <img src="assets/images/boho_hero.webp" alt="Boho Loft Thessaloniki" />
-        <div class="loft-hero-content">
-          <div class="container">
-            <div class="eyebrow">01 · Choose Your Personality</div>
-            <h2>Boho Loft</h2>
-            <p>Inspired by the relaxed spirit of the Greek islands, with warm colours, textures and a laid-back atmosphere.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container loft-body">
-        <div class="loft-body-grid">
-          <div class="loft-description reveal">
-            <h3>Warm, natural and effortlessly relaxed.</h3>
-            <p>Boho Loft brings together soft neutral tones, natural textures, warm wood and woven details to create a calm urban retreat with the easy-going character of a Greek island stay.</p>
-            <p>The high-ceiling living area, private kitchen, elevated sleeping zone and carefully layered lighting give the loft an open, distinctive feel while keeping everything needed for a comfortable Thessaloniki stay close at hand.</p>
-
-            <div class="loft-chips">
-              <span class="chip">Up to 3 guests</span>
-              <span class="chip">Private kitchen</span>
-              <span class="chip">Wi-Fi</span>
-              <span class="chip">Air conditioning</span>
-              <span class="chip">Private bathroom</span>
-              <span class="chip">Designer interior</span>
-            </div>
-          </div>
-
-          <aside class="stay-panel reveal">
-            <div class="panel-title">Plan your Boho stay</div>
-            <div class="panel-note">Select your preferred dates. Availability is confirmed with your booking request.</div>
-            <div class="panel-row">
-              <div class="panel-mini"><small>Guests</small><strong>1–3 guests</strong></div>
-              <div class="panel-mini"><small>Style</small><strong>Warm & relaxed</strong></div>
-            </div>
-            <button class="btn btn-primary calendar-open" data-property="Boho Loft">Open calendar</button>
-          </aside>
+    <section class="section lofts anchor" id="lofts">
+      <div class="container">
+        <div class="lofts-head reveal">
+          <div class="eyebrow">Choose your personality</div>
+          <h2>Meet the three lofts.</h2>
+          <p>Tap a loft to open its full page, gallery and booking request.</p>
         </div>
 
-        <div class="gallery-block reveal">
-          <div class="gallery-head">
-            <div>
-              <div class="eyebrow">Inside Boho</div>
-              <h3>Explore the loft</h3>
+        <div class="loft-stack">
+          <a class="loft-preview reveal loft-page-link" data-page="boho.html" href="boho.html">
+            <img src="assets/images/boho_hero.webp" alt="Boho Loft Thessaloniki">
+            <div class="loft-preview-content">
+              <div class="loft-number">01 · Choose Your Personality</div>
+              <h3>Boho Loft</h3>
+              <p>Inspired by the relaxed spirit of the Greek islands, with warm colours, textures and a laid-back atmosphere.</p>
+              <span class="loft-link">Explore Boho Loft →</span>
             </div>
-            <p>Tap any image to view it full screen.</p>
-          </div>
+          </a>
 
-          <div class="gallery" data-gallery="boho">
-            <button data-src="assets/images/boho_studio.webp"><img src="assets/images/boho_studio.webp" alt="Boho Loft living area"></button>
-            <button data-src="assets/images/boho_bedroom.webp"><img src="assets/images/boho_bedroom.webp" alt="Boho Loft bedroom"></button>
-            <button data-src="assets/images/boho_bathroom.webp"><img src="assets/images/boho_bathroom.webp" alt="Boho Loft bathroom"></button>
-            <button data-src="assets/images/boho_studio3.webp"><img src="assets/images/boho_studio3.webp" alt="Boho Loft kitchen and studio"></button>
-            <button data-src="assets/images/boho_studio5.webp"><img src="assets/images/boho_studio5.webp" alt="Boho Loft overview"><span class="gallery-more">Open gallery</span></button>
-          </div>
+          <a class="loft-preview reveal loft-page-link" data-page="industrial.html" href="industrial.html">
+            <img src="assets/images/industrial_hero.webp" alt="Industrial Loft Thessaloniki">
+            <div class="loft-preview-content">
+              <div class="loft-number">02 · Choose Your Personality</div>
+              <h3>Industrial Loft</h3>
+              <p>A distinctive blend of contemporary industrial design and modern comfort, creating a stylish urban atmosphere.</p>
+              <span class="loft-link">Explore Industrial Loft →</span>
+            </div>
+          </a>
 
-          <div class="gallery-hidden" hidden>
-            <span data-gallery-src="boho" data-src="assets/images/boho_bathroom1.webp"></span>
-            <span data-gallery-src="boho" data-src="assets/images/boho_bedroom1.webp"></span>
-            <span data-gallery-src="boho" data-src="assets/images/boho_bedroom2.webp"></span>
-            <span data-gallery-src="boho" data-src="assets/images/boho_bedroom3.webp"></span>
-            <span data-gallery-src="boho" data-src="assets/images/boho_sofa.webp"></span>
-            <span data-gallery-src="boho" data-src="assets/images/boho_studio1.webp"></span>
-            <span data-gallery-src="boho" data-src="assets/images/boho_studio2.webp"></span>
-            <span data-gallery-src="boho" data-src="assets/images/boho_studio4.webp"></span>
-          </div>
+          <a class="loft-preview reveal loft-page-link" data-page="luxe.html" href="luxe.html">
+            <img src="assets/images/luxury_hero.webp" alt="Luxe Loft Thessaloniki">
+            <div class="loft-preview-content">
+              <div class="loft-number">03 · Choose Your Personality</div>
+              <h3>Luxe Loft</h3>
+              <p>Elegant, sophisticated and thoughtfully designed for guests looking for a more elevated stay.</p>
+              <span class="loft-link">Explore Luxe Loft →</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- INDUSTRIAL -->
-    <section class="loft anchor" id="industrial" data-loft="Industrial Loft">
-      <div class="loft-hero">
-        <img src="assets/images/industrial_hero.webp" alt="Industrial Loft Thessaloniki" />
-        <div class="loft-hero-content">
-          <div class="container">
-            <div class="eyebrow">02 · Choose Your Personality</div>
-            <h2>Industrial Loft</h2>
-            <p>A distinctive blend of contemporary industrial design and modern comfort, creating a stylish urban atmosphere.</p>
-          </div>
-        </div>
-      </div>
+    <section class="section reviews anchor" id="reviews">
+      <div class="container reviews-wrap reveal">
+        <div class="eyebrow">Guest reviews</div>
+        <h2>What guests say about Namaste Lofts.</h2>
 
-      <div class="container loft-body">
-        <div class="loft-body-grid">
-          <div class="loft-description reveal">
-            <h3>Urban, bold and contemporary.</h3>
-            <p>Industrial Loft uses darker stone textures, black metal details, warm wood and clean architectural lines to create a strong urban identity that feels perfectly at home in Thessaloniki.</p>
-            <p>The loft keeps its atmosphere sophisticated rather than heavy, balancing its industrial character with comfortable living spaces, a private kitchen and an elevated sleeping area designed for a relaxed stay.</p>
+        <div class="review-stage" id="reviewStage">
+          <article class="review active">
+            <div class="stars">★★★★★</div>
+            <blockquote>“A very beautiful, clean, and pleasant place. Easily accessible by public transportation to the city center or within a short walking distance. The owner is super nice and courteous. Highly recommended – we really enjoyed our stay!”</blockquote>
+            <div class="review-author">Adi Segev</div>
+            <div class="review-meta">Google review · 5 stars</div>
+          </article>
 
-            <div class="loft-chips">
-              <span class="chip">Up to 3 guests</span>
-              <span class="chip">Private kitchen</span>
-              <span class="chip">Wi-Fi</span>
-              <span class="chip">Air conditioning</span>
-              <span class="chip">Private bathroom</span>
-              <span class="chip">Urban design</span>
-            </div>
-          </div>
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <blockquote>“Namaste Lofts is a really pleasant, cosy and sparkling clean choice if you're spending a few days in Thessaloniki. The location is excellent — a walking distance from the city centre but also very close to a metro station and bus stop. The hosts are pleasant and polite — I would choose this apartment again!”</blockquote>
+            <div class="review-author">lox lox</div>
+            <div class="review-meta">Google review · 5 stars</div>
+          </article>
 
-          <aside class="stay-panel reveal">
-            <div class="panel-title">Plan your Industrial stay</div>
-            <div class="panel-note">Select your preferred dates. Availability is confirmed with your booking request.</div>
-            <div class="panel-row">
-              <div class="panel-mini"><small>Guests</small><strong>1–3 guests</strong></div>
-              <div class="panel-mini"><small>Style</small><strong>Bold & urban</strong></div>
-            </div>
-            <button class="btn btn-primary calendar-open" data-property="Industrial Loft">Open calendar</button>
-          </aside>
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <blockquote>“Gorgeous loft, last-minute perfect service after a protest closed the city and I was stuck there. The hosts were so so kind and patient with me and the entrance is real convenient and so cute as well! Looking forward to staying there again.”</blockquote>
+            <div class="review-author">Alice S</div>
+            <div class="review-meta">Google review · 5 stars</div>
+          </article>
         </div>
 
-        <div class="gallery-block reveal">
-          <div class="gallery-head">
-            <div>
-              <div class="eyebrow">Inside Industrial</div>
-              <h3>Explore the loft</h3>
-            </div>
-            <p>Tap any image to view it full screen.</p>
-          </div>
-
-          <div class="gallery" data-gallery="industrial">
-            <button data-src="assets/images/industrial_studio.webp"><img src="assets/images/industrial_studio.webp" alt="Industrial Loft living area"></button>
-            <button data-src="assets/images/industrial_bedroom.webp"><img src="assets/images/industrial_bedroom.webp" alt="Industrial Loft bedroom"></button>
-            <button data-src="assets/images/industrial_bathroom.webp"><img src="assets/images/industrial_bathroom.webp" alt="Industrial Loft bathroom"></button>
-            <button data-src="assets/images/industrial_studio3.webp"><img src="assets/images/industrial_studio3.webp" alt="Industrial Loft kitchen"></button>
-            <button data-src="assets/images/industrial_studio4.webp"><img src="assets/images/industrial_studio4.webp" alt="Industrial Loft overview"><span class="gallery-more">Open gallery</span></button>
-          </div>
-
-          <div class="gallery-hidden" hidden>
-            <span data-gallery-src="industrial" data-src="assets/images/industrial_bathroom1.webp"></span>
-            <span data-gallery-src="industrial" data-src="assets/images/industrial_bedroom1.webp"></span>
-            <span data-gallery-src="industrial" data-src="assets/images/industrial_sofa.webp"></span>
-            <span data-gallery-src="industrial" data-src="assets/images/industrial_sofa1.webp"></span>
-            <span data-gallery-src="industrial" data-src="assets/images/industrial_studio1.webp"></span>
-            <span data-gallery-src="industrial" data-src="assets/images/industrial_studio2.webp"></span>
-          </div>
+        <div class="review-dots" id="reviewDots" aria-label="Review carousel navigation">
+          <button class="review-dot active" aria-label="Review 1"></button>
+          <button class="review-dot" aria-label="Review 2"></button>
+          <button class="review-dot" aria-label="Review 3"></button>
         </div>
       </div>
     </section>
 
-    <!-- LUXE -->
-    <section class="loft anchor" id="luxe" data-loft="Luxe Loft">
-      <div class="loft-hero">
-        <img src="assets/images/luxury_hero.webp" alt="Luxe Loft Thessaloniki" />
-        <div class="loft-hero-content">
-          <div class="container">
-            <div class="eyebrow">03 · Choose Your Personality</div>
-            <h2>Luxe Loft</h2>
-            <p>Elegant, sophisticated and thoughtfully designed for guests looking for a more elevated stay.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container loft-body">
-        <div class="loft-body-grid">
-          <div class="loft-description reveal">
-            <h3>Refined details with a softer sense of luxury.</h3>
-            <p>Luxe Loft combines warm wood, soft neutral tones, gold accents, sculptural lighting and a clean contemporary layout to create the most polished personality in the Namaste Lofts collection.</p>
-            <p>The result is elegant without feeling formal: a comfortable city stay with a private kitchen, generous living space, elevated sleeping area and carefully selected details throughout.</p>
-
-            <div class="loft-chips">
-              <span class="chip">Up to 3 guests</span>
-              <span class="chip">Private kitchen</span>
-              <span class="chip">Wi-Fi</span>
-              <span class="chip">Air conditioning</span>
-              <span class="chip">Private bathroom</span>
-              <span class="chip">Elevated design</span>
-            </div>
-          </div>
-
-          <aside class="stay-panel reveal">
-            <div class="panel-title">Plan your Luxe stay</div>
-            <div class="panel-note">Select your preferred dates. Availability is confirmed with your booking request.</div>
-            <div class="panel-row">
-              <div class="panel-mini"><small>Guests</small><strong>1–3 guests</strong></div>
-              <div class="panel-mini"><small>Style</small><strong>Elegant & refined</strong></div>
-            </div>
-            <button class="btn btn-primary calendar-open" data-property="Luxe Loft">Open calendar</button>
-          </aside>
-        </div>
-
-        <div class="gallery-block reveal">
-          <div class="gallery-head">
-            <div>
-              <div class="eyebrow">Inside Luxe</div>
-              <h3>Explore the loft</h3>
-            </div>
-            <p>Tap any image to view it full screen.</p>
-          </div>
-
-          <div class="gallery" data-gallery="luxe">
-            <button data-src="assets/images/luxury_studio.webp"><img src="assets/images/luxury_studio.webp" alt="Luxe Loft living area"></button>
-            <button data-src="assets/images/luxury_bedroom.webp"><img src="assets/images/luxury_bedroom.webp" alt="Luxe Loft bedroom"></button>
-            <button data-src="assets/images/luxury_bathroom.webp"><img src="assets/images/luxury_bathroom.webp" alt="Luxe Loft bathroom"></button>
-            <button data-src="assets/images/luxury_studio1.webp"><img src="assets/images/luxury_studio1.webp" alt="Luxe Loft kitchen and living area"></button>
-            <button data-src="assets/images/luxury_studio4.webp"><img src="assets/images/luxury_studio4.webp" alt="Luxe Loft overview"><span class="gallery-more">Open gallery</span></button>
-          </div>
-
-          <div class="gallery-hidden" hidden>
-            <span data-gallery-src="luxe" data-src="assets/images/luxury_bathroom1.webp"></span>
-            <span data-gallery-src="luxe" data-src="assets/images/luxury_bedroom1.webp"></span>
-            <span data-gallery-src="luxe" data-src="assets/images/luxury_bedroom2.webp"></span>
-            <span data-gallery-src="luxe" data-src="assets/images/luxury_sofa.webp"></span>
-            <span data-gallery-src="luxe" data-src="assets/images/luxury_studio2.webp"></span>
-            <span data-gallery-src="luxe" data-src="assets/images/luxury_studio3.webp"></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- STAY TOGETHER -->
     <section class="section together anchor" id="together">
       <div class="container together-grid">
         <div class="together-photo reveal">
-          <img src="assets/images/industrial_studio4.webp" alt="Namaste Lofts Thessaloniki" />
+          <img src="assets/images/lofts_balcony.webp" alt="Namaste Lofts balcony and property exterior" onerror="this.src='assets/images/industrial_studio4.webp'">
         </div>
 
         <div class="together-copy reveal">
           <div class="eyebrow">For groups & families</div>
           <h2>Stay Together, Stay Your Way</h2>
+          <p>All three lofts are located right next to each other, making Namaste Lofts especially convenient for families, groups of friends, couples travelling together and small groups who want to stay close while still keeping the privacy of their own apartment.</p>
+          <p>Together, the three lofts can accommodate up to 9 guests.</p>
 
-          <p>Because all three lofts are located right next to each other, Namaste Lofts is particularly suited to families, groups of friends, couples travelling together, wedding and celebration groups, business groups and extended family stays.</p>
-
-          <p>Together, the three lofts can accommodate up to 9 guests, allowing larger groups to stay in the same location while still enjoying the privacy and comfort of their own individual apartment.</p>
-
-          <p>Whether you're visiting for a few nights, a few weeks or longer, each loft is fully equipped with the essentials for a comfortable stay, including Wi-Fi, air conditioning, private kitchens and thoughtfully designed living spaces.</p>
-
-          <div class="group-grid">
-            <div class="group-card"><strong>Up to 9 guests</strong><span>Across all three lofts</span></div>
-            <div class="group-card"><strong>Right next to each other</strong><span>Stay close while keeping your own space</span></div>
-            <div class="group-card"><strong>3 private kitchens</strong><span>Independent comfort for every loft</span></div>
-            <div class="group-card"><strong>Flexible stays</strong><span>A few nights, a few weeks or longer</span></div>
+          <div class="together-points">
+            <div class="together-point"><strong>Up to 9 guests</strong><span>Across all three lofts</span></div>
+            <div class="together-point"><strong>3 private spaces</strong><span>Stay close, keep your privacy</span></div>
+            <div class="together-point"><strong>Same location</strong><span>Easy for groups and families</span></div>
+            <div class="together-point"><strong>Flexible stays</strong><span>Short stays or longer visits</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- MORE THAN -->
-    <section class="section more">
-      <div class="container more-inner reveal">
-        <div class="eyebrow">More Than a Place to Stay</div>
-        <h2>Make Thessaloniki Your Own</h2>
-        <p>At Namaste Lofts, we believe accommodation should be more than four walls and a bed.</p>
-        <p>Boho, Industrial or Luxe — choose the personality that suits you and make Thessaloniki your own.</p>
-        <div class="more-closer">Three lofts. Three personalities. One Namaste experience.</div>
-      </div>
-    </section>
-
-    <!-- THESSALONIKI -->
-    <section class="section city anchor" id="thessaloniki">
+    <section class="section city anchor" id="city">
       <div class="container city-grid">
         <div class="city-copy reveal">
           <div class="eyebrow">Explore Thessaloniki</div>
           <h2>City energy, waterfront rhythm.</h2>
-          <p>Namaste Lofts gives you a comfortable base on the eastern side of Thessaloniki, just a short walk from the waterfront and within easy reach of the city’s best-known central landmarks.</p>
-          <p>Start the day by the sea, continue toward the White Tower and the historic centre, stop for food and coffee, or use the lofts as a practical base for work, study and longer stays.</p>
+          <p>Namaste Lofts places you close to the waterfront and within easy reach of the city centre, cafés, restaurants, public transport and many of Thessaloniki’s best-known landmarks.</p>
+          <p>This section is intentionally compact for now. The next step can connect it with the Thessaloniki content from Halkidiki Explorer, including useful local information and live weather.</p>
         </div>
 
-        <div class="city-points reveal">
+        <div class="city-cards reveal">
           <div class="city-card">
-            <span>Nearby</span>
-            <strong>Thessaloniki Waterfront</strong>
-            <p>Approximately a 5-minute walk from Namaste Lofts.</p>
-          </div>
-          <div class="city-card">
-            <span>Explore</span>
-            <strong>White Tower</strong>
-            <p>One of the city’s best-known landmarks along the waterfront.</p>
+            <small>Nearby</small>
+            <strong>Waterfront</strong>
+            <span>About a 5-minute walk.</span>
           </div>
           <div class="city-card">
-            <span>City centre</span>
-            <strong>Aristotelous Square</strong>
-            <p>A central point for city walks, cafés, shopping and urban life.</p>
+            <small>Explore</small>
+            <strong>City centre</strong>
+            <span>Easy access to central Thessaloniki.</span>
           </div>
           <div class="city-card">
-            <span>Work & study</span>
-            <strong>Exhibition Centre & Universities</strong>
-            <p>The lofts are positioned for convenient access to major academic and exhibition areas.</p>
+            <small>Move around</small>
+            <strong>Transport</strong>
+            <span>Metro and bus connections nearby.</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LOCATION -->
-    <section class="section location anchor" id="location">
-      <div class="container">
-        <div class="eyebrow">Find Namaste Lofts</div>
-        <div class="location-card reveal">
-          <div>
-            <div class="place">Namaste Lofts — Thessaloniki</div>
-            <p>Amalias 66, Thessaloniki 546 40, Greece</p>
-          </div>
-          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps?q=40.616090718512545,22.95741438596926">View on map →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section class="final">
-      <img src="assets/images/boho_studio5.webp" alt="Namaste Lofts Thessaloniki" />
-      <div class="final-inner reveal">
-        <div class="eyebrow" style="color:#f0d8a8">Your Thessaloniki stay</div>
-        <h2>Which Personality Is Yours?</h2>
-        <p>Boho, Industrial or Luxe — or stay together across all three.</p>
-        <div class="final-actions">
-          <button class="btn btn-primary calendar-open" data-property="Boho Loft">Boho Loft</button>
-          <button class="btn btn-light calendar-open" data-property="Industrial Loft">Industrial Loft</button>
-          <button class="btn btn-ghost calendar-open" data-property="Luxe Loft">Luxe Loft</button>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer id="contact">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <img class="footer-logo" src="assets/images/logo.png" alt="Namaste Homes" />
+          <img class="footer-logo" src="assets/images/logo.png" alt="Namaste Homes">
           <div>Distinctive stays in Thessaloniki and Halkidiki.</div>
         </div>
 
         <div>
           <h4>Namaste Lofts</h4>
-          <a href="#boho">Boho Loft</a>
-          <a href="#industrial">Industrial Loft</a>
-          <a href="#luxe">Luxe Loft</a>
-          <a href="#together">Stay Together</a>
+          <a class="loft-page-link" data-page="boho.html" href="boho.html">Boho Loft</a>
+          <a class="loft-page-link" data-page="industrial.html" href="industrial.html">Industrial Loft</a>
+          <a class="loft-page-link" data-page="luxe.html" href="luxe.html">Luxe Loft</a>
         </div>
 
         <div>
-          <h4>Namaste Homes</h4>
-          <a class="home-link" href="index.html">Home</a>
-          <a href="halkidiki.html" id="halkidikiLink">Sea Breeze Paradise</a>
-          <a href="#location">Location</a>
+          <h4>Contact</h4>
+          <a href="tel:+306944428858">+30 694 442 8858</a>
+          <a href="mailto:namastehomes.gr@gmail.com">namastehomes.gr@gmail.com</a>
+          <a class="home-link" href="index.html">Namaste Homes</a>
         </div>
       </div>
 
@@ -1306,107 +869,50 @@
     </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-top">
-      <div class="lightbox-title" id="lightboxTitle">Gallery</div>
-      <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">×</button>
-    </div>
-    <div class="lightbox-stage">
-      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
-      <img id="lightboxImage" src="" alt="" />
-      <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
-    </div>
-    <div class="lightbox-bottom"><span id="lightboxCounter"></span></div>
-  </div>
-
-  <!-- CALENDAR -->
-  <div class="calendar-modal" id="calendarModal" aria-hidden="true">
-    <div class="calendar-card">
-      <div class="calendar-top">
-        <div>
-          <div class="eyebrow">Plan your stay</div>
-          <h3 id="calendarProperty">Boho Loft</h3>
-          <p>Select your preferred check-in and check-out dates.</p>
-        </div>
-        <button class="calendar-close" id="calendarClose" aria-label="Close calendar">×</button>
-      </div>
-
-      <div class="calendar-summary">
-        <div class="summary-box">
-          <small>Check-in</small>
-          <strong id="checkinSummary">Select a date</strong>
-        </div>
-        <div class="summary-box">
-          <small>Check-out</small>
-          <strong id="checkoutSummary">Select a date</strong>
-        </div>
-        <div class="summary-box">
-          <small>Guests</small>
-          <select id="guestSelect" aria-label="Guests">
-            <option value="1">1 guest</option>
-            <option value="2">2 guests</option>
-            <option value="3">3 guests</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="months" id="months"></div>
-
-      <div class="calendar-footer">
-        <p class="calendar-disclaimer">This calendar is for selecting preferred dates only. Live availability is not yet connected, so your dates are confirmed after Namaste Homes replies to your request.</p>
-        <div class="calendar-actions">
-          <button class="btn btn-outline" id="clearDates">Clear</button>
-          <button class="btn btn-primary" id="requestDates" disabled>Request these dates</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script>
-    /* -------------------------
-       LANGUAGE CONTEXT
-       The language is selected only on index.html.
-       This page reads the saved choice but does not offer a selector.
-    ------------------------- */
     const supportedLanguages = ['en','el','de','ro','sr','bg'];
-    const urlParams = new URLSearchParams(window.location.search);
-    let selectedLanguage = urlParams.get('lang') || localStorage.getItem('namasteLanguage') || 'en';
+    const params = new URLSearchParams(window.location.search);
+    let selectedLanguage = params.get('lang') || localStorage.getItem('namasteLanguage') || 'en';
     if(!supportedLanguages.includes(selectedLanguage)) selectedLanguage = 'en';
     localStorage.setItem('namasteLanguage', selectedLanguage);
     document.documentElement.lang = selectedLanguage;
 
-    const languageLabels = {en:'EN',el:'GR',de:'DE',ro:'RO',sr:'SR',bg:'BG'};
-    document.getElementById('languageIndicator').textContent = languageLabels[selectedLanguage];
-
     document.querySelectorAll('.home-link').forEach(link => {
       link.href = `index.html?lang=${selectedLanguage}`;
     });
-    document.getElementById('halkidikiLink').href = `halkidiki.html?lang=${selectedLanguage}`;
 
-    /* HEADER */
+    document.querySelectorAll('.loft-page-link').forEach(link => {
+      const page = link.dataset.page;
+      link.href = `${page}?lang=${selectedLanguage}`;
+    });
+
     const header = document.getElementById('siteHeader');
     const menuToggle = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
 
-    const handleScroll = () => header.classList.toggle('scrolled', window.scrollY > 30);
+    const handleScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
     handleScroll();
     window.addEventListener('scroll', handleScroll, {passive:true});
 
+    function closeMenu(){
+      mobileNav.classList.remove('open');
+      mobileNav.setAttribute('aria-hidden','true');
+      document.body.classList.remove('locked');
+      menuToggle.setAttribute('aria-expanded','false');
+      menuToggle.querySelector('span:first-child').textContent = 'Menu';
+    }
+
     menuToggle.addEventListener('click', () => {
-      const open = mobileNav.classList.toggle('open');
+      const open = !mobileNav.classList.contains('open');
+      mobileNav.classList.toggle('open', open);
+      mobileNav.setAttribute('aria-hidden', open ? 'false' : 'true');
       document.body.classList.toggle('locked', open);
-      menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuToggle.querySelector('span:first-child').textContent = open ? 'Close' : 'Menu';
     });
 
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        document.body.classList.remove('locked');
-      });
-    });
+    mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
-    /* REVEALS */
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -1414,274 +920,34 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {threshold:.12});
+    }, {threshold:.1});
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    /* -------------------------
-       GALLERIES / LIGHTBOX
-    ------------------------- */
-    const gallerySets = {};
-    document.querySelectorAll('.gallery[data-gallery]').forEach(gallery => {
-      const name = gallery.dataset.gallery;
-      const visible = [...gallery.querySelectorAll('button[data-src]')].map(btn => btn.dataset.src);
-      const hidden = [...document.querySelectorAll(`[data-gallery-src="${name}"]`)].map(el => el.dataset.src);
-      gallerySets[name] = [...visible, ...hidden];
+    const reviews = [...document.querySelectorAll('.review')];
+    const dots = [...document.querySelectorAll('.review-dot')];
+    let reviewIndex = 0;
+    let reviewTimer;
 
-      gallery.querySelectorAll('button[data-src]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const index = gallerySets[name].indexOf(btn.dataset.src);
-          openLightbox(name,index);
-        });
+    function showReview(index){
+      reviewIndex = (index + reviews.length) % reviews.length;
+      reviews.forEach((review,i) => review.classList.toggle('active', i === reviewIndex));
+      dots.forEach((dot,i) => dot.classList.toggle('active', i === reviewIndex));
+    }
+
+    function startReviewTimer(){
+      clearInterval(reviewTimer);
+      reviewTimer = setInterval(() => showReview(reviewIndex + 1), 5500);
+    }
+
+    dots.forEach((dot,i) => {
+      dot.addEventListener('click', () => {
+        showReview(i);
+        startReviewTimer();
       });
     });
 
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxTitle = document.getElementById('lightboxTitle');
-    const lightboxCounter = document.getElementById('lightboxCounter');
-    let activeGallery = '';
-    let activeImageIndex = 0;
-
-    const galleryTitles = {
-      boho:'Boho Loft',
-      industrial:'Industrial Loft',
-      luxe:'Luxe Loft'
-    };
-
-    function openLightbox(name,index){
-      activeGallery = name;
-      activeImageIndex = index;
-      updateLightbox();
-      lightbox.classList.add('open');
-      lightbox.setAttribute('aria-hidden','false');
-      document.body.classList.add('locked');
-    }
-
-    function updateLightbox(){
-      const images = gallerySets[activeGallery];
-      lightboxImage.src = images[activeImageIndex];
-      lightboxImage.alt = `${galleryTitles[activeGallery]} photo ${activeImageIndex + 1}`;
-      lightboxTitle.textContent = galleryTitles[activeGallery];
-      lightboxCounter.textContent = `${activeImageIndex + 1} / ${images.length}`;
-    }
-
-    function changeLightbox(step){
-      const images = gallerySets[activeGallery];
-      activeImageIndex = (activeImageIndex + step + images.length) % images.length;
-      updateLightbox();
-    }
-
-    function closeLightbox(){
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden','true');
-      document.body.classList.remove('locked');
-    }
-
-    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-    document.getElementById('lightboxPrev').addEventListener('click', () => changeLightbox(-1));
-    document.getElementById('lightboxNext').addEventListener('click', () => changeLightbox(1));
-    lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
-
-    /* -------------------------
-       DATE REQUEST CALENDAR
-       No fake live availability is shown.
-    ------------------------- */
-    const calendarModal = document.getElementById('calendarModal');
-    const calendarProperty = document.getElementById('calendarProperty');
-    const monthsEl = document.getElementById('months');
-    const checkinSummary = document.getElementById('checkinSummary');
-    const checkoutSummary = document.getElementById('checkoutSummary');
-    const requestDatesBtn = document.getElementById('requestDates');
-    const guestSelect = document.getElementById('guestSelect');
-
-    let currentProperty = 'Boho Loft';
-    let checkin = null;
-    let checkout = null;
-
-    document.querySelectorAll('.calendar-open').forEach(btn => {
-      btn.addEventListener('click', () => openCalendar(btn.dataset.property));
-    });
-
-    function openCalendar(property){
-      currentProperty = property;
-      calendarProperty.textContent = property;
-      checkin = null;
-      checkout = null;
-      renderCalendar();
-      updateDateSummary();
-      calendarModal.classList.add('open');
-      calendarModal.setAttribute('aria-hidden','false');
-      document.body.classList.add('locked');
-    }
-
-    function closeCalendar(){
-      calendarModal.classList.remove('open');
-      calendarModal.setAttribute('aria-hidden','true');
-      document.body.classList.remove('locked');
-    }
-
-    document.getElementById('calendarClose').addEventListener('click', closeCalendar);
-    calendarModal.addEventListener('click', e => { if(e.target === calendarModal) closeCalendar(); });
-
-    document.getElementById('clearDates').addEventListener('click', () => {
-      checkin = null;
-      checkout = null;
-      renderCalendar();
-      updateDateSummary();
-    });
-
-    function isoDate(date){
-      const y = date.getFullYear();
-      const m = String(date.getMonth()+1).padStart(2,'0');
-      const d = String(date.getDate()).padStart(2,'0');
-      return `${y}-${m}-${d}`;
-    }
-
-    function displayDate(date){
-      return date ? date.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) : 'Select a date';
-    }
-
-    function sameDate(a,b){
-      return a && b && a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate();
-    }
-
-    function normalizeDate(date){
-      return new Date(date.getFullYear(),date.getMonth(),date.getDate());
-    }
-
-    function handleDateClick(date){
-      const clicked = normalizeDate(date);
-
-      if(!checkin || (checkin && checkout)){
-        checkin = clicked;
-        checkout = null;
-      } else if(clicked <= checkin){
-        checkin = clicked;
-        checkout = null;
-      } else {
-        checkout = clicked;
-      }
-
-      renderCalendar();
-      updateDateSummary();
-    }
-
-    function updateDateSummary(){
-      checkinSummary.textContent = displayDate(checkin);
-      checkoutSummary.textContent = displayDate(checkout);
-      requestDatesBtn.disabled = !(checkin && checkout);
-    }
-
-    function renderMonth(baseDate){
-      const year = baseDate.getFullYear();
-      const month = baseDate.getMonth();
-      const today = normalizeDate(new Date());
-      const first = new Date(year,month,1);
-      const last = new Date(year,month+1,0);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'month';
-
-      const title = document.createElement('div');
-      title.className = 'month-title';
-      title.textContent = first.toLocaleDateString('en-GB',{month:'long',year:'numeric'});
-      wrapper.appendChild(title);
-
-      const weekdays = document.createElement('div');
-      weekdays.className = 'weekdays';
-      ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach(day => {
-        const el = document.createElement('div');
-        el.className = 'weekday';
-        el.textContent = day;
-        weekdays.appendChild(el);
-      });
-      wrapper.appendChild(weekdays);
-
-      const days = document.createElement('div');
-      days.className = 'days';
-
-      const mondayFirstOffset = (first.getDay()+6)%7;
-      for(let i=0;i<mondayFirstOffset;i++){
-        const blank = document.createElement('div');
-        days.appendChild(blank);
-      }
-
-      for(let d=1;d<=last.getDate();d++){
-        const date = new Date(year,month,d);
-        const btn = document.createElement('button');
-        btn.className = 'day';
-        btn.textContent = d;
-
-        if(date < today){
-          btn.disabled = true;
-        } else {
-          btn.addEventListener('click', () => handleDateClick(date));
-        }
-
-        if(sameDate(date,checkin) || sameDate(date,checkout)){
-          btn.classList.add('selected');
-        } else if(checkin && checkout && date > checkin && date < checkout){
-          btn.classList.add('in-range');
-        }
-
-        days.appendChild(btn);
-      }
-
-      wrapper.appendChild(days);
-      return wrapper;
-    }
-
-    function renderCalendar(){
-      monthsEl.innerHTML = '';
-      const now = new Date();
-      const firstMonth = new Date(now.getFullYear(),now.getMonth(),1);
-      const secondMonth = new Date(now.getFullYear(),now.getMonth()+1,1);
-      monthsEl.appendChild(renderMonth(firstMonth));
-      monthsEl.appendChild(renderMonth(secondMonth));
-    }
-
-    requestDatesBtn.addEventListener('click', () => {
-      if(!(checkin && checkout)) return;
-
-      const guests = guestSelect.value;
-      const subject = encodeURIComponent(`Namaste Homes availability request — ${currentProperty}`);
-      const body = encodeURIComponent(
-`Hello Namaste Homes,
-
-I would like to request availability for:
-
-Property: ${currentProperty}
-Check-in: ${isoDate(checkin)}
-Check-out: ${isoDate(checkout)}
-Guests: ${guests}
-
-Thank you.`
-      );
-
-      window.location.href = `mailto:namastehomes.gr@gmail.com?subject=${subject}&body=${body}`;
-    });
-
-    /* KEYBOARD */
-    document.addEventListener('keydown', e => {
-      if(e.key === 'Escape'){
-        if(lightbox.classList.contains('open')) closeLightbox();
-        if(calendarModal.classList.contains('open')) closeCalendar();
-      }
-      if(lightbox.classList.contains('open')){
-        if(e.key === 'ArrowLeft') changeLightbox(-1);
-        if(e.key === 'ArrowRight') changeLightbox(1);
-      }
-    });
-
+    startReviewTimer();
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    /* Deep links from index.html, e.g. thessaloniki.html?lang=en#boho */
-    if(window.location.hash){
-      window.addEventListener('load', () => {
-        const target = document.querySelector(window.location.hash);
-        if(target) setTimeout(() => target.scrollIntoView({behavior:'smooth'}),120);
-      });
-    }
   </script>
 </body>
 </html>

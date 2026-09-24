@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#171513" />
+  <meta name="description" content="Industrial Loft Thessaloniki by Namaste Homes — a bold, contemporary designer loft for up to 3 guests." />
+  <title>Industrial Loft Thessaloniki | Namaste Homes</title>
+
+  <style>
+    :root{
+      --charcoal:#171513;
+      --ink:#24201c;
+      --gold:#caa664;
+      --gold-soft:#dfc48c;
+      --ivory:#f7f3eb;
+      --paper:#fffdf9;
+      --muted:#786f64;
+      --line:rgba(36,32,28,.13);
+      --shadow:0 24px 70px rgba(25,19,12,.16);
+      --radius:24px;
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:var(--sans);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    body.locked{overflow:hidden}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,select{font:inherit}
+    button{cursor:pointer}
+    .container{width:min(1180px,calc(100% - 44px));margin-inline:auto}
+    .section{padding:92px 0}
+    .anchor{scroll-margin-top:84px}
+
+    h1,h2,h3{
+      margin:0;
+      font-family:var(--serif);
+      font-weight:500;
+      line-height:1.04;
+    }
+    h2{font-size:clamp(2.35rem,5vw,4.8rem);letter-spacing:-.045em}
+    h3{font-size:clamp(1.8rem,3vw,2.8rem)}
+    p{margin-top:0}
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin:0 0 16px;
+      color:#9b7945;
+      font-size:.74rem;
+      font-weight:850;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .eyebrow::before{content:"";width:32px;height:1px;background:currentColor}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 20px;
+      border-radius:999px;
+      border:0;
+      font-weight:850;
+      font-size:.86rem;
+      letter-spacing:.02em;
+      transition:transform .2s ease,background .2s ease,color .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--gold);color:#21190d}
+    .btn-dark{background:var(--charcoal);color:#fff}
+    .btn-outline{border:1px solid var(--line);background:#fff;color:var(--ink)}
+    .btn-ghost{border:1px solid rgba(255,255,255,.52);background:rgba(255,255,255,.08);color:#fff}
+
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .65s ease,transform .65s ease;
+    }
+    .reveal.visible{opacity:1;transform:none}
+
+    /* HEADER */
+    .site-header{
+      position:fixed;
+      inset:0 0 auto;
+      z-index:60;
+      height:72px;
+      display:flex;
+      align-items:center;
+      transition:background .25s ease,box-shadow .25s ease;
+    }
+    .site-header.scrolled{
+      background:rgba(255,253,249,.96);
+      backdrop-filter:blur(16px);
+      box-shadow:0 8px 30px rgba(20,15,10,.08);
+    }
+    .nav-wrap{
+      width:min(1320px,calc(100% - 26px));
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .brand img{
+      width:112px;
+      max-height:48px;
+      object-fit:contain;
+      filter:drop-shadow(0 5px 14px rgba(0,0,0,.18));
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      margin-left:auto;
+      color:#fff;
+      font-size:.85rem;
+      font-weight:750;
+    }
+    .site-header.scrolled .nav-links{color:var(--ink)}
+    .nav-links a{padding:7px 0}
+
+    .menu-toggle{
+      display:none;
+      min-width:84px;
+      height:40px;
+      border-radius:999px;
+      padding:0 13px;
+      border:1px solid rgba(255,255,255,.42);
+      background:rgba(0,0,0,.14);
+      color:#fff;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      font-size:.7rem;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .menu-icon{width:14px;height:10px;position:relative}
+    .menu-icon::before,.menu-icon::after{
+      content:"";
+      position:absolute;
+      left:0;
+      width:14px;
+      height:1.5px;
+      background:currentColor;
+      border-radius:2px;
+    }
+    .menu-icon::before{top:1px}
+    .menu-icon::after{bottom:1px}
+    .site-header.scrolled .menu-toggle{
+      border-color:var(--line);
+      background:#fff;
+      color:var(--ink);
+    }
+
+    .mobile-nav{
+      position:fixed;
+      inset:0;
+      z-index:59;
+      display:none;
+      background:#151310;
+      color:#fff;
+      padding:92px 26px 36px;
+      overflow:auto;
+    }
+    .mobile-nav.open{display:block}
+    .mobile-nav nav{
+      width:min(100%,420px);
+      margin:auto;
+      display:grid;
+      gap:8px;
+    }
+    .mobile-nav a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:56px;
+      border-bottom:1px solid rgba(255,255,255,.12);
+      font-family:var(--serif);
+      font-size:1.3rem;
+    }
+    .mobile-nav a::after{content:"→";color:var(--gold);font-family:var(--sans)}
+    .mobile-nav .back-link{
+      margin-top:18px;
+      font-family:var(--sans);
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      color:rgba(255,255,255,.62);
+    }
+
+    /* HERO */
+    .hero{
+      min-height:92svh;
+      position:relative;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      background:var(--charcoal);
+    }
+    .hero > img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to top,rgba(12,10,8,.9) 0%,rgba(12,10,8,.28) 58%,rgba(12,10,8,.1) 100%),
+        linear-gradient(to right,rgba(12,10,8,.24),transparent 60%);
+    }
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:920px;
+      padding-bottom:62px;
+    }
+    .hero .eyebrow{color:#f1ddb4}
+    .hero h1{
+      font-size:clamp(4rem,9vw,8rem);
+      letter-spacing:-.06em;
+      text-shadow:0 12px 42px rgba(0,0,0,.34);
+    }
+    .hero-tagline{
+      max-width:760px;
+      margin:18px 0 0;
+      font-family:var(--serif);
+      color:#f1ddb4;
+      font-size:clamp(1.35rem,3vw,2.15rem);
+      line-height:1.22;
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+
+    /* OVERVIEW */
+    .overview{background:var(--paper)}
+    .overview-grid{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:62px;
+      align-items:start;
+    }
+    .overview-copy p{color:#5b534b;font-size:1.03rem;margin-bottom:18px}
+    .facts{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-top:26px;
+    }
+    .fact{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:16px;
+      padding:15px;
+      min-height:96px;
+    }
+    .fact strong{
+      display:block;
+      font-family:var(--serif);
+      font-weight:500;
+      font-size:1.12rem;
+    }
+    .fact span{
+      display:block;
+      margin-top:4px;
+      color:var(--muted);
+      font-size:.72rem;
+    }
+
+    /* GALLERY */
+    .gallery-section{background:var(--ivory)}
+    .gallery-head{max-width:780px;margin-bottom:28px}
+    .gallery-head p{color:var(--muted);margin:14px 0 0}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:1.35fr .85fr .85fr;
+      grid-template-rows:260px 260px;
+      gap:10px;
+    }
+    .gallery button{
+      border:0;
+      padding:0;
+      border-radius:16px;
+      overflow:hidden;
+      background:#ddd;
+      position:relative;
+    }
+    .gallery button:first-child{grid-row:1/3}
+    .gallery img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+    .gallery button:hover img{transform:scale(1.04)}
+    .gallery-more{
+      position:absolute;
+      right:12px;
+      bottom:12px;
+      padding:8px 11px;
+      border-radius:999px;
+      background:rgba(0,0,0,.64);
+      color:#fff;
+      font-size:.72rem;
+      font-weight:850;
+    }
+
+    /* BOOKING */
+    .booking{
+      background:linear-gradient(135deg,#f2eee8,#fffdf9 64%);
+    }
+    .booking-grid{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:58px;
+      align-items:start;
+    }
+    .booking-copy p{color:#5b534b;font-size:1.02rem}
+    .booking-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:26px;
+      box-shadow:0 16px 48px rgba(28,20,12,.08);
+    }
+    .booking-card h3{font-size:2rem;margin-bottom:6px}
+    .booking-card > p{color:var(--muted);font-size:.84rem;margin-bottom:20px}
+    .booking-fields{
+      display:grid;
+      grid-template-columns:1fr 1fr .75fr;
+      gap:10px;
+    }
+    .field label{
+      display:block;
+      margin-bottom:6px;
+      color:#8f8174;
+      font-size:.68rem;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .field input,.field select{
+      width:100%;
+      height:48px;
+      border:1px solid var(--line);
+      border-radius:13px;
+      background:#fff;
+      color:var(--ink);
+      padding:0 12px;
+      outline:none;
+    }
+    .field input:focus,.field select:focus{border-color:var(--gold)}
+    .booking-card .btn{width:100%;margin-top:14px}
+    .booking-note{
+      margin:10px 0 0;
+      color:#8c837b;
+      font-size:.72rem;
+      text-align:center;
+    }
+
+    /* LOCATION */
+    .location{background:var(--paper)}
+    .location-card{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:28px;
+      align-items:center;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:28px;
+      background:#fff;
+    }
+    .location-card .place{
+      font-family:var(--serif);
+      font-size:1.75rem;
+      margin-bottom:6px;
+    }
+    .location-card p{margin:0;color:var(--muted)}
+
+    /* FOOTER */
+    footer{
+      background:#11100f;
+      color:rgba(255,255,255,.72);
+      padding:50px 0 24px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr .9fr;
+      gap:40px;
+      align-items:start;
+    }
+    .footer-logo{width:200px;margin-bottom:15px}
+    footer h4{
+      margin:0 0 12px;
+      color:#fff;
+      font-size:.82rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+    }
+    footer a{display:block;margin:7px 0;font-size:.88rem}
+    .footer-bottom{
+      margin-top:34px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.1);
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      font-size:.76rem;
+    }
+    .footer-tagline{color:var(--gold-soft)}
+
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      z-index:100;
+      display:none;
+      background:rgba(8,7,6,.96);
+      color:#fff;
+    }
+    .lightbox.open{display:grid;grid-template-rows:auto 1fr auto}
+    .lightbox-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 18px;
+    }
+    .lightbox-title{font-family:var(--serif);font-size:1.2rem}
+    .lightbox-close{
+      width:42px;height:42px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.25);
+      background:transparent;color:#fff;font-size:1.3rem;
+    }
+    .lightbox-stage{
+      position:relative;
+      display:grid;
+      place-items:center;
+      min-height:0;
+      padding:0 70px;
+    }
+    .lightbox-stage img{
+      max-width:100%;
+      max-height:78vh;
+      object-fit:contain;
+      border-radius:10px;
+    }
+    .lightbox-nav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:46px;height:46px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.28);
+      background:rgba(0,0,0,.3);
+      color:#fff;
+      font-size:1.6rem;
+    }
+    .lightbox-prev{left:14px}
+    .lightbox-next{right:14px}
+    .lightbox-bottom{
+      display:flex;
+      justify-content:center;
+      padding:12px 18px 18px;
+      color:rgba(255,255,255,.64);
+      font-size:.78rem;
+    }
+
+    @media(max-width:980px){
+      .nav-links{display:none}
+      .menu-toggle{display:flex}
+      .overview-grid,.booking-grid{grid-template-columns:1fr}
+      .location-card{grid-template-columns:1fr}
+      .facts{grid-template-columns:repeat(3,1fr)}
+    }
+
+    @media(max-width:720px){
+      .container{width:min(100% - 24px,1180px)}
+      .section{padding:60px 0}
+      .site-header{height:64px}
+      .brand img{width:92px;max-height:42px}
+      .menu-toggle{min-width:80px;height:38px}
+
+      .hero{min-height:78svh}
+      .hero-content{padding-bottom:30px}
+      .hero h1{font-size:clamp(3rem,14vw,4.8rem)}
+      .hero-tagline{font-size:1.08rem;margin-top:12px}
+      .hero-actions{margin-top:20px}
+      .hero-actions .btn{min-height:44px;padding:0 15px;font-size:.78rem}
+
+      .overview-grid{gap:26px}
+      .overview h2{font-size:2.55rem}
+      .overview-copy p{font-size:.94rem}
+      .facts{grid-template-columns:1fr 1fr 1fr;gap:7px}
+      .fact{padding:11px;min-height:82px;border-radius:13px}
+      .fact strong{font-size:.95rem}
+      .fact span{font-size:.63rem}
+
+      .gallery-head{margin-bottom:18px}
+      .gallery-head h2{font-size:2.55rem}
+      .gallery-head p{font-size:.85rem}
+      .gallery{
+        display:flex;
+        gap:9px;
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
+        padding-bottom:8px;
+        scrollbar-width:none;
+      }
+      .gallery::-webkit-scrollbar{display:none}
+      .gallery button{
+        flex:0 0 84%;
+        height:310px;
+        scroll-snap-align:center;
+      }
+      .gallery button:first-child{grid-row:auto}
+
+      .booking-grid{gap:26px}
+      .booking-copy h2{font-size:2.55rem}
+      .booking-copy p{font-size:.94rem}
+      .booking-card{padding:20px}
+      .booking-fields{grid-template-columns:1fr 1fr}
+      .field:last-child{grid-column:1/3}
+      .field input,.field select{height:46px}
+
+      .location-card{padding:20px}
+      .location-card .place{font-size:1.45rem}
+
+      .footer-grid{grid-template-columns:1fr;gap:26px}
+      .footer-bottom{flex-direction:column}
+
+      .lightbox-stage{padding:0 8px}
+      .lightbox-nav{width:40px;height:40px;background:rgba(0,0,0,.5)}
+      .lightbox-prev{left:6px}
+      .lightbox-next{right:6px}
+    }
+
+    @media(max-width:390px){
+      .facts{grid-template-columns:1fr 1fr}
+      .booking-fields{grid-template-columns:1fr}
+      .field:last-child{grid-column:auto}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap">
+      <a class="brand back-thessaloniki" href="thessaloniki.html" aria-label="Back to Namaste Lofts Thessaloniki">
+        <img src="assets/images/logo.png" alt="Namaste Homes">
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Book</a>
+        <a href="#location">Location</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span>Menu</span><span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#booking">Book Your Stay</a>
+      <a href="#location">Location</a>
+      <a class="back-link back-thessaloniki" href="thessaloniki.html">Back to Thessaloniki</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero">
+      <img src="assets/images/industrial_hero.webp" alt="Industrial Loft Thessaloniki">
+      <div class="container hero-content">
+        <div class="eyebrow">02 · Choose Your Personality</div>
+        <h1>Industrial Loft</h1>
+        <div class="hero-tagline">Urban, bold and contemporary.</div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#gallery">Explore the Loft</a>
+          <a class="btn btn-ghost" href="#booking">Book Your Stay</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section overview anchor" id="overview">
+      <div class="container overview-grid">
+        <div class="reveal">
+          <div class="eyebrow">Industrial Loft · Thessaloniki</div>
+          <h2>A distinctive blend of contemporary industrial design and modern comfort.</h2>
+
+          <div class="facts">
+            <div class="fact"><strong>Up to 3</strong><span>Guests</span></div>
+            <div class="fact"><strong>Private</strong><span>Kitchen</span></div>
+            <div class="fact"><strong>Private</strong><span>Bathroom</span></div>
+            <div class="fact"><strong>Wi-Fi</strong><span>Included</span></div>
+            <div class="fact"><strong>A/C</strong><span>Air conditioning</span></div>
+            <div class="fact"><strong>Urban</strong><span>Design</span></div>
+          </div>
+        </div>
+
+        <div class="overview-copy reveal">
+          <p>Industrial Loft uses darker stone textures, black metal details, warm wood and clean architectural lines to create a strong urban identity that feels perfectly at home in Thessaloniki.</p>
+          <p>The loft keeps its atmosphere sophisticated rather than heavy, balancing its industrial character with comfortable living spaces, a private kitchen and an elevated sleeping area designed for a relaxed stay.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section anchor" id="gallery">
+      <div class="container">
+        <div class="gallery-head reveal">
+          <div class="eyebrow">Inside Industrial</div>
+          <h2>Explore the loft.</h2>
+          <p>Tap any image to view the full gallery.</p>
+        </div>
+
+        <div class="gallery reveal" data-gallery="industrial">
+          <button data-src="assets/images/industrial_studio.webp"><img src="assets/images/industrial_studio.webp" alt="Industrial Loft living area"></button>
+          <button data-src="assets/images/industrial_bedroom.webp"><img src="assets/images/industrial_bedroom.webp" alt="Industrial Loft bedroom"></button>
+          <button data-src="assets/images/industrial_bathroom.webp"><img src="assets/images/industrial_bathroom.webp" alt="Industrial Loft bathroom"></button>
+          <button data-src="assets/images/industrial_studio3.webp"><img src="assets/images/industrial_studio3.webp" alt="Industrial Loft kitchen"></button>
+          <button data-src="assets/images/industrial_studio4.webp"><img src="assets/images/industrial_studio4.webp" alt="Industrial Loft overview"><span class="gallery-more">View all</span></button>
+        </div>
+
+        <div hidden>
+          <span data-gallery-src="industrial" data-src="assets/images/industrial_bathroom1.webp"></span>
+          <span data-gallery-src="industrial" data-src="assets/images/industrial_bedroom1.webp"></span>
+          <span data-gallery-src="industrial" data-src="assets/images/industrial_sofa.webp"></span>
+          <span data-gallery-src="industrial" data-src="assets/images/industrial_sofa1.webp"></span>
+          <span data-gallery-src="industrial" data-src="assets/images/industrial_studio1.webp"></span>
+          <span data-gallery-src="industrial" data-src="assets/images/industrial_studio2.webp"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section booking anchor" id="booking">
+      <div class="container booking-grid">
+        <div class="booking-copy reveal">
+          <div class="eyebrow">Plan your stay</div>
+          <h2>Choose your dates.</h2>
+          <p>Select your preferred check-in and check-out dates and the number of guests. Your request will be prepared automatically for Industrial Loft.</p>
+        </div>
+
+        <div class="booking-card reveal">
+          <h3>Industrial Loft</h3>
+          <p>Up to 3 guests · Thessaloniki</p>
+
+          <div class="booking-fields">
+            <div class="field">
+              <label for="checkin">Check-in</label>
+              <input type="date" id="checkin">
+            </div>
+
+            <div class="field">
+              <label for="checkout">Check-out</label>
+              <input type="date" id="checkout">
+            </div>
+
+            <div class="field">
+              <label for="guests">Guests</label>
+              <select id="guests">
+                <option value="1">1 guest</option>
+                <option value="2">2 guests</option>
+                <option value="3">3 guests</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" id="sendRequest">Send Request</button>
+          <p class="booking-note">Final availability is confirmed after your request is received.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section location anchor" id="location">
+      <div class="container">
+        <div class="eyebrow">Thessaloniki</div>
+        <div class="location-card reveal">
+          <div>
+            <div class="place">Industrial Loft — Namaste Lofts</div>
+            <p>Amalias 66, Thessaloniki 546 40, Greece</p>
+          </div>
+          <a class="btn btn-dark" target="_blank" rel="noopener" href="https://www.google.com/maps?q=40.616090718512545,22.95741438596926">View on map →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img class="footer-logo" src="assets/images/logo.png" alt="Namaste Homes">
+          <div>Distinctive stays in Thessaloniki and Halkidiki.</div>
+        </div>
+
+        <div>
+          <h4>Industrial Loft</h4>
+          <a href="#overview">Overview</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#booking">Book Your Stay</a>
+          <a class="back-thessaloniki" href="thessaloniki.html">Namaste Lofts Thessaloniki</a>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:+306944428858">+30 694 442 8858</a>
+          <a href="mailto:namastehomes.gr@gmail.com">namastehomes.gr@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Namaste Homes</span>
+        <span class="footer-tagline">Industrial Loft · Urban · Bold · Contemporary</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-top">
+      <div class="lightbox-title">Industrial Loft</div>
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">×</button>
+    </div>
+
+    <div class="lightbox-stage">
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+      <img id="lightboxImage" src="" alt="">
+      <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+    </div>
+
+    <div class="lightbox-bottom"><span id="lightboxCounter"></span></div>
+  </div>
+
+  <script>
+    const supportedLanguages = ['en','el','de','ro','sr','bg'];
+    const params = new URLSearchParams(window.location.search);
+    let selectedLanguage = params.get('lang') || localStorage.getItem('namasteLanguage') || 'en';
+    if(!supportedLanguages.includes(selectedLanguage)) selectedLanguage = 'en';
+    localStorage.setItem('namasteLanguage', selectedLanguage);
+    document.documentElement.lang = selectedLanguage;
+
+    document.querySelectorAll('.back-thessaloniki').forEach(link => {
+      link.href = `thessaloniki.html?lang=${selectedLanguage}#lofts`;
+    });
+
+    const header = document.getElementById('siteHeader');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+
+    const handleScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, {passive:true});
+
+    function closeMenu(){
+      mobileNav.classList.remove('open');
+      mobileNav.setAttribute('aria-hidden','true');
+      document.body.classList.remove('locked');
+      menuToggle.setAttribute('aria-expanded','false');
+      menuToggle.querySelector('span:first-child').textContent = 'Menu';
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const open = !mobileNav.classList.contains('open');
+      mobileNav.classList.toggle('open', open);
+      mobileNav.setAttribute('aria-hidden', open ? 'false' : 'true');
+      document.body.classList.toggle('locked', open);
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuToggle.querySelector('span:first-child').textContent = open ? 'Close' : 'Menu';
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* GALLERY */
+    const visibleGallery = [...document.querySelectorAll('.gallery[data-gallery="industrial"] button[data-src]')].map(btn => btn.dataset.src);
+    const hiddenGallery = [...document.querySelectorAll('[data-gallery-src="industrial"]')].map(el => el.dataset.src);
+    const galleryImages = [...visibleGallery, ...hiddenGallery];
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    let imageIndex = 0;
+
+    function updateLightbox(){
+      lightboxImage.src = galleryImages[imageIndex];
+      lightboxImage.alt = `Industrial Loft photo ${imageIndex + 1}`;
+      lightboxCounter.textContent = `${imageIndex + 1} / ${galleryImages.length}`;
+    }
+
+    function openLightbox(index){
+      imageIndex = index;
+      updateLightbox();
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden','false');
+      document.body.classList.add('locked');
+    }
+
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
+      document.body.classList.remove('locked');
+    }
+
+    function changeImage(step){
+      imageIndex = (imageIndex + step + galleryImages.length) % galleryImages.length;
+      updateLightbox();
+    }
+
+    document.querySelectorAll('.gallery[data-gallery="industrial"] button[data-src]').forEach(btn => {
+      btn.addEventListener('click', () => openLightbox(galleryImages.indexOf(btn.dataset.src)));
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxPrev').addEventListener('click', () => changeImage(-1));
+    document.getElementById('lightboxNext').addEventListener('click', () => changeImage(1));
+
+    lightbox.addEventListener('click', e => {
+      if(e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', e => {
+      if(e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+      if(lightbox.classList.contains('open')){
+        if(e.key === 'ArrowLeft') changeImage(-1);
+        if(e.key === 'ArrowRight') changeImage(1);
+      }
+    });
+
+    /* BOOKING */
+    const checkin = document.getElementById('checkin');
+    const checkout = document.getElementById('checkout');
+    const guests = document.getElementById('guests');
+    const sendRequest = document.getElementById('sendRequest');
+
+    function toISO(date){
+      const y = date.getFullYear();
+      const m = String(date.getMonth()+1).padStart(2,'0');
+      const d = String(date.getDate()).padStart(2,'0');
+      return `${y}-${m}-${d}`;
+    }
+
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const todayISO = toISO(today);
+    checkin.min = todayISO;
+    checkout.min = todayISO;
+
+    checkin.addEventListener('change', () => {
+      if(!checkin.value){
+        checkout.min = todayISO;
+        return;
+      }
+
+      const nextDay = new Date(checkin.value + 'T00:00:00');
+      nextDay.setDate(nextDay.getDate() + 1);
+      const minCheckout = toISO(nextDay);
+      checkout.min = minCheckout;
+
+      if(checkout.value && checkout.value < minCheckout){
+        checkout.value = '';
+      }
+    });
+
+    sendRequest.addEventListener('click', () => {
+      if(!checkin.value || !checkout.value){
+        alert('Please select your check-in and check-out dates.');
+        return;
+      }
+
+      const message =
+`Hello Namaste Homes,
+
+I would like to request availability for:
+
+Property: Industrial Loft — Thessaloniki
+Check-in: ${checkin.value}
+Check-out: ${checkout.value}
+Guests: ${guests.value}
+
+Thank you.`;
+
+      const url = `https://wa.me/306944428858?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank', 'noopener');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
