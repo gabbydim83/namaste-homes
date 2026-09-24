@@ -308,6 +308,48 @@
       font-size:1.55rem;
     }
 
+    .personality-links{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .personality-link{
+      min-height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:14px;
+      padding:0 16px;
+      font-weight:850;
+      font-size:.84rem;
+      letter-spacing:.04em;
+      transition:transform .2s ease,box-shadow .2s ease,filter .2s ease;
+      box-shadow:0 8px 22px rgba(31,22,14,.08);
+    }
+
+    .personality-link:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.03);
+      box-shadow:0 12px 28px rgba(31,22,14,.12);
+    }
+
+    .personality-link.boho{
+      background:#c8a77d;
+      color:#2e241b;
+    }
+
+    .personality-link.industrial{
+      background:#4f5457;
+      color:#fff;
+    }
+
+    .personality-link.luxe{
+      background:#d7c3aa;
+      color:#33271f;
+    }
+
     /* LOFT PREVIEWS */
     .lofts{background:var(--ivory)}
     .lofts-head{max-width:760px;margin-bottom:34px}
@@ -581,6 +623,8 @@
       .collection-grid{gap:26px}
       .collection-copy{font-size:.95rem}
       .choose-line{font-size:1.3rem;margin-top:20px}
+      .personality-links{grid-template-columns:1fr 1fr 1fr;gap:7px}
+      .personality-link{min-height:46px;padding:0 8px;border-radius:12px;font-size:.72rem}
 
       .lofts-head{margin-bottom:24px}
       .loft-stack{gap:14px}
@@ -629,6 +673,8 @@
       .hero-tagline{font-size:1rem}
       .city-cards{grid-template-columns:1fr}
       .review-stage{min-height:315px}
+      .personality-links{grid-template-columns:1fr}
+      .personality-link{min-height:44px}
     }
   </style>
 </head>
@@ -676,7 +722,7 @@
       <div class="container hero-content">
         <div class="eyebrow">Namaste Homes · Thessaloniki</div>
         <h1>Namaste Lofts Thessaloniki</h1>
-        <div class="hero-tagline">Three Unique Lofts. Three Different Personalities. One Memorable Thessaloniki Experience.</div>
+        <div class="hero-tagline">Memorable Thessaloniki Experiences</div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#lofts">Meet the Lofts</a>
           <a class="btn btn-ghost" href="#together">Travel Together</a>
@@ -694,8 +740,15 @@
 
         <div class="collection-copy reveal">
           <p>Namaste Lofts is a collection of three unique designer loft apartments in the eastern side of Thessaloniki, each created with its own distinctive character, atmosphere and story.</p>
-          <p>Located just a short walk from the waterfront and within easy reach of the city centre, the three lofts offer a stylish base for a city break, a longer stay or a trip with friends and family.</p>
-          <div class="choose-line">Which one is yours? Choose your stay.</div>
+          <p>All three lofts are located next to each other on the ground floor, each with its own private entrance and a small balcony at the entrance, offering easy access and added privacy.</p>
+          <p>Located just a short walk from the waterfront and within easy reach of the city centre, the three lofts offer a stylish and comfortable base for a city break, a longer stay or a trip with friends and family.</p>
+
+          <div class="choose-line">Which one is yours?</div>
+          <div class="personality-links" aria-label="Choose a loft">
+            <a class="personality-link boho loft-page-link" data-page="boho.html" href="boho.html">Boho Loft</a>
+            <a class="personality-link industrial loft-page-link" data-page="industrial.html" href="industrial.html">Industrial Loft</a>
+            <a class="personality-link luxe loft-page-link" data-page="luxe.html" href="luxe.html">Luxe Loft</a>
+          </div>
         </div>
       </div>
     </section>

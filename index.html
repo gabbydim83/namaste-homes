@@ -387,6 +387,8 @@
       letter-spacing:-.055em;
       text-shadow:0 10px 36px rgba(0,0,0,.34);
     }
+    .hero-title-line{display:inline}
+
     .hero-sub{
       max-width:650px;
       margin:18px auto 0;
@@ -652,7 +654,9 @@
       }
       .hero-mark{width:min(118px,31vw);margin-bottom:10px}
       .hero-kicker{font-size:.62rem;letter-spacing:.13em;margin-bottom:11px}
-      .hero h1{font-size:clamp(2.35rem,12vw,3.35rem);line-height:.98}
+      .hero h1{font-size:clamp(2.35rem,12vw,3.35rem);line-height:1}
+      .hero-title-line{display:block}
+      .hero-title-line-2{margin-top:10px}
       .hero-sub{font-size:.86rem;line-height:1.45;max-width:330px;margin-top:13px}
       .hero-cta{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
       .hero-cta .btn{
@@ -708,6 +712,7 @@
 
     @media(max-width:390px){
       .hero h1{font-size:2.25rem}
+      .hero-title-line-2{margin-top:8px}
       .hero-sub{font-size:.82rem}
       .hero-cta .btn{font-size:.64rem;padding:0 7px}
       .journey-card{min-height:56svh}
@@ -777,7 +782,7 @@
       <div class="hero-content">
         <img class="hero-mark" src="assets/images/logo.png" alt="Namaste Homes" />
         <div class="hero-kicker">Thessaloniki · Halkidiki</div>
-        <h1>Discover Two Sides of Greece</h1>
+        <h1><span class="hero-title-line hero-title-line-1">Discover Two</span> <span class="hero-title-line hero-title-line-2">Sides of Greece</span></h1>
         <p class="hero-sub">Thoughtfully designed stays connecting the vibrant energy of Thessaloniki with the peaceful beauty of the Aegean.</p>
 
         <div class="hero-cta">
