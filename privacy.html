@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#171513" />
+  <meta name="description" content="Privacy Policy for Namaste Homes and namastehomes.gr." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo.png" />
+  <title>Privacy Policy | Namaste Homes</title>
+  <style>
+    :root{
+      --charcoal:#171513;--ink:#24201c;--gold:#caa664;--gold-soft:#dfc48c;
+      --ivory:#f7f3eb;--paper:#fffdf9;--muted:#786f64;--line:rgba(36,32,28,.13);
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.68}
+    a{color:inherit;text-decoration:none}
+    .topbar{background:#11100f;color:#fff;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .wrap{width:min(980px,calc(100% - 40px));margin:auto}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:128px;height:auto}
+    .back{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:9px 14px;font-size:.76rem;font-weight:800}
+    .hero{padding:78px 0 54px;background:linear-gradient(180deg,#f4ecdf 0%,#fffdf9 100%)}
+    .eyebrow{color:#9b7945;font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+    h1,h2{font-family:var(--serif);font-weight:500;margin:0}
+    h1{font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.02;letter-spacing:-.045em}
+    .lead{max-width:760px;margin:20px 0 0;color:#5d554d;font-size:1.04rem}
+    .updated{margin-top:18px;color:#8d7d6c;font-size:.78rem}
+    main{padding:54px 0 76px}
+    .section-card{padding:26px 0;border-bottom:1px solid var(--line)}
+    .section-card:first-child{padding-top:0}
+    .section-card h2{font-size:1.65rem;margin-bottom:12px}
+    .section-card p{margin:9px 0;color:#4f4841}
+    .section-card ul{margin:10px 0 0;padding-left:20px;color:#4f4841}
+    .section-card li{margin:7px 0}
+    .contact-box{margin-top:32px;padding:22px;border:1px solid var(--line);border-radius:20px;background:var(--ivory)}
+    .contact-box strong{display:block;font-family:var(--serif);font-size:1.25rem;margin-bottom:8px}
+    .contact-box a{display:block;margin:5px 0;text-decoration:underline;text-underline-offset:3px}
+    .legal-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+    .legal-nav a{border:1px solid var(--line);border-radius:999px;padding:10px 15px;font-size:.78rem;font-weight:850;background:#fff}
+    footer{background:#11100f;color:rgba(255,255,255,.72);padding:28px 0}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:.76rem}
+    .footer-row a{color:var(--gold-soft)}
+    @media(max-width:640px){
+      .wrap{width:min(100% - 28px,980px)}
+      .topbar-inner{align-items:flex-start}
+      .brand img{width:108px}
+      .back{font-size:.68rem;padding:8px 11px}
+      .hero{padding:54px 0 38px}
+      h1{font-size:2.6rem}
+      .lead{font-size:.94rem}
+      main{padding:38px 0 56px}
+      .section-card{padding:22px 0}
+      .section-card h2{font-size:1.42rem}
+      .footer-row{flex-direction:column;text-align:center;gap:7px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" id="homeLogo" href="index.html"><img src="assets/images/logo.png" alt="Namaste Homes"></a>
+      <a class="back" id="backHome" href="index.html">Back to Namaste Homes</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Namaste Homes</div>
+      <h1 id="pageTitle">Privacy Policy | Namaste Homes</h1>
+      <p class="lead" id="lead"></p>
+      <div class="updated" id="updated"></div>
+    </div>
+  </section>
+
+  <main>
+    <div class="wrap">
+      <div id="sections"></div>
+
+      <div class="contact-box">
+        <strong id="contactTitle"></strong>
+        <a href="tel:+306944428858">0030-6944428858</a>
+        <a href="mailto:namastehomes.gr@gmail.com">namastehomes.gr@gmail.com</a>
+      </div>
+
+      <div class="legal-nav">
+        <a id="otherLegal" href="terms.html"></a>
+        <a id="homeLegal" href="index.html"></a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© <span id="year"></span> Namaste Homes</span>
+      <span id="footerText"></span>
+    </div>
+  </footer>
+
+<script>
+const supportedLanguages=["en", "el", "de", "ro", "sr", "bg"];
+const translations={"en":{"title":"Privacy Policy | Namaste Homes","meta":"Privacy Policy for Namaste Homes and namastehomes.gr.","heading":"Privacy Policy","lead":"This Privacy Policy explains how Namaste Homes handles personal data when you visit namastehomes.gr or contact us about a stay.","updated":"Last updated: 25 September 2026","contactTitle":"Privacy contact","backHome":"Back to Namaste Homes","termsLink":"Terms & Conditions","footerText":"Privacy · Namaste Homes","sections":[{"title":"1. Who is responsible for your data","paragraphs":["Namaste Homes is responsible for the personal data processed through this website and through direct enquiries relating to our accommodation services."]},{"title":"2. Information we may process","bullets":["Information you choose to provide when contacting us, such as your name, phone number, email address, requested dates, number of guests and message.","Technical connection data that may be processed by hosting and infrastructure providers in order to deliver and secure the website, such as IP address, browser/device information and request timestamps.","Your selected website language. The website stores the language preference locally in your browser under the key “namasteLanguage” so the same language can be used across pages."]},{"title":"3. Why we use personal data","bullets":["To respond to enquiries and check accommodation availability.","To communicate with you about a requested or confirmed stay.","To operate, maintain and protect the website.","To comply with legal, accounting or regulatory obligations where applicable."]},{"title":"4. Legal bases","paragraphs":["Depending on the situation, processing may be necessary to take steps at your request before entering into a contract, to perform a contract, to comply with a legal obligation, or for our legitimate interests in operating and securing the website and responding to genuine enquiries."]},{"title":"5. Sharing and external services","paragraphs":["We do not sell your personal data. Data may be processed by service providers that are necessary to operate communications and the website, such as hosting/infrastructure providers, email providers and WhatsApp/Meta if you choose to contact us through WhatsApp. External services operate under their own privacy terms. We may also disclose information where required by law."]},{"title":"6. Retention","paragraphs":["Enquiry and booking-related information is kept only for as long as reasonably necessary to answer your request, manage a stay, resolve issues and meet applicable legal or accounting obligations. Your language preference remains in your browser until you change it, clear your browser storage or remove site data."]},{"title":"7. Cookies and local storage","paragraphs":["At the time of this policy, this website does not intentionally use advertising or analytics cookies. It uses local browser storage to remember your language preference. If non-essential analytics or marketing technologies are introduced later, this policy will be updated and consent will be requested where required."]},{"title":"8. Your rights","paragraphs":["Subject to the GDPR and applicable law, you may have rights to access, correct, erase or restrict your personal data, receive certain data in portable form, object to certain processing, and withdraw consent where processing is based on consent. You may also lodge a complaint with the Hellenic Data Protection Authority."]},{"title":"9. Third-party links","paragraphs":["The website may link to services such as WhatsApp, email applications and mapping services. When you follow an external link, that service’s own privacy policy and terms apply."]},{"title":"10. Changes to this policy","paragraphs":["We may update this Privacy Policy when the website, our services or applicable requirements change. The latest version will always be published on this page."]}]},"el":{"title":"Πολιτική Απορρήτου | Namaste Homes","meta":"Πολιτική Απορρήτου για το Namaste Homes και το namastehomes.gr.","heading":"Πολιτική Απορρήτου","lead":"Η παρούσα Πολιτική Απορρήτου εξηγεί πώς το Namaste Homes διαχειρίζεται προσωπικά δεδομένα όταν επισκέπτεστε το namastehomes.gr ή επικοινωνείτε μαζί μας σχετικά με μια διαμονή.","updated":"Τελευταία ενημέρωση: 25 Σεπτεμβρίου 2026","contactTitle":"Επικοινωνία για θέματα απορρήτου","backHome":"Πίσω στο Namaste Homes","termsLink":"Όροι & Προϋποθέσεις","footerText":"Απόρρητο · Namaste Homes","sections":[{"title":"1. Ποιος είναι υπεύθυνος για τα δεδομένα σας","paragraphs":["Το Namaste Homes είναι υπεύθυνο για τα προσωπικά δεδομένα που υποβάλλονται σε επεξεργασία μέσω αυτού του ιστοτόπου και μέσω άμεσων αιτημάτων που σχετίζονται με τις υπηρεσίες διαμονής μας."]},{"title":"2. Πληροφορίες που μπορεί να επεξεργαζόμαστε","bullets":["Πληροφορίες που επιλέγετε να μας παρέχετε, όπως όνομα, τηλέφωνο, email, επιθυμητές ημερομηνίες, αριθμός επισκεπτών και μήνυμα.","Τεχνικά δεδομένα σύνδεσης που ενδέχεται να επεξεργάζονται πάροχοι φιλοξενίας και υποδομής για την παράδοση και ασφάλεια του ιστοτόπου, όπως διεύθυνση IP, πληροφορίες προγράμματος περιήγησης/συσκευής και χρονικές σημάνσεις αιτημάτων.","Η επιλεγμένη γλώσσα του ιστοτόπου. Η προτίμηση αποθηκεύεται τοπικά στο πρόγραμμα περιήγησης με το κλειδί “namasteLanguage”."]},{"title":"3. Γιατί χρησιμοποιούμε προσωπικά δεδομένα","bullets":["Για να απαντούμε σε αιτήματα και να ελέγχουμε διαθεσιμότητα.","Για επικοινωνία σχετικά με ζητούμενη ή επιβεβαιωμένη διαμονή.","Για λειτουργία, συντήρηση και προστασία του ιστοτόπου.","Για συμμόρφωση με νομικές, λογιστικές ή κανονιστικές υποχρεώσεις όπου εφαρμόζεται."]},{"title":"4. Νομικές βάσεις","paragraphs":["Ανάλογα με την περίπτωση, η επεξεργασία μπορεί να είναι απαραίτητη για ενέργειες κατόπιν αιτήματός σας πριν από σύμβαση, για εκτέλεση σύμβασης, για συμμόρφωση με νομική υποχρέωση ή για τα έννομα συμφέροντά μας στη λειτουργία και ασφάλεια του ιστοτόπου και στην απάντηση σε πραγματικά αιτήματα."]},{"title":"5. Κοινοποίηση και εξωτερικές υπηρεσίες","paragraphs":["Δεν πωλούμε προσωπικά δεδομένα. Δεδομένα μπορεί να υποβάλλονται σε επεξεργασία από παρόχους που είναι απαραίτητοι για την επικοινωνία και λειτουργία του ιστοτόπου, όπως πάροχοι φιλοξενίας/υποδομής, email και WhatsApp/Meta αν επιλέξετε το WhatsApp. Οι εξωτερικές υπηρεσίες εφαρμόζουν τις δικές τους πολιτικές. Πληροφορίες μπορεί επίσης να γνωστοποιηθούν όταν απαιτείται από τον νόμο."]},{"title":"6. Χρόνος διατήρησης","paragraphs":["Πληροφορίες αιτημάτων και κρατήσεων διατηρούνται μόνο όσο είναι εύλογα απαραίτητο για την απάντηση, τη διαχείριση διαμονής, την επίλυση θεμάτων και την τήρηση ισχυουσών νομικών ή λογιστικών υποχρεώσεων. Η προτίμηση γλώσσας παραμένει στο πρόγραμμα περιήγησης μέχρι να την αλλάξετε ή να διαγράψετε τα δεδομένα του ιστοτόπου."]},{"title":"7. Cookies και τοπική αποθήκευση","paragraphs":["Κατά τον χρόνο δημοσίευσης της παρούσας πολιτικής, ο ιστότοπος δεν χρησιμοποιεί σκόπιμα cookies διαφήμισης ή analytics. Χρησιμοποιεί τοπική αποθήκευση για να θυμάται τη γλώσσα. Αν προστεθούν μη απαραίτητες τεχνολογίες analytics ή marketing, η πολιτική θα ενημερωθεί και θα ζητείται συγκατάθεση όπου απαιτείται."]},{"title":"8. Τα δικαιώματά σας","paragraphs":["Με βάση τον GDPR και την εφαρμοστέα νομοθεσία, μπορεί να έχετε δικαίωμα πρόσβασης, διόρθωσης, διαγραφής ή περιορισμού, φορητότητας ορισμένων δεδομένων, εναντίωσης σε συγκεκριμένη επεξεργασία και ανάκλησης συγκατάθεσης όπου αυτή αποτελεί τη νομική βάση. Μπορείτε επίσης να υποβάλετε καταγγελία στην Ελληνική Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα."]},{"title":"9. Σύνδεσμοι τρίτων","paragraphs":["Ο ιστότοπος μπορεί να συνδέεται με υπηρεσίες όπως WhatsApp, εφαρμογές email και υπηρεσίες χαρτών. Όταν ακολουθείτε εξωτερικό σύνδεσμο, ισχύουν η πολιτική απορρήτου και οι όροι της αντίστοιχης υπηρεσίας."]},{"title":"10. Αλλαγές στην πολιτική","paragraphs":["Μπορούμε να ενημερώνουμε την παρούσα Πολιτική Απορρήτου όταν αλλάζει ο ιστότοπος, οι υπηρεσίες μας ή οι εφαρμοστέες απαιτήσεις. Η πιο πρόσφατη έκδοση θα δημοσιεύεται πάντα σε αυτή τη σελίδα."]}]},"de":{"title":"Datenschutzerklärung | Namaste Homes","meta":"Datenschutzerklärung für Namaste Homes und namastehomes.gr.","heading":"Datenschutzerklärung","lead":"Diese Datenschutzerklärung erläutert, wie Namaste Homes personenbezogene Daten verarbeitet, wenn Sie namastehomes.gr besuchen oder uns wegen eines Aufenthalts kontaktieren.","updated":"Zuletzt aktualisiert: 25. September 2026","contactTitle":"Datenschutzkontakt","backHome":"Zurück zu Namaste Homes","termsLink":"Allgemeine Geschäftsbedingungen","footerText":"Datenschutz · Namaste Homes","sections":[{"title":"1. Wer für Ihre Daten verantwortlich ist","paragraphs":["Namaste Homes ist für personenbezogene Daten verantwortlich, die über diese Website und über direkte Anfragen zu unseren Unterkünften verarbeitet werden."]},{"title":"2. Welche Informationen wir verarbeiten können","bullets":["Informationen, die Sie freiwillig mitteilen, z. B. Name, Telefonnummer, E-Mail-Adresse, gewünschte Reisedaten, Gästezahl und Nachricht.","Technische Verbindungsdaten, die Hosting- und Infrastruktur-Anbieter zur Bereitstellung und Sicherung der Website verarbeiten können, z. B. IP-Adresse, Browser-/Geräteinformationen und Zeitstempel von Anfragen.","Ihre ausgewählte Website-Sprache. Die Sprachpräferenz wird lokal im Browser unter “namasteLanguage” gespeichert."]},{"title":"3. Warum wir personenbezogene Daten verwenden","bullets":["Zur Beantwortung von Anfragen und Prüfung der Verfügbarkeit.","Zur Kommunikation über angefragte oder bestätigte Aufenthalte.","Zum Betrieb, zur Wartung und zum Schutz der Website.","Zur Erfüllung gesetzlicher, buchhalterischer oder regulatorischer Pflichten, soweit anwendbar."]},{"title":"4. Rechtsgrundlagen","paragraphs":["Je nach Situation kann die Verarbeitung erforderlich sein, um auf Ihre Anfrage hin vor Vertragsschluss tätig zu werden, einen Vertrag zu erfüllen, einer gesetzlichen Pflicht nachzukommen oder unsere berechtigten Interessen am sicheren Betrieb der Website und an der Beantwortung echter Anfragen zu verfolgen."]},{"title":"5. Weitergabe und externe Dienste","paragraphs":["Wir verkaufen keine personenbezogenen Daten. Daten können durch erforderliche Dienstleister verarbeitet werden, etwa Hosting-/Infrastruktur-Anbieter, E-Mail-Dienste und WhatsApp/Meta, wenn Sie WhatsApp nutzen. Externe Dienste haben eigene Datenschutzbestimmungen. Eine Offenlegung kann zudem erfolgen, wenn sie gesetzlich vorgeschrieben ist."]},{"title":"6. Speicherdauer","paragraphs":["Anfrage- und buchungsbezogene Informationen werden nur so lange aufbewahrt, wie dies für die Bearbeitung, die Durchführung eines Aufenthalts, die Klärung von Fragen sowie gesetzliche oder buchhalterische Pflichten erforderlich ist. Die Sprachpräferenz bleibt im Browser, bis Sie sie ändern oder Website-Daten löschen."]},{"title":"7. Cookies und lokaler Speicher","paragraphs":["Zum Zeitpunkt dieser Erklärung verwendet die Website bewusst keine Werbe- oder Analyse-Cookies. Sie nutzt lokalen Browserspeicher, um die Sprache zu merken. Sollten später nicht notwendige Analyse- oder Marketing-Technologien hinzukommen, wird diese Erklärung aktualisiert und, soweit erforderlich, eine Einwilligung eingeholt."]},{"title":"8. Ihre Rechte","paragraphs":["Nach der DSGVO und anwendbarem Recht können Ihnen Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch und – soweit einschlägig – Widerruf einer Einwilligung zustehen. Sie können außerdem Beschwerde bei der griechischen Datenschutzbehörde einlegen."]},{"title":"9. Links zu Drittanbietern","paragraphs":["Die Website kann auf Dienste wie WhatsApp, E-Mail-Anwendungen und Kartendienste verlinken. Beim Aufruf eines externen Links gelten die Datenschutzbestimmungen und Bedingungen des jeweiligen Anbieters."]},{"title":"10. Änderungen","paragraphs":["Wir können diese Datenschutzerklärung aktualisieren, wenn sich die Website, unsere Leistungen oder rechtliche Anforderungen ändern. Die aktuelle Fassung wird stets auf dieser Seite veröffentlicht."]}]},"ro":{"title":"Politica de confidențialitate | Namaste Homes","meta":"Politica de confidențialitate pentru Namaste Homes și namastehomes.gr.","heading":"Politica de confidențialitate","lead":"Această Politică de confidențialitate explică modul în care Namaste Homes prelucrează datele personale atunci când vizitați namastehomes.gr sau ne contactați în legătură cu un sejur.","updated":"Ultima actualizare: 25 septembrie 2026","contactTitle":"Contact pentru confidențialitate","backHome":"Înapoi la Namaste Homes","termsLink":"Termeni și condiții","footerText":"Confidențialitate · Namaste Homes","sections":[{"title":"1. Cine este responsabil pentru datele dvs.","paragraphs":["Namaste Homes este responsabil pentru datele personale prelucrate prin acest website și prin solicitările directe referitoare la serviciile noastre de cazare."]},{"title":"2. Informații pe care le putem prelucra","bullets":["Informații pe care alegeți să ni le transmiteți, precum numele, numărul de telefon, adresa de email, datele dorite, numărul de oaspeți și mesajul.","Date tehnice de conexiune care pot fi prelucrate de furnizorii de hosting și infrastructură pentru livrarea și securizarea website-ului, precum adresa IP, informații despre browser/dispozitiv și marcaje temporale ale solicitărilor.","Limba selectată pentru website. Preferința este stocată local în browser sub cheia “namasteLanguage”."]},{"title":"3. De ce folosim datele personale","bullets":["Pentru a răspunde solicitărilor și a verifica disponibilitatea.","Pentru a comunica în legătură cu un sejur solicitat sau confirmat.","Pentru a opera, întreține și proteja website-ul.","Pentru respectarea obligațiilor legale, contabile sau de reglementare, atunci când se aplică."]},{"title":"4. Temeiuri legale","paragraphs":["În funcție de situație, prelucrarea poate fi necesară pentru demersuri la cererea dvs. înainte de încheierea unui contract, pentru executarea unui contract, pentru respectarea unei obligații legale sau pentru interesele noastre legitime de a opera și securiza website-ul și de a răspunde solicitărilor reale."]},{"title":"5. Partajare și servicii externe","paragraphs":["Nu vindem datele personale. Datele pot fi prelucrate de furnizori necesari pentru funcționarea comunicațiilor și a website-ului, precum furnizori de hosting/infrastructură, email și WhatsApp/Meta dacă alegeți să ne contactați prin WhatsApp. Serviciile externe au propriile politici. Informațiile pot fi divulgate și atunci când legea o impune."]},{"title":"6. Păstrarea datelor","paragraphs":["Informațiile legate de solicitări și rezervări sunt păstrate doar atât timp cât este rezonabil necesar pentru a răspunde, a gestiona sejurul, a soluționa eventuale probleme și a respecta obligațiile legale sau contabile aplicabile. Preferința de limbă rămâne în browser până când o modificați sau ștergeți datele website-ului."]},{"title":"7. Cookies și stocare locală","paragraphs":["La data acestei politici, website-ul nu utilizează în mod intenționat cookies de publicitate sau analiză. Folosește stocarea locală a browserului pentru a reține limba selectată. Dacă vom introduce ulterior tehnologii neesențiale de analiză sau marketing, politica va fi actualizată și vom solicita consimțământul acolo unde este necesar."]},{"title":"8. Drepturile dvs.","paragraphs":["În condițiile GDPR și ale legislației aplicabile, puteți avea dreptul de acces, rectificare, ștergere sau restricționare, portabilitate pentru anumite date, opoziție la anumite prelucrări și retragerea consimțământului atunci când prelucrarea se bazează pe consimțământ. Puteți depune și o plângere la Autoritatea Elenă pentru Protecția Datelor."]},{"title":"9. Linkuri către terți","paragraphs":["Website-ul poate conține linkuri către servicii precum WhatsApp, aplicații de email și servicii de hărți. Când accesați un link extern, se aplică politica de confidențialitate și termenii serviciului respectiv."]},{"title":"10. Modificări ale politicii","paragraphs":["Putem actualiza această Politică de confidențialitate atunci când se modifică website-ul, serviciile noastre sau cerințele aplicabile. Cea mai recentă versiune va fi publicată întotdeauna pe această pagină."]}]},"sr":{"title":"Politika privatnosti | Namaste Homes","meta":"Politika privatnosti za Namaste Homes i namastehomes.gr.","heading":"Politika privatnosti","lead":"Ova Politika privatnosti objašnjava kako Namaste Homes obrađuje lične podatke kada posetite namastehomes.gr ili nas kontaktirate u vezi sa boravkom.","updated":"Poslednje ažuriranje: 25. septembar 2026.","contactTitle":"Kontakt za privatnost","backHome":"Nazad na Namaste Homes","termsLink":"Uslovi korišćenja","footerText":"Privatnost · Namaste Homes","sections":[{"title":"1. Ko je odgovoran za vaše podatke","paragraphs":["Namaste Homes je odgovoran za lične podatke koji se obrađuju putem ovog sajta i kroz direktne upite u vezi sa našim smeštajem."]},{"title":"2. Koje informacije možemo obrađivati","bullets":["Informacije koje dobrovoljno pošaljete, kao što su ime, broj telefona, email, željeni datumi, broj gostiju i poruka.","Tehnički podaci o vezi koje pružaoci hostinga i infrastrukture mogu obrađivati radi isporuke i zaštite sajta, kao što su IP adresa, informacije o pregledaču/uređaju i vreme zahteva.","Izabrani jezik sajta. Preferencija se lokalno čuva u pregledaču pod ključem “namasteLanguage”."]},{"title":"3. Zašto koristimo lične podatke","bullets":["Da odgovorimo na upite i proverimo dostupnost.","Da komuniciramo o traženom ili potvrđenom boravku.","Da upravljamo, održavamo i štitimo sajt.","Da ispunimo zakonske, računovodstvene ili regulatorne obaveze kada je primenljivo."]},{"title":"4. Pravni osnov","paragraphs":["U zavisnosti od situacije, obrada može biti potrebna radi preduzimanja koraka na vaš zahtev pre ugovora, izvršenja ugovora, poštovanja zakonske obaveze ili naših legitimnih interesa za bezbedan rad sajta i odgovaranje na stvarne upite."]},{"title":"5. Deljenje i spoljne usluge","paragraphs":["Ne prodajemo lične podatke. Podatke mogu obrađivati neophodni pružaoci usluga, kao što su hosting/infrastruktura, email i WhatsApp/Meta ako izaberete WhatsApp. Spoljne usluge imaju sopstvene politike privatnosti. Informacije mogu biti otkrivene i kada to zakon zahteva."]},{"title":"6. Čuvanje podataka","paragraphs":["Podaci o upitima i rezervacijama čuvaju se samo koliko je razumno potrebno za odgovor, upravljanje boravkom, rešavanje pitanja i ispunjenje primenljivih zakonskih ili računovodstvenih obaveza. Jezička preferencija ostaje u pregledaču dok je ne promenite ili obrišete podatke sajta."]},{"title":"7. Cookies i lokalno skladištenje","paragraphs":["U vreme ove politike sajt namerno ne koristi reklamne ili analitičke cookies. Koristi lokalno skladištenje pregledača da zapamti jezik. Ako kasnije uvedemo neobavezne analitičke ili marketinške tehnologije, politika će biti ažurirana i tražićemo saglasnost gde je potrebna."]},{"title":"8. Vaša prava","paragraphs":["U skladu sa GDPR-om i primenljivim pravom, možete imati pravo na pristup, ispravku, brisanje ili ograničenje, prenosivost određenih podataka, prigovor na određenu obradu i povlačenje saglasnosti kada se obrada zasniva na saglasnosti. Možete podneti i pritužbu grčkom organu za zaštitu podataka."]},{"title":"9. Linkovi trećih strana","paragraphs":["Sajt može sadržati linkove ka uslugama kao što su WhatsApp, email aplikacije i mape. Kada otvorite spoljni link, primenjuju se politika privatnosti i uslovi te usluge."]},{"title":"10. Izmene","paragraphs":["Ovu Politiku privatnosti možemo ažurirati kada se promene sajt, naše usluge ili primenljivi zahtevi. Najnovija verzija će uvek biti objavljena na ovoj stranici."]}]},"bg":{"title":"Политика за поверителност | Namaste Homes","meta":"Политика за поверителност за Namaste Homes и namastehomes.gr.","heading":"Политика за поверителност","lead":"Тази Политика за поверителност обяснява как Namaste Homes обработва лични данни, когато посещавате namastehomes.gr или се свързвате с нас относно престой.","updated":"Последна актуализация: 25 септември 2026 г.","contactTitle":"Контакт за поверителност","backHome":"Назад към Namaste Homes","termsLink":"Общи условия","footerText":"Поверителност · Namaste Homes","sections":[{"title":"1. Кой отговаря за вашите данни","paragraphs":["Namaste Homes отговаря за личните данни, обработвани чрез този сайт и чрез директни запитвания, свързани с нашите услуги за настаняване."]},{"title":"2. Каква информация може да обработваме","bullets":["Информация, която изберете да ни предоставите, като име, телефон, email, желани дати, брой гости и съобщение.","Технически данни за връзката, които доставчици на хостинг и инфраструктура могат да обработват за предоставяне и защита на сайта, като IP адрес, информация за браузър/устройство и времеви данни за заявките.","Избраният език на сайта. Предпочитанието се съхранява локално в браузъра под ключ “namasteLanguage”."]},{"title":"3. Защо използваме лични данни","bullets":["За да отговаряме на запитвания и да проверяваме наличност.","За комуникация относно поискан или потвърден престой.","За работа, поддръжка и защита на сайта.","За спазване на законови, счетоводни или регулаторни задължения, когато е приложимо."]},{"title":"4. Правни основания","paragraphs":["В зависимост от случая обработването може да е необходимо за действия по ваше искане преди договор, за изпълнение на договор, за спазване на законово задължение или за нашите легитимни интереси за безопасна работа на сайта и отговор на реални запитвания."]},{"title":"5. Споделяне и външни услуги","paragraphs":["Не продаваме лични данни. Данни могат да бъдат обработвани от необходими доставчици, като хостинг/инфраструктура, email и WhatsApp/Meta, ако изберете WhatsApp. Външните услуги имат собствени политики. Информация може да бъде разкрита и когато това се изисква от закона."]},{"title":"6. Срок за съхранение","paragraphs":["Информацията за запитвания и резервации се съхранява само толкова дълго, колкото е разумно необходимо за отговор, управление на престоя, решаване на въпроси и изпълнение на приложими законови или счетоводни задължения. Езиковото предпочитание остава в браузъра, докато не го промените или не изтриете данните на сайта."]},{"title":"7. Cookies и локално съхранение","paragraphs":["Към датата на тази политика сайтът не използва умишлено рекламни или аналитични cookies. Използва локалното хранилище на браузъра, за да запомни езика. Ако по-късно бъдат добавени несъществени аналитични или маркетингови технологии, политиката ще бъде актуализирана и ще се иска съгласие, когато е необходимо."]},{"title":"8. Вашите права","paragraphs":["Съгласно GDPR и приложимото право може да имате право на достъп, корекция, изтриване или ограничаване, преносимост на определени данни, възражение срещу определена обработка и оттегляне на съгласие, когато обработката е основана на съгласие. Можете да подадете жалба и до гръцкия орган за защита на данните."]},{"title":"9. Външни връзки","paragraphs":["Сайтът може да съдържа връзки към услуги като WhatsApp, email приложения и карти. При отваряне на външна връзка се прилагат политиката за поверителност и условията на съответната услуга."]},{"title":"10. Промени","paragraphs":["Можем да актуализираме тази Политика за поверителност при промени в сайта, нашите услуги или приложимите изисквания. Най-новата версия винаги ще бъде публикувана на тази страница."]}]}};
+
+const params=new URLSearchParams(window.location.search);
+let lang=params.get('lang')||localStorage.getItem('namasteLanguage')||'en';
+if(!supportedLanguages.includes(lang)) lang='en';
+localStorage.setItem('namasteLanguage',lang);
+document.documentElement.lang=lang;
+
+const t=translations[lang]||translations.en;
+document.title=t.title;
+document.querySelector('meta[name="description"]').setAttribute('content',t.meta);
+document.getElementById('pageTitle').textContent=t.heading;
+document.getElementById('lead').textContent=t.lead;
+document.getElementById('updated').textContent=t.updated;
+document.getElementById('contactTitle').textContent=t.contactTitle;
+document.getElementById('backHome').textContent=t.backHome;
+document.getElementById('homeLegal').textContent=t.backHome;
+document.getElementById('otherLegal').textContent=t.termsLink;
+document.getElementById('footerText').textContent=t.footerText;
+
+const sectionsRoot=document.getElementById('sections');
+t.sections.forEach(section=>{
+  const article=document.createElement('section');
+  article.className='section-card';
+  const h=document.createElement('h2');
+  h.textContent=section.title;
+  article.appendChild(h);
+  (section.paragraphs||[]).forEach(p=>{
+    const el=document.createElement('p');
+    el.textContent=p;
+    article.appendChild(el);
+  });
+  if(section.bullets&&section.bullets.length){
+    const ul=document.createElement('ul');
+    section.bullets.forEach(item=>{
+      const li=document.createElement('li');
+      li.textContent=item;
+      ul.appendChild(li);
+    });
+    article.appendChild(ul);
+  }
+  sectionsRoot.appendChild(article);
+});
+
+const suffix='?lang='+encodeURIComponent(lang);
+document.getElementById('homeLogo').href='index.html'+suffix;
+document.getElementById('backHome').href='index.html'+suffix;
+document.getElementById('homeLegal').href='index.html'+suffix;
+document.getElementById('otherLegal').href='terms.html'+suffix;
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

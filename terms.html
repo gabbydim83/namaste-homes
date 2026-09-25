@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#171513" />
+  <meta name="description" content="Terms and Conditions for the Namaste Homes website and accommodation enquiries." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo.png" />
+  <title>Terms &amp; Conditions | Namaste Homes</title>
+  <style>
+    :root{
+      --charcoal:#171513;--ink:#24201c;--gold:#caa664;--gold-soft:#dfc48c;
+      --ivory:#f7f3eb;--paper:#fffdf9;--muted:#786f64;--line:rgba(36,32,28,.13);
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.68}
+    a{color:inherit;text-decoration:none}
+    .topbar{background:#11100f;color:#fff;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .wrap{width:min(980px,calc(100% - 40px));margin:auto}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:128px;height:auto}
+    .back{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:9px 14px;font-size:.76rem;font-weight:800}
+    .hero{padding:78px 0 54px;background:linear-gradient(180deg,#f4ecdf 0%,#fffdf9 100%)}
+    .eyebrow{color:#9b7945;font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+    h1,h2{font-family:var(--serif);font-weight:500;margin:0}
+    h1{font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.02;letter-spacing:-.045em}
+    .lead{max-width:760px;margin:20px 0 0;color:#5d554d;font-size:1.04rem}
+    .updated{margin-top:18px;color:#8d7d6c;font-size:.78rem}
+    main{padding:54px 0 76px}
+    .section-card{padding:26px 0;border-bottom:1px solid var(--line)}
+    .section-card:first-child{padding-top:0}
+    .section-card h2{font-size:1.65rem;margin-bottom:12px}
+    .section-card p{margin:9px 0;color:#4f4841}
+    .section-card ul{margin:10px 0 0;padding-left:20px;color:#4f4841}
+    .section-card li{margin:7px 0}
+    .contact-box{margin-top:32px;padding:22px;border:1px solid var(--line);border-radius:20px;background:var(--ivory)}
+    .contact-box strong{display:block;font-family:var(--serif);font-size:1.25rem;margin-bottom:8px}
+    .contact-box a{display:block;margin:5px 0;text-decoration:underline;text-underline-offset:3px}
+    .legal-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+    .legal-nav a{border:1px solid var(--line);border-radius:999px;padding:10px 15px;font-size:.78rem;font-weight:850;background:#fff}
+    footer{background:#11100f;color:rgba(255,255,255,.72);padding:28px 0}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:.76rem}
+    .footer-row a{color:var(--gold-soft)}
+    @media(max-width:640px){
+      .wrap{width:min(100% - 28px,980px)}
+      .topbar-inner{align-items:flex-start}
+      .brand img{width:108px}
+      .back{font-size:.68rem;padding:8px 11px}
+      .hero{padding:54px 0 38px}
+      h1{font-size:2.6rem}
+      .lead{font-size:.94rem}
+      main{padding:38px 0 56px}
+      .section-card{padding:22px 0}
+      .section-card h2{font-size:1.42rem}
+      .footer-row{flex-direction:column;text-align:center;gap:7px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" id="homeLogo" href="index.html"><img src="assets/images/logo.png" alt="Namaste Homes"></a>
+      <a class="back" id="backHome" href="index.html">Back to Namaste Homes</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Namaste Homes</div>
+      <h1 id="pageTitle">Terms &amp; Conditions | Namaste Homes</h1>
+      <p class="lead" id="lead"></p>
+      <div class="updated" id="updated"></div>
+    </div>
+  </section>
+
+  <main>
+    <div class="wrap">
+      <div id="sections"></div>
+
+      <div class="contact-box">
+        <strong id="contactTitle"></strong>
+        <a href="tel:+306944428858">0030-6944428858</a>
+        <a href="mailto:namastehomes.gr@gmail.com">namastehomes.gr@gmail.com</a>
+      </div>
+
+      <div class="legal-nav">
+        <a id="otherLegal" href="privacy.html"></a>
+        <a id="homeLegal" href="index.html"></a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© <span id="year"></span> Namaste Homes</span>
+      <span id="footerText"></span>
+    </div>
+  </footer>
+
+<script>
+const supportedLanguages=["en", "el", "de", "ro", "sr", "bg"];
+const translations={"en":{"title":"Terms & Conditions | Namaste Homes","meta":"Terms and Conditions for the Namaste Homes website and accommodation enquiries.","heading":"Terms & Conditions","lead":"These Terms & Conditions govern the use of namastehomes.gr and enquiries made through the website for Namaste Homes accommodation.","updated":"Last updated: 25 September 2026","contactTitle":"Questions about these terms","backHome":"Back to Namaste Homes","privacyLink":"Privacy Policy","footerText":"Terms · Namaste Homes","sections":[{"title":"1. About this website","paragraphs":["namastehomes.gr presents Namaste Homes accommodation in Thessaloniki and Halkidiki and provides ways to contact us and request availability."]},{"title":"2. Website information","paragraphs":["We aim to keep descriptions, photographs, facilities and practical information accurate and up to date. However, availability, prices, minimum stays, included services and other booking details may change. Information shown on the website does not by itself constitute a guaranteed offer."]},{"title":"3. Enquiries and reservations","paragraphs":["A request sent through WhatsApp, email or another contact method is an enquiry only. A reservation becomes confirmed only after Namaste Homes explicitly confirms the booking and any applicable payment or deposit arrangements have been agreed and completed as required."]},{"title":"4. Prices, payments and cancellation","paragraphs":["The price, payment schedule, cancellation conditions, check-in/check-out arrangements and any property-specific rules applicable to a stay will be communicated as part of the booking process. The terms specifically agreed for a confirmed reservation take precedence for that reservation."]},{"title":"5. Guest responsibilities","bullets":["Provide accurate booking and contact information.","Respect the maximum occupancy and any property-specific house rules communicated for the stay.","Use the accommodation responsibly and comply with applicable laws and safety requirements.","Inform us promptly about material issues that arise during the stay so we have a reasonable opportunity to assist."]},{"title":"6. External services and links","paragraphs":["The website may link to third-party services such as WhatsApp, email applications and mapping services. We do not control those third-party services, and their own terms and privacy policies apply when you use them."]},{"title":"7. Intellectual property","paragraphs":["Unless otherwise stated, the Namaste Homes name, website design, written content and original visual material on this website may not be copied, republished or used commercially without permission. Third-party trademarks and content remain the property of their respective owners."]},{"title":"8. Website availability and liability","paragraphs":["We take reasonable care to keep the website available and accurate, but cannot guarantee uninterrupted access or that every item will always be free from errors. To the extent permitted by law, Namaste Homes is not responsible for interruptions or failures caused by external networks, hosting, devices or third-party services. Nothing in these Terms limits rights that cannot legally be excluded."]},{"title":"9. Privacy","paragraphs":["Personal data is handled as described in our Privacy Policy."]},{"title":"10. Applicable law and changes","paragraphs":["These Terms are intended to operate under applicable Greek law, without limiting mandatory consumer rights available under Greek or European Union law. We may update these Terms when our website, services or legal requirements change. The current version will be published on this page."]}]},"el":{"title":"Όροι & Προϋποθέσεις | Namaste Homes","meta":"Όροι και Προϋποθέσεις για τον ιστότοπο Namaste Homes και τα αιτήματα διαμονής.","heading":"Όροι & Προϋποθέσεις","lead":"Οι παρόντες Όροι & Προϋποθέσεις διέπουν τη χρήση του namastehomes.gr και τα αιτήματα που υποβάλλονται μέσω του ιστοτόπου για τα καταλύματα Namaste Homes.","updated":"Τελευταία ενημέρωση: 25 Σεπτεμβρίου 2026","contactTitle":"Ερωτήσεις σχετικά με τους όρους","backHome":"Πίσω στο Namaste Homes","privacyLink":"Πολιτική Απορρήτου","footerText":"Όροι · Namaste Homes","sections":[{"title":"1. Σχετικά με τον ιστότοπο","paragraphs":["Το namastehomes.gr παρουσιάζει τα καταλύματα Namaste Homes στη Θεσσαλονίκη και τη Χαλκιδική και προσφέρει τρόπους επικοινωνίας και αιτήματος διαθεσιμότητας."]},{"title":"2. Πληροφορίες ιστοτόπου","paragraphs":["Στόχος μας είναι οι περιγραφές, φωτογραφίες, παροχές και πρακτικές πληροφορίες να είναι ακριβείς και ενημερωμένες. Ωστόσο, διαθεσιμότητα, τιμές, ελάχιστη διαμονή, παρεχόμενες υπηρεσίες και λοιπές λεπτομέρειες κράτησης μπορεί να αλλάξουν. Οι πληροφορίες του ιστοτόπου δεν αποτελούν από μόνες τους εγγυημένη προσφορά."]},{"title":"3. Αιτήματα και κρατήσεις","paragraphs":["Αίτημα μέσω WhatsApp, email ή άλλου τρόπου επικοινωνίας αποτελεί μόνο αίτημα ενδιαφέροντος. Μια κράτηση θεωρείται επιβεβαιωμένη μόνο αφού το Namaste Homes την επιβεβαιώσει ρητά και συμφωνηθούν και ολοκληρωθούν, όπου απαιτείται, τυχόν πληρωμή ή προκαταβολή."]},{"title":"4. Τιμές, πληρωμές και ακυρώσεις","paragraphs":["Η τιμή, το πρόγραμμα πληρωμών, οι όροι ακύρωσης, οι λεπτομέρειες check-in/check-out και οι ειδικοί κανόνες του καταλύματος γνωστοποιούνται στο πλαίσιο της διαδικασίας κράτησης. Οι ειδικοί όροι που συμφωνούνται για μια επιβεβαιωμένη κράτηση υπερισχύουν για τη συγκεκριμένη κράτηση."]},{"title":"5. Υποχρεώσεις επισκεπτών","bullets":["Να παρέχετε ακριβή στοιχεία κράτησης και επικοινωνίας.","Να τηρείτε τη μέγιστη χωρητικότητα και τους κανόνες του καταλύματος που σας γνωστοποιούνται.","Να χρησιμοποιείτε το κατάλυμα υπεύθυνα και σύμφωνα με τη νομοθεσία και τις απαιτήσεις ασφάλειας.","Να μας ενημερώνετε άμεσα για σημαντικά προβλήματα κατά τη διαμονή ώστε να έχουμε εύλογη δυνατότητα να βοηθήσουμε."]},{"title":"6. Εξωτερικές υπηρεσίες και σύνδεσμοι","paragraphs":["Ο ιστότοπος μπορεί να συνδέεται με υπηρεσίες τρίτων όπως WhatsApp, εφαρμογές email και χάρτες. Δεν ελέγχουμε αυτές τις υπηρεσίες και κατά τη χρήση τους ισχύουν οι δικοί τους όροι και πολιτικές απορρήτου."]},{"title":"7. Πνευματική ιδιοκτησία","paragraphs":["Εκτός αν αναφέρεται διαφορετικά, το όνομα Namaste Homes, ο σχεδιασμός του ιστοτόπου, τα γραπτά κείμενα και το πρωτότυπο οπτικό υλικό δεν επιτρέπεται να αντιγράφονται, αναδημοσιεύονται ή χρησιμοποιούνται εμπορικά χωρίς άδεια. Σήματα και περιεχόμενο τρίτων ανήκουν στους αντίστοιχους ιδιοκτήτες."]},{"title":"8. Διαθεσιμότητα ιστοτόπου και ευθύνη","paragraphs":["Καταβάλλουμε εύλογη προσπάθεια για διαθεσιμότητα και ακρίβεια, αλλά δεν μπορούμε να εγγυηθούμε αδιάλειπτη πρόσβαση ή πλήρη απουσία σφαλμάτων. Στον βαθμό που επιτρέπεται από τον νόμο, το Namaste Homes δεν ευθύνεται για διακοπές ή αστοχίες που προκαλούνται από εξωτερικά δίκτυα, hosting, συσκευές ή υπηρεσίες τρίτων. Τίποτα στους παρόντες Όρους δεν περιορίζει δικαιώματα που δεν μπορούν νόμιμα να αποκλειστούν."]},{"title":"9. Απόρρητο","paragraphs":["Τα προσωπικά δεδομένα διαχειρίζονται όπως περιγράφεται στην Πολιτική Απορρήτου μας."]},{"title":"10. Εφαρμοστέο δίκαιο και αλλαγές","paragraphs":["Οι παρόντες Όροι προορίζονται να λειτουργούν σύμφωνα με το εφαρμοστέο ελληνικό δίκαιο, χωρίς να περιορίζουν υποχρεωτικά δικαιώματα καταναλωτών που παρέχονται από το ελληνικό ή το δίκαιο της Ευρωπαϊκής Ένωσης. Μπορούμε να ενημερώνουμε τους Όρους όταν αλλάζουν ο ιστότοπος, οι υπηρεσίες ή οι νομικές απαιτήσεις."]}]},"de":{"title":"Allgemeine Geschäftsbedingungen | Namaste Homes","meta":"Allgemeine Geschäftsbedingungen für die Namaste Homes Website und Unterkunftsanfragen.","heading":"Allgemeine Geschäftsbedingungen","lead":"Diese Bedingungen regeln die Nutzung von namastehomes.gr und Anfragen über die Website für Unterkünfte von Namaste Homes.","updated":"Zuletzt aktualisiert: 25. September 2026","contactTitle":"Fragen zu diesen Bedingungen","backHome":"Zurück zu Namaste Homes","privacyLink":"Datenschutzerklärung","footerText":"Bedingungen · Namaste Homes","sections":[{"title":"1. Über diese Website","paragraphs":["namastehomes.gr präsentiert Unterkünfte von Namaste Homes in Thessaloniki und Chalkidiki und bietet Kontaktmöglichkeiten sowie die Möglichkeit, Verfügbarkeit anzufragen."]},{"title":"2. Informationen auf der Website","paragraphs":["Wir bemühen uns, Beschreibungen, Fotos, Ausstattungsmerkmale und praktische Informationen korrekt und aktuell zu halten. Verfügbarkeit, Preise, Mindestaufenthalte, enthaltene Leistungen und andere Buchungsdetails können sich jedoch ändern. Website-Informationen stellen für sich allein kein garantiertes Angebot dar."]},{"title":"3. Anfragen und Reservierungen","paragraphs":["Eine Anfrage über WhatsApp, E-Mail oder einen anderen Kontaktweg ist zunächst nur eine Anfrage. Eine Reservierung ist erst bestätigt, wenn Namaste Homes sie ausdrücklich bestätigt und gegebenenfalls vereinbarte Zahlungs- oder Anzahlungsbedingungen erfüllt wurden."]},{"title":"4. Preise, Zahlungen und Stornierung","paragraphs":["Preis, Zahlungsplan, Stornierungsbedingungen, Check-in/Check-out sowie objektspezifische Regeln werden im Buchungsprozess mitgeteilt. Die für eine bestätigte Reservierung konkret vereinbarten Bedingungen haben für diese Reservierung Vorrang."]},{"title":"5. Pflichten der Gäste","bullets":["Geben Sie korrekte Buchungs- und Kontaktdaten an.","Beachten Sie maximale Belegung und mitgeteilte Hausregeln.","Nutzen Sie die Unterkunft verantwortungsvoll und beachten Sie geltende Gesetze und Sicherheitsanforderungen.","Informieren Sie uns zeitnah über wesentliche Probleme während des Aufenthalts, damit wir angemessen helfen können."]},{"title":"6. Externe Dienste und Links","paragraphs":["Die Website kann zu Diensten Dritter wie WhatsApp, E-Mail-Anwendungen und Kartendiensten verlinken. Diese Dienste werden nicht von uns kontrolliert; bei ihrer Nutzung gelten deren eigene Bedingungen und Datenschutzregeln."]},{"title":"7. Geistiges Eigentum","paragraphs":["Sofern nicht anders angegeben, dürfen der Name Namaste Homes, das Webdesign, Texte und originale visuelle Inhalte ohne Erlaubnis nicht kopiert, erneut veröffentlicht oder kommerziell genutzt werden. Marken und Inhalte Dritter bleiben Eigentum der jeweiligen Rechteinhaber."]},{"title":"8. Website-Verfügbarkeit und Haftung","paragraphs":["Wir bemühen uns um eine verfügbare und korrekte Website, können jedoch keinen ununterbrochenen Zugang oder vollständige Fehlerfreiheit garantieren. Soweit gesetzlich zulässig, haftet Namaste Homes nicht für Störungen, die durch externe Netze, Hosting, Geräte oder Drittanbieter verursacht werden. Zwingende gesetzliche Rechte werden durch diese Bedingungen nicht eingeschränkt."]},{"title":"9. Datenschutz","paragraphs":["Personenbezogene Daten werden gemäß unserer Datenschutzerklärung verarbeitet."]},{"title":"10. Anwendbares Recht und Änderungen","paragraphs":["Diese Bedingungen sollen unter anwendbarem griechischem Recht gelten, ohne zwingende Verbraucherrechte nach griechischem oder EU-Recht einzuschränken. Wir können die Bedingungen aktualisieren, wenn sich Website, Leistungen oder rechtliche Anforderungen ändern."]}]},"ro":{"title":"Termeni și condiții | Namaste Homes","meta":"Termeni și condiții pentru website-ul Namaste Homes și solicitările de cazare.","heading":"Termeni și condiții","lead":"Acești Termeni și condiții reglementează utilizarea namastehomes.gr și solicitările transmise prin website pentru cazările Namaste Homes.","updated":"Ultima actualizare: 25 septembrie 2026","contactTitle":"Întrebări despre acești termeni","backHome":"Înapoi la Namaste Homes","privacyLink":"Politica de confidențialitate","footerText":"Termeni · Namaste Homes","sections":[{"title":"1. Despre acest website","paragraphs":["namastehomes.gr prezintă cazările Namaste Homes din Salonic și Halkidiki și oferă modalități de contact și de solicitare a disponibilității."]},{"title":"2. Informațiile de pe website","paragraphs":["Încercăm să păstrăm corecte și actualizate descrierile, fotografiile, facilitățile și informațiile practice. Totuși, disponibilitatea, prețurile, durata minimă, serviciile incluse și alte detalii de rezervare se pot modifica. Informațiile afișate pe website nu reprezintă singure o ofertă garantată."]},{"title":"3. Solicitări și rezervări","paragraphs":["O solicitare trimisă prin WhatsApp, email sau alt canal de contact reprezintă doar o cerere de informații/disponibilitate. Rezervarea devine confirmată numai după confirmarea explicită din partea Namaste Homes și după ce eventualele condiții de plată sau avans au fost stabilite și îndeplinite, dacă este cazul."]},{"title":"4. Prețuri, plăți și anulări","paragraphs":["Prețul, calendarul plăților, condițiile de anulare, detaliile de check-in/check-out și orice reguli specifice proprietății vor fi comunicate în procesul de rezervare. Condițiile convenite în mod specific pentru o rezervare confirmată au prioritate pentru rezervarea respectivă."]},{"title":"5. Responsabilitățile oaspeților","bullets":["Furnizați informații corecte pentru rezervare și contact.","Respectați capacitatea maximă și regulile specifice proprietății comunicate pentru sejur.","Folosiți cazarea în mod responsabil și respectați legislația și cerințele de siguranță aplicabile.","Anunțați-ne prompt despre probleme importante apărute în timpul sejurului, pentru a ne oferi o posibilitate rezonabilă de a ajuta."]},{"title":"6. Servicii și linkuri externe","paragraphs":["Website-ul poate conține linkuri către servicii terțe precum WhatsApp, aplicații de email și servicii de hărți. Nu controlăm aceste servicii; când le utilizați se aplică propriii lor termeni și propriile politici de confidențialitate."]},{"title":"7. Proprietate intelectuală","paragraphs":["Dacă nu se precizează altfel, numele Namaste Homes, designul website-ului, textele și materialele vizuale originale nu pot fi copiate, republicate sau utilizate comercial fără permisiune. Mărcile și conținutul terților rămân proprietatea titularilor respectivi."]},{"title":"8. Disponibilitatea website-ului și răspunderea","paragraphs":["Depunem eforturi rezonabile pentru ca website-ul să fie disponibil și corect, însă nu putem garanta acces neîntrerupt sau absența totală a erorilor. În măsura permisă de lege, Namaste Homes nu răspunde pentru întreruperi sau defecțiuni cauzate de rețele externe, hosting, dispozitive sau servicii terțe. Nimic din acești Termeni nu limitează drepturi care nu pot fi excluse legal."]},{"title":"9. Confidențialitate","paragraphs":["Datele personale sunt gestionate conform Politicii noastre de confidențialitate."]},{"title":"10. Legea aplicabilă și modificări","paragraphs":["Acești Termeni sunt concepuți să funcționeze în conformitate cu legislația greacă aplicabilă, fără a limita drepturile obligatorii ale consumatorilor prevăzute de legislația Greciei sau a Uniunii Europene. Putem actualiza Termenii atunci când se modifică website-ul, serviciile sau cerințele legale."]}]},"sr":{"title":"Uslovi korišćenja | Namaste Homes","meta":"Uslovi korišćenja za Namaste Homes sajt i upite za smeštaj.","heading":"Uslovi korišćenja","lead":"Ovi Uslovi uređuju korišćenje namastehomes.gr i upite poslate putem sajta za Namaste Homes smeštaj.","updated":"Poslednje ažuriranje: 25. septembar 2026.","contactTitle":"Pitanja o ovim uslovima","backHome":"Nazad na Namaste Homes","privacyLink":"Politika privatnosti","footerText":"Uslovi · Namaste Homes","sections":[{"title":"1. O ovom sajtu","paragraphs":["namastehomes.gr predstavlja Namaste Homes smeštaj u Solunu i na Halkidikiju i nudi načine za kontakt i proveru dostupnosti."]},{"title":"2. Informacije na sajtu","paragraphs":["Trudimo se da opisi, fotografije, sadržaji i praktične informacije budu tačni i ažurni. Ipak, dostupnost, cene, minimalni boravak, uključene usluge i drugi detalji rezervacije mogu se promeniti. Informacije na sajtu same po sebi ne predstavljaju garantovanu ponudu."]},{"title":"3. Upiti i rezervacije","paragraphs":["Poruka poslata putem WhatsApp-a, emaila ili drugog kanala predstavlja samo upit. Rezervacija je potvrđena tek kada je Namaste Homes izričito potvrdi i kada su eventualni uslovi plaćanja ili depozita dogovoreni i ispunjeni, gde je primenljivo."]},{"title":"4. Cene, plaćanja i otkazivanje","paragraphs":["Cena, raspored plaćanja, uslovi otkazivanja, check-in/check-out i pravila objekta biće saopšteni tokom procesa rezervacije. Posebno dogovoreni uslovi za potvrđenu rezervaciju imaju prednost za tu rezervaciju."]},{"title":"5. Odgovornosti gostiju","bullets":["Dostavite tačne podatke za rezervaciju i kontakt.","Poštujte maksimalan broj gostiju i pravila objekta koja su vam saopštena.","Koristite smeštaj odgovorno i poštujte primenljive zakone i bezbednosne zahteve.","Brzo nas obavestite o važnim problemima tokom boravka kako bismo imali razumnu priliku da pomognemo."]},{"title":"6. Spoljne usluge i linkovi","paragraphs":["Sajt može sadržati linkove ka uslugama trećih strana, kao što su WhatsApp, email aplikacije i mape. Ne kontrolišemo te usluge i pri njihovom korišćenju važe njihovi uslovi i politike privatnosti."]},{"title":"7. Intelektualna svojina","paragraphs":["Ako nije drugačije navedeno, naziv Namaste Homes, dizajn sajta, tekstovi i originalni vizuelni materijali ne smeju se kopirati, ponovo objavljivati ili koristiti komercijalno bez dozvole. Žigovi i sadržaj trećih strana ostaju vlasništvo svojih nosilaca."]},{"title":"8. Dostupnost sajta i odgovornost","paragraphs":["Preduzimamo razumne mere da sajt bude dostupan i tačan, ali ne možemo garantovati neprekidan pristup ili potpunu odsutnost grešaka. U meri dozvoljenoj zakonom, Namaste Homes nije odgovoran za prekide izazvane spoljnim mrežama, hostingom, uređajima ili uslugama trećih strana. Ovi Uslovi ne ograničavaju prava koja se po zakonu ne mogu isključiti."]},{"title":"9. Privatnost","paragraphs":["Lični podaci se obrađuju kako je opisano u našoj Politici privatnosti."]},{"title":"10. Primenljivo pravo i izmene","paragraphs":["Ovi Uslovi su namenjeni primeni u skladu sa važećim grčkim pravom, bez ograničavanja obaveznih prava potrošača po grčkom pravu ili pravu Evropske unije. Uslove možemo ažurirati kada se promene sajt, usluge ili pravni zahtevi."]}]},"bg":{"title":"Общи условия | Namaste Homes","meta":"Общи условия за сайта Namaste Homes и запитванията за настаняване.","heading":"Общи условия","lead":"Тези Общи условия уреждат използването на namastehomes.gr и запитванията чрез сайта за настаняване в Namaste Homes.","updated":"Последна актуализация: 25 септември 2026 г.","contactTitle":"Въпроси относно условията","backHome":"Назад към Namaste Homes","privacyLink":"Политика за поверителност","footerText":"Условия · Namaste Homes","sections":[{"title":"1. За този сайт","paragraphs":["namastehomes.gr представя местата за настаняване Namaste Homes в Солун и Халкидики и предоставя начини за контакт и заявка за наличност."]},{"title":"2. Информация на сайта","paragraphs":["Стремим се описанията, снимките, удобствата и практическата информация да бъдат точни и актуални. Въпреки това наличност, цени, минимален престой, включени услуги и други детайли по резервацията могат да се променят. Информацията на сайта сама по себе си не представлява гарантирана оферта."]},{"title":"3. Запитвания и резервации","paragraphs":["Заявка чрез WhatsApp, email или друг канал е само запитване. Резервацията се счита за потвърдена едва след изрично потвърждение от Namaste Homes и след като приложимите условия за плащане или депозит са договорени и изпълнени, когато е необходимо."]},{"title":"4. Цени, плащания и анулации","paragraphs":["Цената, графикът за плащане, условията за анулация, check-in/check-out и специфичните правила на имота ще бъдат съобщени в процеса на резервация. Специално договорените условия за потвърдена резервация имат предимство за тази резервация."]},{"title":"5. Отговорности на гостите","bullets":["Предоставяйте точни данни за резервация и контакт.","Спазвайте максималния капацитет и правилата на имота, съобщени за престоя.","Използвайте настаняването отговорно и спазвайте приложимите закони и изисквания за безопасност.","Уведомявайте ни своевременно за съществени проблеми по време на престоя, за да имаме разумна възможност да помогнем."]},{"title":"6. Външни услуги и връзки","paragraphs":["Сайтът може да съдържа връзки към услуги на трети страни като WhatsApp, email приложения и карти. Ние не контролираме тези услуги и при използването им се прилагат техните условия и политики за поверителност."]},{"title":"7. Интелектуална собственост","paragraphs":["Освен ако не е посочено друго, името Namaste Homes, дизайнът на сайта, текстовете и оригиналните визуални материали не могат да бъдат копирани, публикувани повторно или използвани с търговска цел без разрешение. Марките и съдържанието на трети страни остават собственост на съответните им притежатели."]},{"title":"8. Достъпност на сайта и отговорност","paragraphs":["Полагаме разумни усилия сайтът да бъде достъпен и точен, но не можем да гарантираме непрекъснат достъп или пълна липса на грешки. Доколкото законът позволява, Namaste Homes не носи отговорност за прекъсвания или повреди, причинени от външни мрежи, хостинг, устройства или услуги на трети страни. Нищо в тези Условия не ограничава права, които не могат законно да бъдат изключени."]},{"title":"9. Поверителност","paragraphs":["Личните данни се обработват съгласно нашата Политика за поверителност."]},{"title":"10. Приложимо право и промени","paragraphs":["Тези Условия са предназначени да се прилагат съгласно приложимото гръцко право, без да ограничават задължителните потребителски права по гръцкото право или правото на Европейския съюз. Можем да актуализираме Условията при промени в сайта, услугите или правните изисквания."]}]}};
+
+const params=new URLSearchParams(window.location.search);
+let lang=params.get('lang')||localStorage.getItem('namasteLanguage')||'en';
+if(!supportedLanguages.includes(lang)) lang='en';
+localStorage.setItem('namasteLanguage',lang);
+document.documentElement.lang=lang;
+
+const t=translations[lang]||translations.en;
+document.title=t.title;
+document.querySelector('meta[name="description"]').setAttribute('content',t.meta);
+document.getElementById('pageTitle').textContent=t.heading;
+document.getElementById('lead').textContent=t.lead;
+document.getElementById('updated').textContent=t.updated;
+document.getElementById('contactTitle').textContent=t.contactTitle;
+document.getElementById('backHome').textContent=t.backHome;
+document.getElementById('homeLegal').textContent=t.backHome;
+document.getElementById('otherLegal').textContent=t.privacyLink;
+document.getElementById('footerText').textContent=t.footerText;
+
+const sectionsRoot=document.getElementById('sections');
+t.sections.forEach(section=>{
+  const article=document.createElement('section');
+  article.className='section-card';
+  const h=document.createElement('h2');
+  h.textContent=section.title;
+  article.appendChild(h);
+  (section.paragraphs||[]).forEach(p=>{
+    const el=document.createElement('p');
+    el.textContent=p;
+    article.appendChild(el);
+  });
+  if(section.bullets&&section.bullets.length){
+    const ul=document.createElement('ul');
+    section.bullets.forEach(item=>{
+      const li=document.createElement('li');
+      li.textContent=item;
+      ul.appendChild(li);
+    });
+    article.appendChild(ul);
+  }
+  sectionsRoot.appendChild(article);
+});
+
+const suffix='?lang='+encodeURIComponent(lang);
+document.getElementById('homeLogo').href='index.html'+suffix;
+document.getElementById('backHome').href='index.html'+suffix;
+document.getElementById('homeLegal').href='index.html'+suffix;
+document.getElementById('otherLegal').href='privacy.html'+suffix;
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

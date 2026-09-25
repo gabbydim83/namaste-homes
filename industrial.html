@@ -493,7 +493,7 @@
       text-transform:uppercase;
       letter-spacing:.14em;
     }
-    footer a{display:block;margin:7px 0;font-size:.88rem}.license-number{margin-top:24px;color:rgba(255,255,255,.58);font-size:.74rem;letter-spacing:.035em;text-align:center}
+    footer a{display:block;margin:7px 0;font-size:.88rem}.footer-contact a{overflow-wrap:anywhere}.license-number{margin-top:24px;color:rgba(255,255,255,.58);font-size:.74rem;letter-spacing:.035em;text-align:center}
     .footer-bottom{
       margin-top:34px;
       padding-top:18px;
@@ -820,9 +820,12 @@
           <a class="back-thessaloniki" href="thessaloniki.html">Namaste Lofts Thessaloniki</a>
         </div>
 
-        <div>
+        <div class="footer-contact">
           <h4 data-i18n="contact">Contact</h4>
-          <a href="tel:+306944428858">+30 694 442 8858</a>
+          <a href="tel:+306944428858">0030-6944428858</a>
+          <a href="mailto:namastehomes.gr@gmail.com">namastehomes.gr@gmail.com</a>
+          <a class="legal-page-link" data-page="privacy.html" href="privacy.html" data-i18n="privacyPolicy">Privacy Policy</a>
+          <a class="legal-page-link" data-page="terms.html" href="terms.html" data-i18n="termsConditions">Terms &amp; Conditions</a>
         </div>
       </div>
 
@@ -884,38 +887,40 @@
         selectDatesAlert:'Please select your check-in and check-out dates from the calendar.',
         requestHello:'Hello Namaste Homes,', requestLine:'I would like to request availability for:',
         propertyLine:'Property: Industrial Loft — Thessaloniki',
-        checkinLine:'Check-in', checkoutLine:'Check-out', guestsLine:'Guests', thanks:'Thank you.'
+        checkinLine:'Check-in', checkoutLine:'Check-out', guestsLine:'Guests', thanks:'Thank you.',
+        privacyPolicy:'Privacy Policy', termsConditions:'Terms & Conditions'
       },
       el:{
         title:'Industrial Loft Θεσσαλονίκη | Namaste Homes',
-        meta:'Industrial Loft Θεσσαλονίκη από το Namaste Homes — ένα τολμηρό, σύγχρονο loft για έως 3 επισκέπτες.',
+        meta:'Industrial Loft Θεσσαλονίκη από το Namaste Homes — ένα σύγχρονο loft με έντονο αστικό χαρακτήρα, για έως 3 επισκέπτες.',
         overview:'Επισκόπηση', gallery:'Συλλογή', book:'Κράτηση', bookStay:'Κράτηση διαμονής', location:'Τοποθεσία', menu:'Μενού', close:'Κλείσιμο',
-        backThessaloniki:'Πίσω στη Θεσσαλονίκη', heroEyebrow:'02 · Επιλέξτε την προσωπικότητά σας',
-        heroTagline:'Αστικό, τολμηρό και σύγχρονο.', exploreLoft:'Ανακαλύψτε το Loft',
+        backThessaloniki:'Επιστροφή στη Θεσσαλονίκη', heroEyebrow:'02 · Επιλέξτε το στυλ που σας ταιριάζει',
+        heroTagline:'Αστικό, δυναμικό και σύγχρονο.', exploreLoft:'Ανακαλύψτε το Loft',
         overviewEyebrow:'Industrial Loft · Θεσσαλονίκη',
-        overviewTitle:'Ένα τολμηρό αστικό loft με industrial χαρακτήρα και άνετη, σύγχρονη διαρρύθμιση.',
+        overviewTitle:'Ένα σύγχρονο αστικό loft με industrial χαρακτήρα και άνετη, λειτουργική διαρρύθμιση.',
         upTo3:'Έως 3', guests:'Επισκέπτες', doubleBed:'Διπλό κρεβάτι', upperLevel:'Επάνω επίπεδο', singleBed:'Μονό κρεβάτι', lowerLevel:'Κάτω επίπεδο',
         private:'Ιδιωτικό', kitchen:'Κουζίνα', bathroom:'Μπάνιο', included:'Περιλαμβάνεται', airConditioning:'Κλιματισμός',
-        industrialStyle:'Industrial στυλ', urbanInterior:'Αστικό, σύγχρονο εσωτερικό',
-        overviewP1:'Το Industrial Loft συνδυάζει πιο σκούρες υφές, μαύρες μεταλλικές λεπτομέρειες, ζεστό ξύλο και καθαρές αρχιτεκτονικές γραμμές, δημιουργώντας μια δυναμική αστική ατμόσφαιρα που παραμένει άνετη και φιλόξενη.',
-        overviewP2:'Στο κάτω επίπεδο υπάρχει ένας ευρύχωρος ενιαίος χώρος καθιστικού και κουζίνας με ψηλό ταβάνι, WC και ένα ξεχωριστό μονό κρεβάτι σε ιδιωτικό δωμάτιο με πόρτα. Ο δεύτερος χώρος ύπνου βρίσκεται στο επάνω επίπεδο και διαθέτει άνετο διπλό κρεβάτι.',
-        overviewP3:'Με την ιδιαίτερη διαρρύθμιση, την ιδιωτική κουζίνα και τους άνετους χώρους διαβίωσης, το Industrial Loft είναι ιδανικό για έως τρεις επισκέπτες, είτε για city break, μεγαλύτερη διαμονή είτε για να απολαύσετε τη Θεσσαλονίκη με τον δικό σας ρυθμό.',
-        insideIndustrial:'Μέσα στο Industrial', galleryTitle:'Ανακαλύψτε το loft.', galleryInstruction:'Πατήστε οποιαδήποτε εικόνα για να δείτε ολόκληρη τη συλλογή.', viewAll:'Δείτε όλες',
-        planStay:'Σχεδιάστε τη διαμονή σας', chooseDates:'Επιλέξτε ημερομηνίες.',
-        bookingIntro:'Επιλέξτε τις ημερομηνίες άφιξης και αναχώρησης και τον αριθμό επισκεπτών. Το αίτημά σας θα ετοιμαστεί αυτόματα για το Industrial Loft.',
-        calendarIntro:'Επιλέξτε τις ημερομηνίες απευθείας από το ημερολόγιο.',
-        calendarHelpInitial:'Επιλέξτε πρώτα την ημερομηνία άφιξης και μετά την ημερομηνία αναχώρησης.', calendarHelpCheckout:'Τώρα επιλέξτε την ημερομηνία αναχώρησης.',
-        calendarHelpSelected:'Οι ημερομηνίες επιλέχθηκαν. Επιλέξτε νέα ημερομηνία για να ξεκινήσετε ξανά.',
+        industrialStyle:'Industrial αισθητική', urbanInterior:'Σύγχρονο αστικό εσωτερικό',
+        overviewP1:'Το Industrial Loft συνδυάζει σκούρες υφές, μαύρες μεταλλικές λεπτομέρειες, ζεστό ξύλο και καθαρές αρχιτεκτονικές γραμμές, δημιουργώντας μια δυναμική αστική ατμόσφαιρα που παραμένει άνετη και φιλόξενη.',
+        overviewP2:'Στο κάτω επίπεδο βρίσκεται ένας ευρύχωρος ενιαίος χώρος καθιστικού και κουζίνας με ψηλό ταβάνι, καθώς και WC και ένα ανεξάρτητο δωμάτιο με μονό κρεβάτι και πόρτα. Στο επάνω επίπεδο βρίσκεται ο δεύτερος χώρος ύπνου, με ένα άνετο διπλό κρεβάτι.',
+        overviewP3:'Με την ιδιαίτερη διαρρύθμιση, την ιδιωτική κουζίνα και τους άνετους χώρους του, το Industrial Loft είναι ιδανικό για έως τρεις επισκέπτες, είτε πρόκειται για ένα city break, μια μεγαλύτερη διαμονή ή απλώς για να απολαύσετε τη Θεσσαλονίκη με τον δικό σας ρυθμό.',
+        insideIndustrial:'Στο εσωτερικό του Industrial Loft', galleryTitle:'Ανακαλύψτε το loft.', galleryInstruction:'Πατήστε σε οποιαδήποτε φωτογραφία για να δείτε ολόκληρη τη συλλογή.', viewAll:'Δείτε όλες τις φωτογραφίες',
+        planStay:'Οργανώστε τη διαμονή σας', chooseDates:'Επιλέξτε ημερομηνίες.',
+        bookingIntro:'Επιλέξτε τις ημερομηνίες άφιξης και αναχώρησης και τον αριθμό των επισκεπτών. Το αίτημά σας για το Industrial Loft θα ετοιμαστεί αυτόματα.',
+        calendarIntro:'Επιλέξτε τις ημερομηνίες σας απευθείας από το ημερολόγιο.',
+        calendarHelpInitial:'Επιλέξτε πρώτα την ημερομηνία άφιξης και στη συνέχεια την ημερομηνία αναχώρησης.', calendarHelpCheckout:'Τώρα επιλέξτε την ημερομηνία αναχώρησης.',
+        calendarHelpSelected:'Οι ημερομηνίες επιλέχθηκαν. Επιλέξτε μια νέα ημερομηνία για να ξεκινήσετε από την αρχή.',
         checkin:'Άφιξη', checkout:'Αναχώρηση', calendarPlaceholder:'Επιλέξτε από το ημερολόγιο',
-        guest1:'1 επισκέπτης', guest2:'2 επισκέπτες', guest3:'3 επισκέπτες', sendRequest:'Αποστολή αιτήματος',
-        bookingNote:'Η τελική διαθεσιμότητα επιβεβαιώνεται μετά τη λήψη του αιτήματός σας.',
-        thessaloniki:'Θεσσαλονίκη', takeMeThere:'Οδηγήστε με εκεί →',
-        footerIntro:'Ξεχωριστές διαμονές στη Θεσσαλονίκη και τη Χαλκιδική.', contact:'Επικοινωνία',
-        footerTagline:'Industrial Loft · Αστικό · Τολμηρό · Σύγχρονο',
+        guest1:'1 επισκέπτης', guest2:'2 επισκέπτες', guest3:'3 επισκέπτες', sendRequest:'Στείλτε αίτημα',
+        bookingNote:'Η τελική διαθεσιμότητα επιβεβαιώνεται μόλις λάβουμε το αίτημά σας.',
+        thessaloniki:'Θεσσαλονίκη', takeMeThere:'Οδηγίες μετάβασης →',
+        footerIntro:'Ξεχωριστά καταλύματα στη Θεσσαλονίκη και τη Χαλκιδική.', contact:'Επικοινωνία',
+        footerTagline:'Industrial Loft · Αστικό · Δυναμικό · Σύγχρονο',
+        privacyPolicy:'Πολιτική Απορρήτου', termsConditions:'Όροι και Προϋποθέσεις',
         closeGallery:'Κλείσιμο συλλογής', previousImage:'Προηγούμενη εικόνα', nextImage:'Επόμενη εικόνα',
-        selectDatesAlert:'Παρακαλώ επιλέξτε ημερομηνία άφιξης και αναχώρησης από το ημερολόγιο.',
-        requestHello:'Γεια σας Namaste Homes,', requestLine:'Θα ήθελα να ζητήσω διαθεσιμότητα για:',
-        propertyLine:'Κατάλυμα: Industrial Loft — Θεσσαλονίκη',
+        selectDatesAlert:'Παρακαλώ επιλέξτε από το ημερολόγιο την ημερομηνία άφιξης και την ημερομηνία αναχώρησης.',
+        requestHello:'Γεια σας Namaste Homes,', requestLine:'Θα ήθελα να ρωτήσω για τη διαθεσιμότητα του:',
+        propertyLine:'Industrial Loft — Θεσσαλονίκη',
         checkinLine:'Άφιξη', checkoutLine:'Αναχώρηση', guestsLine:'Επισκέπτες', thanks:'Ευχαριστώ.'
       },
       de:{
@@ -948,7 +953,8 @@
         selectDatesAlert:'Bitte wählen Sie An- und Abreisedatum im Kalender aus.',
         requestHello:'Hallo Namaste Homes,', requestLine:'Ich möchte die Verfügbarkeit anfragen für:',
         propertyLine:'Unterkunft: Industrial Loft — Thessaloniki',
-        checkinLine:'Anreise', checkoutLine:'Abreise', guestsLine:'Gäste', thanks:'Vielen Dank.'
+        checkinLine:'Anreise', checkoutLine:'Abreise', guestsLine:'Gäste', thanks:'Vielen Dank.',
+        privacyPolicy:'Datenschutzerklärung', termsConditions:'Allgemeine Geschäftsbedingungen'
       },
       ro:{
         title:'Industrial Loft Salonic | Namaste Homes',
@@ -980,7 +986,8 @@
         selectDatesAlert:'Te rog selectează datele de check-in și check-out din calendar.',
         requestHello:'Bună, Namaste Homes,', requestLine:'Aș dori să solicit disponibilitate pentru:',
         propertyLine:'Proprietate: Industrial Loft — Salonic',
-        checkinLine:'Check-in', checkoutLine:'Check-out', guestsLine:'Oaspeți', thanks:'Mulțumesc.'
+        checkinLine:'Check-in', checkoutLine:'Check-out', guestsLine:'Oaspeți', thanks:'Mulțumesc.',
+        privacyPolicy:'Politica de confidențialitate', termsConditions:'Termeni și condiții'
       },
       sr:{
         title:'Industrial Loft Solun | Namaste Homes',
@@ -1012,7 +1019,8 @@
         selectDatesAlert:'Molimo izaberite datum dolaska i odlaska iz kalendara.',
         requestHello:'Zdravo Namaste Homes,', requestLine:'Želeo/la bih da proverim dostupnost za:',
         propertyLine:'Smeštaj: Industrial Loft — Solun',
-        checkinLine:'Dolazak', checkoutLine:'Odlazak', guestsLine:'Gosti', thanks:'Hvala.'
+        checkinLine:'Dolazak', checkoutLine:'Odlazak', guestsLine:'Gosti', thanks:'Hvala.',
+        privacyPolicy:'Politika privatnosti', termsConditions:'Uslovi korišćenja'
       },
       bg:{
         title:'Industrial Loft Солун | Namaste Homes',
@@ -1044,7 +1052,8 @@
         selectDatesAlert:'Моля, изберете датите за настаняване и напускане от календара.',
         requestHello:'Здравейте Namaste Homes,', requestLine:'Бих искал/а да попитам за наличност за:',
         propertyLine:'Място за настаняване: Industrial Loft — Солун',
-        checkinLine:'Настаняване', checkoutLine:'Напускане', guestsLine:'Гости', thanks:'Благодаря.'
+        checkinLine:'Настаняване', checkoutLine:'Напускане', guestsLine:'Гости', thanks:'Благодаря.',
+        privacyPolicy:'Политика за поверителност', termsConditions:'Общи условия'
       }
     };
     const params = new URLSearchParams(window.location.search);
@@ -1103,6 +1112,11 @@
 
     document.querySelectorAll('.back-thessaloniki').forEach(link => {
       link.href = `thessaloniki.html?lang=${selectedLanguage}#lofts`;
+    });
+
+    document.querySelectorAll('.legal-page-link').forEach(link => {
+      const page = link.dataset.page;
+      link.href = `${page}?lang=${selectedLanguage}`;
     });
 
     const header = document.getElementById('siteHeader');

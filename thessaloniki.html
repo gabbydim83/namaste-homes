@@ -623,8 +623,16 @@
       .collection-grid{gap:26px}
       .collection-copy{font-size:.95rem}
       .choose-line{font-size:1.3rem;margin-top:20px}
-      .personality-links{grid-template-columns:1fr 1fr 1fr;gap:7px}
-      .personality-link{min-height:46px;padding:0 8px;border-radius:12px;font-size:.72rem}
+      .personality-links{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+      .personality-link{
+        min-height:44px;
+        padding:0 7px;
+        border-radius:999px;
+        font-size:.70rem;
+        line-height:1.1;
+        text-align:center;
+        white-space:nowrap;
+      }
 
       .lofts-head{margin-bottom:24px}
       .loft-stack{gap:14px}
@@ -673,8 +681,18 @@
       .hero-tagline{font-size:1rem}
       .city-cards{grid-template-columns:1fr}
       .review-stage{min-height:315px}
-      .personality-links{grid-template-columns:1fr}
-      .personality-link{min-height:44px}
+      .personality-links{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:5px;
+      }
+      .personality-link{
+        min-height:42px;
+        padding:0 5px;
+        border-radius:999px;
+        font-size:.61rem;
+        letter-spacing:0;
+        white-space:nowrap;
+      }
     }
   </style>
 </head>
@@ -900,8 +918,11 @@
 
         <div>
           <h4 data-i18n="contact">Contact</h4>
-          <a href="tel:+306944428858">+30 694 442 8858</a>
+          <a href="tel:+306944428858">0030-6944428858</a>
+          <a href="mailto:namastehomes.gr@gmail.com">namastehomes.gr@gmail.com</a>
           <a class="home-link" href="index.html">Namaste Homes</a>
+          <a class="legal-page-link" data-page="privacy.html" href="privacy.html" data-i18n="privacyPolicy">Privacy Policy</a>
+          <a class="legal-page-link" data-page="terms.html" href="terms.html" data-i18n="termsConditions">Terms &amp; Conditions</a>
         </div>
       </div>
 
@@ -948,41 +969,41 @@
         cityP2:'This section is intentionally compact for now. The next step can connect it with the Thessaloniki content from Halkidiki Explorer, including useful local information and live weather.',
         nearby:'Nearby', waterfront:'Waterfront', fiveMinuteWalk:'About a 5-minute walk.', explore:'Explore',
         cityCentre:'City centre', easyAccess:'Easy access to central Thessaloniki.', moveAround:'Move around', transport:'Transport', transportCopy:'Metro and bus connections nearby.',
-        footerIntro:'Distinctive stays in Thessaloniki and Halkidiki.', footerTagline:'Three lofts. Three personalities. One Namaste experience.'
+        footerIntro:'Distinctive stays in Thessaloniki and Halkidiki.', footerTagline:'Three lofts. Three personalities. One Namaste experience.', privacyPolicy:'Privacy Policy', termsConditions:'Terms & Conditions'
       },
       el:{
         title:'Namaste Lofts Θεσσαλονίκη | Namaste Homes',
-        meta:'Namaste Lofts Θεσσαλονίκη — Boho Loft, Industrial Loft και Luxe Loft. Τρία designer lofts, τρεις διαφορετικές προσωπικότητες, μία διεύθυνση.',
+        meta:'Namaste Lofts Θεσσαλονίκη — Boho Loft, Industrial Loft και Luxe Loft. Τρία μοναδικά loft διαμερίσματα, τρία διαφορετικά στυλ, μία διεύθυνση.',
         navLofts:'Τα Lofts', navReviews:'Κριτικές', navTogether:'Μείνετε μαζί', cityName:'Θεσσαλονίκη', contact:'Επικοινωνία',
         menu:'Μενού', close:'Κλείσιμο', guestReviews:'Κριτικές επισκεπτών', exploreCity:'Ανακαλύψτε τη Θεσσαλονίκη', backHome:'Πίσω στο Namaste Homes',
         heroEyebrow:'Namaste Homes · Θεσσαλονίκη', heroTitle:'Namaste Lofts Θεσσαλονίκη', heroTagline:'Αξέχαστες εμπειρίες στη Θεσσαλονίκη',
         meetLofts:'Γνωρίστε τα Lofts', travelTogether:'Ταξιδέψτε μαζί', collectionLabel:'Η συλλογή',
-        collectionTitle:'Τρεις προσωπικότητες. Μία διεύθυνση.',
-        collectionP1:'Το Namaste Lofts είναι μια συλλογή από τρία μοναδικά designer loft διαμερίσματα στην ανατολική πλευρά της Θεσσαλονίκης, το καθένα με τον δικό του ξεχωριστό χαρακτήρα, ατμόσφαιρα και ιστορία.',
-        collectionP2:'Και τα τρία lofts βρίσκονται το ένα δίπλα στο άλλο στο ισόγειο, το καθένα με ιδιωτική είσοδο και ένα μικρό μπαλκόνι στην είσοδο, προσφέροντας εύκολη πρόσβαση και περισσότερη ιδιωτικότητα.',
-        collectionP3:'Σε μικρή απόσταση με τα πόδια από την παραλία και με εύκολη πρόσβαση στο κέντρο, τα τρία lofts αποτελούν μια κομψή και άνετη βάση για city break, μεγαλύτερη διαμονή ή ταξίδι με φίλους και οικογένεια.',
-        whichOne:'Ποιο σας ταιριάζει;', choosePersonality:'Επιλέξτε την προσωπικότητά σας', meetThree:'Γνωρίστε τα τρία lofts.',
-        tapLoft:'Πατήστε σε ένα loft για να ανοίξετε την πλήρη σελίδα, τη συλλογή φωτογραφιών και το αίτημα κράτησης.',
-        loftNumber1:'01 · Επιλέξτε την προσωπικότητά σας', loftNumber2:'02 · Επιλέξτε την προσωπικότητά σας', loftNumber3:'03 · Επιλέξτε την προσωπικότητά σας',
-        bohoDesc:'Ζεστά χρώματα, φυσικές υφές και χαλαρή ατμόσφαιρα εμπνευσμένη από την ανεπιτήδευτη πλευρά των ελληνικών νησιών.',
-        industrialDesc:'Ένας ιδιαίτερος συνδυασμός σύγχρονου industrial design και μοντέρνας άνεσης, με κομψή αστική ατμόσφαιρα.',
-        luxeDesc:'Κομψό, εκλεπτυσμένο και προσεγμένα σχεδιασμένο για επισκέπτες που αναζητούν μια πιο αναβαθμισμένη διαμονή.',
+        collectionTitle:'Τρία διαφορετικά στυλ. Μία διεύθυνση.',
+        collectionP1:'Τα Namaste Lofts είναι μια συλλογή από τρία μοναδικά loft διαμερίσματα ιδιαίτερου σχεδιασμού στην ανατολική Θεσσαλονίκη, το καθένα με τον δικό του ξεχωριστό χαρακτήρα, τη δική του ατμόσφαιρα και ιστορία.',
+        collectionP2:'Και τα τρία loft βρίσκονται το ένα δίπλα στο άλλο στο ισόγειο. Καθένα διαθέτει ιδιωτική είσοδο και ένα μικρό μπαλκόνι στην είσοδο, προσφέροντας εύκολη πρόσβαση και επιπλέον ιδιωτικότητα.',
+        collectionP3:'Σε μικρή απόσταση με τα πόδια από την παραλιακή και με εύκολη πρόσβαση στο κέντρο της πόλης, τα τρία loft αποτελούν μια κομψή και άνετη επιλογή για ένα city break, μια μεγαλύτερη διαμονή ή ένα ταξίδι με φίλους και οικογένεια.',
+        whichOne:'Ποιο σας ταιριάζει;', choosePersonality:'Επιλέξτε το στυλ που σας ταιριάζει', meetThree:'Γνωρίστε τα τρία loft.',
+        tapLoft:'Επιλέξτε ένα loft για να δείτε την πλήρη σελίδα του, τη συλλογή φωτογραφιών και τη δυνατότητα αποστολής αιτήματος κράτησης.',
+        loftNumber1:'01 · Επιλέξτε το στυλ που σας ταιριάζει', loftNumber2:'02 · Επιλέξτε το στυλ που σας ταιριάζει', loftNumber3:'03 · Επιλέξτε το στυλ που σας ταιριάζει',
+        bohoDesc:'Ζεστά χρώματα, φυσικές υφές και μια χαλαρή ατμόσφαιρα εμπνευσμένη από την ανεμελιά των ελληνικών νησιών.',
+        industrialDesc:'Ένας ξεχωριστός συνδυασμός σύγχρονου βιομηχανικού σχεδιασμού και μοντέρνας άνεσης, με κομψή αστική ατμόσφαιρα.',
+        luxeDesc:'Κομψό, εκλεπτυσμένο και προσεγμένα σχεδιασμένο για επισκέπτες που αναζητούν μια πιο αναβαθμισμένη εμπειρία διαμονής.',
         exploreBoho:'Ανακαλύψτε το Boho Loft →', exploreIndustrial:'Ανακαλύψτε το Industrial Loft →', exploreLuxe:'Ανακαλύψτε το Luxe Loft →',
-        reviewsTitle:'Τι λένε οι επισκέπτες για το Namaste Lofts.', reviewMeta:'Κριτική Google · 5 αστέρια',
-        review1:'“Ένας πολύ όμορφος, καθαρός και ευχάριστος χώρος. Πολύ εύκολη πρόσβαση με δημόσια συγκοινωνία προς το κέντρο ή με έναν σύντομο περίπατο. Ο ιδιοκτήτης είναι εξαιρετικά ευγενικός και εξυπηρετικός. Το προτείνουμε ανεπιφύλακτα — περάσαμε υπέροχα!”',
-        review2:'“Το Namaste Lofts είναι μια πραγματικά ευχάριστη, ζεστή και πεντακάθαρη επιλογή αν περάσετε λίγες ημέρες στη Θεσσαλονίκη. Η τοποθεσία είναι εξαιρετική — σε απόσταση με τα πόδια από το κέντρο και πολύ κοντά σε σταθμό μετρό και στάση λεωφορείου. Οι οικοδεσπότες είναι ευγενικοί και φιλικοί — θα επέλεγα ξανά αυτό το διαμέρισμα!”',
-        review3:'“Υπέροχο loft και άψογη εξυπηρέτηση την τελευταία στιγμή, όταν μια διαμαρτυρία έκλεισε την πόλη και έμεινα εκεί. Οι οικοδεσπότες ήταν απίστευτα καλοί και υπομονετικοί μαζί μου, ενώ η είσοδος είναι πολύ βολική και χαριτωμένη. Ανυπομονώ να μείνω ξανά εκεί.”',
-        groupsFamilies:'Για παρέες & οικογένειες', togetherTitle:'Μαζί, αλλά με τον δικό σας τρόπο',
-        togetherP1:'Και τα τρία lofts βρίσκονται ακριβώς δίπλα το ένα στο άλλο, κάτι που κάνει το Namaste Lofts ιδιαίτερα βολικό για οικογένειες, παρέες φίλων, ζευγάρια που ταξιδεύουν μαζί και μικρές ομάδες που θέλουν να μένουν κοντά διατηρώντας παράλληλα την ιδιωτικότητα του δικού τους διαμερίσματος.',
-        togetherP2:'Συνολικά, τα τρία lofts μπορούν να φιλοξενήσουν έως 9 επισκέπτες.',
-        upTo9:'Έως 9 επισκέπτες', acrossThree:'Και στα τρία lofts', privateSpaces:'3 ιδιωτικοί χώροι', privacyCopy:'Μείνετε κοντά, κρατήστε την ιδιωτικότητά σας',
-        sameLocation:'Ίδια τοποθεσία', groupsEasy:'Εύκολο για παρέες και οικογένειες', flexibleStays:'Ευέλικτες διαμονές', shortLong:'Σύντομες ή μεγαλύτερες διαμονές',
-        cityTitle:'Ενέργεια πόλης, ρυθμός παραλίας.',
-        cityP1:'Το Namaste Lofts σας τοποθετεί κοντά στην παραλία και με εύκολη πρόσβαση στο κέντρο, σε καφέ, εστιατόρια, δημόσιες συγκοινωνίες και πολλά από τα πιο γνωστά αξιοθέατα της Θεσσαλονίκης.',
-        cityP2:'Η ενότητα αυτή παραμένει προς το παρόν σύντομη. Σε επόμενο στάδιο μπορεί να συνδεθεί με το περιεχόμενο Θεσσαλονίκης του Halkidiki Explorer, με χρήσιμες τοπικές πληροφορίες και ζωντανά δεδομένα καιρού.',
-        nearby:'Κοντά', waterfront:'Παραλία', fiveMinuteWalk:'Περίπου 5 λεπτά με τα πόδια.', explore:'Εξερευνήστε',
-        cityCentre:'Κέντρο πόλης', easyAccess:'Εύκολη πρόσβαση στο κέντρο της Θεσσαλονίκης.', moveAround:'Μετακινήσεις', transport:'Μεταφορές', transportCopy:'Μετρό και λεωφορεία σε κοντινή απόσταση.',
-        footerIntro:'Ξεχωριστές διαμονές στη Θεσσαλονίκη και τη Χαλκιδική.', footerTagline:'Τρία lofts. Τρεις προσωπικότητες. Μία εμπειρία Namaste.'
+        reviewsTitle:'Τι λένε οι επισκέπτες για τα Namaste Lofts.', reviewMeta:'Κριτική Google · 5 αστέρια',
+        review1:'“Ένας πολύ όμορφος, καθαρός και ευχάριστος χώρος. Το κέντρο της πόλης είναι εύκολα προσβάσιμο με τα μέσα μαζικής μεταφοράς ή με έναν σύντομο περίπατο. Ο ιδιοκτήτης είναι πολύ ευγενικός και εξυπηρετικός. Το προτείνουμε ανεπιφύλακτα — απολαύσαμε πραγματικά τη διαμονή μας!”',
+        review2:'“Τα Namaste Lofts είναι μια πραγματικά ευχάριστη, ζεστή και πεντακάθαρη επιλογή για λίγες ημέρες στη Θεσσαλονίκη. Η τοποθεσία είναι εξαιρετική — το κέντρο βρίσκεται σε κοντινή απόσταση με τα πόδια, ενώ πολύ κοντά υπάρχουν σταθμός μετρό και στάση λεωφορείου. Οι οικοδεσπότες είναι ευγενικοί και φιλικοί — θα επέλεγα ξανά αυτό το διαμέρισμα!”',
+        review3:'“Υπέροχο loft και άψογη εξυπηρέτηση την τελευταία στιγμή, όταν μια διαμαρτυρία παρέλυσε την πόλη και δεν μπορούσα να φύγω. Οι οικοδεσπότες ήταν απίστευτα ευγενικοί και υπομονετικοί μαζί μου, ενώ η είσοδος είναι πολύ βολική και πραγματικά όμορφη. Ανυπομονώ να μείνω ξανά εκεί.”',
+        groupsFamilies:'Για παρέες & οικογένειες', togetherTitle:'Μαζί, αλλά ο καθένας στον δικό του χώρο',
+        togetherP1:'Και τα τρία loft βρίσκονται ακριβώς το ένα δίπλα στο άλλο, γεγονός που κάνει τα Namaste Lofts ιδιαίτερα πρακτικά για οικογένειες, παρέες φίλων, ζευγάρια που ταξιδεύουν μαζί και μικρές ομάδες που θέλουν να μένουν κοντά, διατηρώντας παράλληλα την ιδιωτικότητα του δικού τους διαμερίσματος.',
+        togetherP2:'Συνολικά, τα τρία loft μπορούν να φιλοξενήσουν έως 9 επισκέπτες.',
+        upTo9:'Έως 9 επισκέπτες', acrossThree:'Συνολικά και στα τρία loft', privateSpaces:'3 ανεξάρτητοι χώροι', privacyCopy:'Μείνετε κοντά, διατηρώντας την ιδιωτικότητά σας',
+        sameLocation:'Στην ίδια τοποθεσία', groupsEasy:'Ιδανικό για παρέες και οικογένειες', flexibleStays:'Ευελιξία στη διαμονή', shortLong:'Για σύντομες ή μεγαλύτερες διαμονές',
+        cityTitle:'Ο παλμός της πόλης, ο ρυθμός της παραλιακής.',
+        cityP1:'Τα Namaste Lofts βρίσκονται κοντά στην παραλιακή και προσφέρουν εύκολη πρόσβαση στο κέντρο της πόλης, σε καφέ, εστιατόρια, μέσα μαζικής μεταφοράς και πολλά από τα πιο γνωστά αξιοθέατα της Θεσσαλονίκης.',
+        cityP2:'Η ενότητα αυτή παραμένει προς το παρόν σύντομη. Σε επόμενο στάδιο μπορεί να συνδεθεί με το περιεχόμενο για τη Θεσσαλονίκη από το Halkidiki Explorer, προσφέροντας χρήσιμες τοπικές πληροφορίες και ζωντανά δεδομένα καιρού.',
+        nearby:'Κοντά', waterfront:'Παραλιακή', fiveMinuteWalk:'Περίπου 5 λεπτά με τα πόδια.', explore:'Ανακαλύψτε',
+        cityCentre:'Κέντρο πόλης', easyAccess:'Εύκολη πρόσβαση στο κέντρο της Θεσσαλονίκης.', moveAround:'Μετακινήσεις', transport:'Μέσα μεταφοράς', transportCopy:'Μετρό και λεωφορεία σε κοντινή απόσταση.',
+        footerIntro:'Ξεχωριστά καταλύματα στη Θεσσαλονίκη και τη Χαλκιδική.', footerTagline:'Τρία loft. Τρία διαφορετικά στυλ. Μία εμπειρία Namaste.', privacyPolicy:'Πολιτική Απορρήτου', termsConditions:'Όροι και Προϋποθέσεις'
       },
       de:{
         title:'Namaste Lofts Thessaloniki | Namaste Homes',
@@ -1016,7 +1037,7 @@
         cityP2:'Dieser Bereich ist vorerst bewusst kompakt gehalten. Später kann er mit den Thessaloniki-Inhalten aus Halkidiki Explorer verbunden werden, einschließlich nützlicher lokaler Informationen und Live-Wetterdaten.',
         nearby:'In der Nähe', waterfront:'Uferpromenade', fiveMinuteWalk:'Etwa 5 Minuten zu Fuß.', explore:'Entdecken',
         cityCentre:'Stadtzentrum', easyAccess:'Gute Anbindung an das Zentrum von Thessaloniki.', moveAround:'Unterwegs', transport:'Verkehr', transportCopy:'Metro- und Busverbindungen in der Nähe.',
-        footerIntro:'Besondere Unterkünfte in Thessaloniki und Chalkidiki.', footerTagline:'Drei Lofts. Drei Persönlichkeiten. Ein Namaste Erlebnis.'
+        footerIntro:'Besondere Unterkünfte in Thessaloniki und Chalkidiki.', footerTagline:'Drei Lofts. Drei Persönlichkeiten. Ein Namaste Erlebnis.', privacyPolicy:'Datenschutzerklärung', termsConditions:'Allgemeine Geschäftsbedingungen'
       },
       ro:{
         title:'Namaste Lofts Salonic | Namaste Homes',
@@ -1050,7 +1071,7 @@
         cityP2:'Această secțiune rămâne intenționat compactă pentru moment. Ulterior poate fi conectată cu conținutul despre Salonic din Halkidiki Explorer, inclusiv informații locale utile și vreme live.',
         nearby:'În apropiere', waterfront:'Faleza', fiveMinuteWalk:'Aproximativ 5 minute de mers pe jos.', explore:'Explorează',
         cityCentre:'Centrul orașului', easyAccess:'Acces ușor către centrul Salonicului.', moveAround:'Deplasare', transport:'Transport', transportCopy:'Metrou și autobuze în apropiere.',
-        footerIntro:'Cazări deosebite în Salonic și Halkidiki.', footerTagline:'Trei lofturi. Trei personalități. O singură experiență Namaste.'
+        footerIntro:'Cazări deosebite în Salonic și Halkidiki.', footerTagline:'Trei lofturi. Trei personalități. O singură experiență Namaste.', privacyPolicy:'Politica de confidențialitate', termsConditions:'Termeni și condiții'
       },
       sr:{
         title:'Namaste Lofts Solun | Namaste Homes',
@@ -1084,7 +1105,7 @@
         cityP2:'Ovaj deo je za sada namerno sažet. Kasnije može biti povezan sa sadržajem o Solunu iz Halkidiki Explorer-a, uključujući korisne lokalne informacije i vremensku prognozu uživo.',
         nearby:'U blizini', waterfront:'Obala', fiveMinuteWalk:'Oko 5 minuta peške.', explore:'Istražite',
         cityCentre:'Centar grada', easyAccess:'Lak pristup centru Soluna.', moveAround:'Kretanje', transport:'Prevoz', transportCopy:'Metro i autobuske veze u blizini.',
-        footerIntro:'Posebni smeštaji u Solunu i na Halkidikiju.', footerTagline:'Tri lofta. Tri karaktera. Jedno Namaste iskustvo.'
+        footerIntro:'Posebni smeštaji u Solunu i na Halkidikiju.', footerTagline:'Tri lofta. Tri karaktera. Jedno Namaste iskustvo.', privacyPolicy:'Politika privatnosti', termsConditions:'Uslovi korišćenja'
       },
       bg:{
         title:'Namaste Lofts Солун | Namaste Homes',
@@ -1118,7 +1139,7 @@
         cityP2:'Тази секция засега умишлено е кратка. По-късно може да бъде свързана със съдържанието за Солун от Halkidiki Explorer, включително полезна местна информация и време на живо.',
         nearby:'Наблизо', waterfront:'Крайбрежие', fiveMinuteWalk:'Около 5 минути пеша.', explore:'Разгледайте',
         cityCentre:'Центърът', easyAccess:'Лесен достъп до центъра на Солун.', moveAround:'Придвижване', transport:'Транспорт', transportCopy:'Метро и автобусни връзки наблизо.',
-        footerIntro:'Отличителни места за настаняване в Солун и Халкидики.', footerTagline:'Три loft апартамента. Три характера. Едно Namaste изживяване.'
+        footerIntro:'Отличителни места за настаняване в Солун и Халкидики.', footerTagline:'Три loft апартамента. Три характера. Едно Namaste изживяване.', privacyPolicy:'Политика за поверителност', termsConditions:'Общи условия'
       }
     };
     const params = new URLSearchParams(window.location.search);
@@ -1145,6 +1166,11 @@
     });
 
     document.querySelectorAll('.loft-page-link').forEach(link => {
+      const page = link.dataset.page;
+      link.href = `${page}?lang=${selectedLanguage}`;
+    });
+
+    document.querySelectorAll('.legal-page-link').forEach(link => {
       const page = link.dataset.page;
       link.href = `${page}?lang=${selectedLanguage}`;
     });

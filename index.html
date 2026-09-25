@@ -510,6 +510,29 @@
     }
     .journey-card h3{font-size:clamp(2rem,4vw,3rem)}
     .journey-card p{margin:8px 0 0;color:rgba(255,255,255,.78);font-size:.88rem}
+    .journey-card-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      margin-top:16px;
+      padding:0 19px;
+      border:1px solid rgba(255,255,255,.72);
+      border-radius:999px;
+      background:rgba(255,255,255,.02);
+      color:#fff;
+      font-size:.74rem;
+      font-weight:850;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      backdrop-filter:blur(2px);
+      transition:background .22s ease,border-color .22s ease,transform .22s ease;
+    }
+    .journey-card:hover .journey-card-btn{
+      background:rgba(255,255,255,.12);
+      border-color:#fff;
+      transform:translateY(-1px);
+    }
     .journey-card .arrow{position:absolute;right:22px;top:20px;font-size:1.5rem;color:#f0d8a8}
 
     /* SPIRIT */
@@ -604,6 +627,19 @@
       align-items:start;
     }
     .footer-logo{width:210px;margin-bottom:16px}
+    .footer-brand-title{
+      color:#fff;
+      font-family:var(--serif);
+      font-size:1.2rem;
+      line-height:1.25;
+      margin-bottom:6px;
+    }
+    .footer-brand-copy{
+      max-width:330px;
+      color:rgba(255,255,255,.66);
+      font-size:.86rem;
+      line-height:1.55;
+    }
     footer h4{
       margin:0 0 13px;
       color:#fff;
@@ -612,38 +648,6 @@
       letter-spacing:.14em;
     }
     footer a{display:block;margin:8px 0;font-size:.89rem}
-    .website-cta{
-      margin-top:34px;
-      padding:22px 24px;
-      border:1px solid rgba(202,166,100,.35);
-      border-radius:20px;
-      background:linear-gradient(135deg,rgba(202,166,100,.10),rgba(255,255,255,.03));
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-    }
-    .website-cta-text{
-      color:#fff;
-      font-family:var(--serif);
-      font-size:clamp(1.15rem,2vw,1.45rem);
-      line-height:1.2;
-    }
-    .website-cta-btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:46px;
-      padding:0 18px;
-      border-radius:999px;
-      background:var(--gold);
-      color:#21190d;
-      font-weight:900;
-      font-size:.8rem;
-      white-space:nowrap;
-      transition:transform .2s ease,background .2s ease;
-    }
-    .website-cta-btn:hover{transform:translateY(-2px);background:var(--gold-soft)}
 
     .footer-bottom{
       margin-top:38px;
@@ -737,6 +741,13 @@
       .journey-card .card-label{font-size:.6rem;letter-spacing:.1em;margin-bottom:6px}
       .journey-card h3{font-size:2rem;line-height:1}
       .journey-card p{font-size:.8rem;line-height:1.4;margin-top:7px}
+      .journey-card-btn{
+        min-height:42px;
+        margin-top:14px;
+        padding:0 16px;
+        font-size:.66rem;
+        letter-spacing:.07em;
+      }
       .journey-card .arrow{right:16px;top:14px;font-size:1.2rem}
 
       .spirit-grid{gap:26px}
@@ -756,17 +767,11 @@
       .footer-grid{grid-template-columns:1fr 1fr;gap:30px 18px}
       .footer-grid > div:first-child{grid-column:1/3;text-align:center}
       .footer-logo{width:170px;margin:0 auto 12px}
+      .footer-brand-copy{margin:0 auto}
       footer{padding-top:44px}
       footer h4{font-size:.72rem}
       footer a{font-size:.82rem}
-      .website-cta{
-        margin-top:28px;
-        padding:20px 16px;
-        flex-direction:column;
-        text-align:center;
-      }
-      .website-cta-btn{width:100%;max-width:290px}
-      .footer-bottom{flex-direction:column;text-align:center;gap:7px;margin-top:30px}
+.footer-bottom{flex-direction:column;text-align:center;gap:7px;margin-top:30px}
     }
 
     @media(max-width:390px){
@@ -870,6 +875,7 @@
               <span class="card-label" data-i18n="destinationOneLabel">Destination One · City · Culture · Waterfront</span>
               <h3>Thessaloniki</h3>
               <p data-i18n="destinationOneCopy">Start with Namaste Lofts and the vibrant urban side of the Namaste experience.</p>
+              <span class="journey-card-btn" data-i18n="destinationEnter">Enter here</span>
             </div>
           </a>
 
@@ -880,6 +886,7 @@
               <span class="card-label" data-i18n="destinationTwoLabel">Destination Two · Sea · Nature · Slow Living</span>
               <h3>Halkidiki</h3>
               <p data-i18n="destinationTwoCopy">Continue at Sea Breeze Paradise and settle into the peaceful beauty of the Aegean.</p>
+              <span class="journey-card-btn" data-i18n="destinationEnter">Enter here</span>
             </div>
           </a>
         </div>
@@ -918,7 +925,8 @@
       <div class="footer-grid">
         <div>
           <img class="footer-logo" src="assets/images/logo.png" alt="Namaste Homes" />
-          <div data-i18n="footerIntro">Distinctive stays in Thessaloniki and Halkidiki.</div>
+          <div class="footer-brand-title" data-i18n="footerIntro">Your Namaste Experience Awaits</div>
+          <div class="footer-brand-copy" data-i18n="footerSub">Discover the city. Escape to the sea. Or experience both.</div>
         </div>
 
         <div>
@@ -930,20 +938,14 @@
         <div>
           <h4>Namaste Homes</h4>
           <a href="#journey" data-i18n="namasteJourney">The Namaste Journey</a>
-            <a href="#about" data-i18n="ourStory">Our Story</a>
+          <a href="#about" data-i18n="ourStory">Our Story</a>
+          <a href="tel:+306944428858">0030-6944428858</a>
+          <a href="mailto:namastehomes.gr@gmail.com">namastehomes.gr@gmail.com</a>
+          <a class="legal-page-link" data-page="privacy.html" href="privacy.html" data-i18n="privacyPolicy">Privacy Policy</a>
+          <a class="legal-page-link" data-page="terms.html" href="terms.html" data-i18n="termsConditions">Terms &amp; Conditions</a>
         </div>
       </div>
-
-      <div class="website-cta">
-        <div class="website-cta-text" data-i18n="websiteCta">Want a website like this?</div>
-        <a class="website-cta-btn"
-           href="https://wa.me/40755687296?text=I%27m%20intrested%20about%20a%20website%21"
-           target="_blank"
-           rel="noopener"
-           data-i18n="websiteCtaButton">Contact on WhatsApp</a>
-      </div>
-
-      <div class="footer-bottom">
+<div class="footer-bottom">
         <span>© <span id="year"></span> Namaste Homes</span>
         <span class="footer-tagline" data-i18n="twoDestinations">Two Destinations. One Namaste Experience.</span>
       </div>
@@ -1038,50 +1040,54 @@
         destinationOneCopy:'Start with Namaste Lofts and the vibrant urban side of the Namaste experience.',
         destinationTwoLabel:'Destination Two · Sea · Nature · Slow Living',
         destinationTwoCopy:'Continue at Sea Breeze Paradise and settle into the peaceful beauty of the Aegean.',
+        destinationEnter:'Enter here',
         aboutTitle:'About Namaste Homes',
         aboutP1:'Since 2019, Namaste Homes has been creating distinctive stays in Thessaloniki and Halkidiki, where thoughtful design, comfort and genuine hospitality come together.',
         aboutP2:'Inspired by the Indian greeting Namaste, a traditional expression of respect and welcome, we believe that every stay should feel warm, effortless and memorable. Our guests’ comfort, needs and experience are at the heart of everything we do, with attention to detail and a personal touch in every home.',
         aboutP3:'From stylish city lofts to peaceful seaside escapes, discover thoughtfully designed spaces that invite you to relax, explore and feel at home.',
         since2019:'Creating memorable stays since 2019',
-        footerIntro:'Distinctive stays in Thessaloniki and Halkidiki.',
+        footerIntro:'Your Namaste Experience Awaits',
+        footerSub:'Discover the city. Escape to the sea. Or experience both.',
         explore:'Explore',
-        websiteCta:'Want a website like this?',
-        websiteCtaButton:'Contact on WhatsApp'
+        privacyPolicy:"Privacy Policy",
+        termsConditions:"Terms & Conditions"
       },
       el:{
         title:'Namaste Homes | Θεσσαλονίκη & Χαλκιδική',
-        meta:'Namaste Homes — ξεχωριστές διαμονές στη Θεσσαλονίκη και τη Χαλκιδική. Ανακαλύψτε τα Namaste Lofts και το Sea Breeze Paradise.',
+        meta:'Namaste Homes — ξεχωριστά καταλύματα στη Θεσσαλονίκη και τη Χαλκιδική. Ανακαλύψτε τα Namaste Lofts και το Sea Breeze Paradise.',
         navJourney:'Το ταξίδι',
         thessaloniki:'Θεσσαλονίκη',
         halkidiki:'Χαλκιδική',
         ourStory:'Η ιστορία μας',
         chooseStay:'Επιλέξτε τη διαμονή σας',
-        langNote:'Επιλέξτε γλώσσα εδώ. Η ίδια επιλογή μεταφέρεται και στις σελίδες των καταλυμάτων.',
+        langNote:'Επιλέξτε τη γλώσσα σας εδώ. Η επιλογή θα διατηρηθεί και στις σελίδες των καταλυμάτων.',
         menu:'Μενού',
         close:'Κλείσιμο',
         namasteJourney:'Το ταξίδι Namaste',
         heroKicker:'Θεσσαλονίκη · Χαλκιδική',
         heroTitle1:'Ανακαλύψτε δύο',
         heroTitle2:'όψεις της Ελλάδας',
-        heroSub:'Προσεγμένα καταλύματα που συνδέουν τη ζωντανή ενέργεια της Θεσσαλονίκης με τη γαλήνια ομορφιά του Αιγαίου.',
+        heroSub:'Προσεκτικά σχεδιασμένα καταλύματα που συνδέουν τη ζωντανή ενέργεια της Θεσσαλονίκης με τη γαλήνια ομορφιά του Αιγαίου.',
         exploreThessaloniki:'Ανακαλύψτε τη Θεσσαλονίκη',
-        escapeHalkidiki:'Απόδραση στη Χαλκιδική',
+        escapeHalkidiki:'Αποδράστε στη Χαλκιδική',
         twoDestinations:'Δύο προορισμοί. Μία εμπειρία Namaste.',
         journeyQuestion:'Από την ενέργεια της πόλης στη γαλήνη του Αιγαίου.',
-        journeyCopy:'Ξεκινήστε με τον ζωντανό ρυθμό της Θεσσαλονίκης και συνεχίστε χαλαρώνοντας δίπλα στο Αιγαίο, στη Χαλκιδική. Δύο διαφορετικές διαμονές, ενωμένες σε μία εμπειρία Namaste.',
+        journeyCopy:'Ξεκινήστε με τον ζωντανό παλμό της Θεσσαλονίκης και συνεχίστε με πιο αργούς ρυθμούς δίπλα στο Αιγαίο, στη Χαλκιδική. Δύο διαφορετικές εμπειρίες διαμονής, ενωμένες σε μία εμπειρία Namaste.',
         destinationOneLabel:'Προορισμός Ένα · Πόλη · Πολιτισμός · Παραλία',
-        destinationOneCopy:'Ξεκινήστε από τα Namaste Lofts και γνωρίστε τη ζωντανή, αστική πλευρά της εμπειρίας Namaste.',
+        destinationOneCopy:'Ξεκινήστε από τα Namaste Lofts και ζήστε τη ζωντανή, αστική πλευρά της εμπειρίας Namaste.',
         destinationTwoLabel:'Προορισμός Δύο · Θάλασσα · Φύση · Χαλαροί ρυθμοί',
-        destinationTwoCopy:'Συνεχίστε στο Sea Breeze Paradise και απολαύστε τη γαλήνια ομορφιά του Αιγαίου.',
+        destinationTwoCopy:'Συνεχίστε στο Sea Breeze Paradise και αφεθείτε στη γαλήνια ομορφιά του Αιγαίου.',
+        destinationEnter:'Δείτε περισσότερα',
         aboutTitle:'Σχετικά με το Namaste Homes',
-        aboutP1:'Από το 2019, το Namaste Homes δημιουργεί ξεχωριστές διαμονές στη Θεσσαλονίκη και τη Χαλκιδική, όπου ο προσεγμένος σχεδιασμός, η άνεση και η αυθεντική φιλοξενία συνδυάζονται αρμονικά.',
-        aboutP2:'Εμπνευσμένοι από τον ινδικό χαιρετισμό Namaste, μια παραδοσιακή έκφραση σεβασμού και καλωσορίσματος, πιστεύουμε ότι κάθε διαμονή πρέπει να είναι ζεστή, άνετη και αξέχαστη. Η άνεση, οι ανάγκες και η εμπειρία των επισκεπτών μας βρίσκονται στο επίκεντρο, με προσοχή στη λεπτομέρεια και προσωπική φροντίδα σε κάθε χώρο.',
-        aboutP3:'Από κομψά city lofts μέχρι ήρεμες αποδράσεις δίπλα στη θάλασσα, ανακαλύψτε χώρους σχεδιασμένους με φροντίδα που σας προσκαλούν να χαλαρώσετε, να εξερευνήσετε και να νιώσετε σαν στο σπίτι σας.',
-        since2019:'Δημιουργούμε αξέχαστες διαμονές από το 2019',
-        footerIntro:'Ξεχωριστές διαμονές στη Θεσσαλονίκη και τη Χαλκιδική.',
+        aboutP1:'Από το 2019, το Namaste Homes προσφέρει ξεχωριστές εμπειρίες διαμονής στη Θεσσαλονίκη και τη Χαλκιδική, όπου ο προσεγμένος σχεδιασμός, η άνεση και η αυθεντική φιλοξενία συνδυάζονται αρμονικά.',
+        aboutP2:'Εμπνευσμένοι από τον ινδικό χαιρετισμό Namaste, μια παραδοσιακή έκφραση σεβασμού και καλωσορίσματος, πιστεύουμε ότι κάθε διαμονή πρέπει να αποπνέει ζεστασιά, να είναι ξεκούραστη και αξέχαστη. Η άνεση, οι ανάγκες και η συνολική εμπειρία των επισκεπτών μας βρίσκονται στο επίκεντρο όσων κάνουμε, με προσοχή στη λεπτομέρεια και προσωπική φροντίδα σε κάθε κατάλυμα.',
+        aboutP3:'Από κομψά loft στην πόλη έως ήρεμες παραθαλάσσιες αποδράσεις, ανακαλύψτε προσεκτικά διαμορφωμένους χώρους που σας προσκαλούν να χαλαρώσετε, να εξερευνήσετε και να νιώσετε σαν στο σπίτι σας.',
+        since2019:'Δημιουργούμε αξέχαστες εμπειρίες διαμονής από το 2019',
+        footerIntro:'Η εμπειρία Namaste σας περιμένει',
+        footerSub:'Ανακαλύψτε την πόλη. Αποδράστε στη θάλασσα. Ή ζήστε και τα δύο.',
         explore:'Ανακαλύψτε',
-        websiteCta:'Θέλετε μια ιστοσελίδα σαν αυτή;',
-        websiteCtaButton:'Επικοινωνία στο WhatsApp'
+        privacyPolicy:"Πολιτική Απορρήτου",
+        termsConditions:"Όροι & Προϋποθέσεις"
       },
       de:{
         title:'Namaste Homes | Thessaloniki & Chalkidiki',
@@ -1108,15 +1114,17 @@
         destinationOneCopy:'Starten Sie in den Namaste Lofts und entdecken Sie die lebendige urbane Seite des Namaste Erlebnisses.',
         destinationTwoLabel:'Reiseziel Zwei · Meer · Natur · Entschleunigung',
         destinationTwoCopy:'Setzen Sie Ihre Reise im Sea Breeze Paradise fort und genießen Sie die friedliche Schönheit der Ägäis.',
+        destinationEnter:'Hier entdecken',
         aboutTitle:'Über Namaste Homes',
         aboutP1:'Seit 2019 schafft Namaste Homes besondere Aufenthalte in Thessaloniki und Chalkidiki, bei denen durchdachtes Design, Komfort und echte Gastfreundschaft zusammenkommen.',
         aboutP2:'Inspiriert vom indischen Gruß Namaste, einem traditionellen Ausdruck von Respekt und Willkommen, glauben wir, dass sich jeder Aufenthalt warm, unkompliziert und unvergesslich anfühlen sollte. Komfort, Bedürfnisse und Erlebnis unserer Gäste stehen im Mittelpunkt – mit Liebe zum Detail und einer persönlichen Note in jedem Zuhause.',
         aboutP3:'Von stilvollen City-Lofts bis zu ruhigen Rückzugsorten am Meer: Entdecken Sie durchdacht gestaltete Räume, die zum Entspannen, Erkunden und Wohlfühlen einladen.',
         since2019:'Unvergessliche Aufenthalte seit 2019',
-        footerIntro:'Besondere Unterkünfte in Thessaloniki und Chalkidiki.',
+        footerIntro:'Ihr Namaste Erlebnis wartet auf Sie',
+        footerSub:'Entdecken Sie die Stadt. Entfliehen Sie ans Meer. Oder erleben Sie beides.',
         explore:'Entdecken',
-        websiteCta:'Möchten Sie eine Website wie diese?',
-        websiteCtaButton:'Kontakt über WhatsApp'
+        privacyPolicy:"Datenschutzerklärung",
+        termsConditions:"Allgemeine Geschäftsbedingungen"
       },
       ro:{
         title:'Namaste Homes | Salonic & Halkidiki',
@@ -1143,15 +1151,17 @@
         destinationOneCopy:'Începe cu Namaste Lofts și descoperă latura urbană și vibrantă a experienței Namaste.',
         destinationTwoLabel:'Destinația Doi · Mare · Natură · Relaxare',
         destinationTwoCopy:'Continuă la Sea Breeze Paradise și bucură-te de frumusețea liniștită a Mării Egee.',
+        destinationEnter:'Intră aici',
         aboutTitle:'Despre Namaste Homes',
         aboutP1:'Din 2019, Namaste Homes creează cazări deosebite în Salonic și Halkidiki, unde designul atent, confortul și ospitalitatea autentică se întâlnesc.',
         aboutP2:'Inspirați de salutul indian Namaste, o expresie tradițională de respect și bun venit, credem că fiecare ședere trebuie să fie caldă, simplă și memorabilă. Confortul, nevoile și experiența oaspeților noștri sunt în centrul a tot ceea ce facem, cu atenție la detalii și o notă personală în fiecare proprietate.',
         aboutP3:'De la lofturi urbane elegante la refugii liniștite lângă mare, descoperă spații atent concepute care te invită să te relaxezi, să explorezi și să te simți ca acasă.',
         since2019:'Creăm șederi memorabile din 2019',
-        footerIntro:'Cazări deosebite în Salonic și Halkidiki.',
+        footerIntro:'Experiența ta Namaste te așteaptă',
+        footerSub:'Descoperă orașul. Evadează la mare. Sau trăiește-le pe amândouă.',
         explore:'Explorează',
-        websiteCta:'Vrei un website ca acesta?',
-        websiteCtaButton:'Contact pe WhatsApp'
+        privacyPolicy:"Politica de confidențialitate",
+        termsConditions:"Termeni și condiții"
       },
       sr:{
         title:'Namaste Homes | Solun & Halkidiki',
@@ -1178,15 +1188,17 @@
         destinationOneCopy:'Počnite u Namaste Lofts i otkrijte živu urbanu stranu Namaste iskustva.',
         destinationTwoLabel:'Destinacija Dva · More · Priroda · Sporiji ritam',
         destinationTwoCopy:'Nastavite u Sea Breeze Paradise i prepustite se mirnoj lepoti Egejskog mora.',
+        destinationEnter:'Uđite ovde',
         aboutTitle:'O Namaste Homes',
         aboutP1:'Od 2019. godine, Namaste Homes stvara posebne boravke u Solunu i na Halkidikiju, gde se pažljiv dizajn, udobnost i iskreno gostoprimstvo prirodno spajaju.',
         aboutP2:'Inspirisani indijskim pozdravom Namaste, tradicionalnim izrazom poštovanja i dobrodošlice, verujemo da svaki boravak treba da bude topao, jednostavan i nezaboravan. Udobnost, potrebe i iskustvo naših gostiju nalaze se u središtu svega što radimo, uz pažnju prema detaljima i lični pristup u svakom domu.',
         aboutP3:'Od elegantnih gradskih loftova do mirnih utočišta kraj mora, otkrijte pažljivo osmišljene prostore koji vas pozivaju da se opustite, istražujete i osećate kao kod kuće.',
         since2019:'Stvaramo nezaboravne boravke od 2019.',
-        footerIntro:'Posebni smeštaji u Solunu i na Halkidikiju.',
+        footerIntro:'Vaše Namaste iskustvo vas čeka',
+        footerSub:'Otkrijte grad. Pobegnite na more. Ili doživite oba.',
         explore:'Istražite',
-        websiteCta:'Želite ovakav sajt?',
-        websiteCtaButton:'Kontakt preko WhatsApp-a'
+        privacyPolicy:"Politika privatnosti",
+        termsConditions:"Uslovi korišćenja"
       },
       bg:{
         title:'Namaste Homes | Солун & Халкидики',
@@ -1213,15 +1225,17 @@
         destinationOneCopy:'Започнете с Namaste Lofts и открийте живата градска страна на Namaste изживяването.',
         destinationTwoLabel:'Дестинация Две · Море · Природа · Спокоен ритъм',
         destinationTwoCopy:'Продължете към Sea Breeze Paradise и се насладете на спокойната красота на Егейско море.',
+        destinationEnter:'Влезте тук',
         aboutTitle:'За Namaste Homes',
         aboutP1:'От 2019 г. Namaste Homes създава отличителни престои в Солун и Халкидики, където внимателният дизайн, комфортът и истинското гостоприемство се срещат.',
         aboutP2:'Вдъхновени от индийския поздрав Namaste, традиционен израз на уважение и приветствие, вярваме, че всеки престой трябва да бъде топъл, лек и запомнящ се. Комфортът, нуждите и преживяването на нашите гости са в центъра на всичко, което правим, с внимание към детайла и личен подход във всеки дом.',
         aboutP3:'От стилни градски лофтове до спокойни морски убежища, открийте внимателно проектирани пространства, които ви канят да се отпуснете, да разгледате и да се почувствате като у дома си.',
         since2019:'Създаваме запомнящи се престои от 2019 г.',
-        footerIntro:'Отличителни места за настаняване в Солун и Халкидики.',
+        footerIntro:'Вашето Namaste изживяване ви очаква',
+        footerSub:'Открийте града. Избягайте край морето. Или изживейте и двете.',
         explore:'Разгледайте',
-        websiteCta:'Искате сайт като този?',
-        websiteCtaButton:'Контакт в WhatsApp'
+        privacyPolicy:"Политика за поверителност",
+        termsConditions:"Общи условия"
       }
     };
 
@@ -1263,7 +1277,7 @@
 
       translatePage(lang);
 
-      document.querySelectorAll('a[href^="thessaloniki.html"],a[href^="halkidiki.html"]').forEach(link => {
+      document.querySelectorAll('a[href^="thessaloniki.html"],a[href^="halkidiki.html"],a[href^="privacy.html"],a[href^="terms.html"]').forEach(link => {
         const rawHref = link.getAttribute('href');
         const parts = rawHref.split('#');
         const page = parts[0].split('?')[0];
