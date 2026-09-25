@@ -906,7 +906,7 @@
             <span class="arrow">↗</span>
             <div class="journey-card-content">
               <span class="card-label" data-i18n="destinationOneLabel">Destination One · City · Culture · Waterfront</span>
-              <h3>Thessaloniki</h3>
+              <h3 data-i18n="journeyCityName">Thessaloniki</h3>
               <p data-i18n="destinationOneCopy">Start with Namaste Lofts and the vibrant urban side of the Namaste experience.</p>
               <span class="journey-card-btn" data-i18n="destinationEnter">Enter here</span>
             </div>
@@ -917,7 +917,7 @@
             <span class="arrow">↗</span>
             <div class="journey-card-content">
               <span class="card-label" data-i18n="destinationTwoLabel">Destination Two · Sea · Nature · Slow Living</span>
-              <h3>Halkidiki</h3>
+              <h3 data-i18n="journeySeaName">Halkidiki</h3>
               <p data-i18n="destinationTwoCopy">Continue at Sea Breeze Paradise and settle into the peaceful beauty of the Aegean.</p>
               <span class="journey-card-btn" data-i18n="destinationEnter">Enter here</span>
             </div>
@@ -1098,6 +1098,8 @@
         destinationTwoLabel:'Destination Two · Sea · Nature · Slow Living',
         destinationTwoCopy:'Continue at Sea Breeze Paradise and settle into the peaceful beauty of the Aegean.',
         destinationEnter:'Enter here',
+        journeyCityName:'Thessaloniki',
+        journeySeaName:'Halkidiki',
         aboutTitle:'About Namaste Homes',
         aboutP1:'Since 2019, Namaste Homes has been creating distinctive stays in Thessaloniki and Halkidiki, where thoughtful design, comfort and genuine hospitality come together.',
         aboutP2:'Inspired by the Indian greeting Namaste, a traditional expression of respect and welcome, we believe that every stay should feel warm, effortless and memorable. Our guests’ comfort, needs and experience are at the heart of everything we do, with attention to detail and a personal touch in every home.',
@@ -1124,17 +1126,19 @@
         heroKicker:'Θεσσαλονίκη · Χαλκιδική',
         heroTitle1:'Ανακαλύψτε δύο',
         heroTitle2:'όψεις της Ελλάδας',
-        heroSub:'Προσεκτικά σχεδιασμένα καταλύματα που συνδέουν τη ζωντανή ενέργεια της Θεσσαλονίκης με τη γαλήνια ομορφιά του Αιγαίου.',
+        heroSub:'Καλαίσθητα καταλύματα, σχεδιασμένα με προσοχή στη λεπτομέρεια, που συνδυάζουν τη ζωντανή ενέργεια της Θεσσαλονίκης με τη γαλήνια ομορφιά του Αιγαίου.',
         exploreThessaloniki:'Ανακαλύψτε τη Θεσσαλονίκη',
         escapeHalkidiki:'Αποδράστε στη Χαλκιδική',
-        twoDestinations:'Δύο προορισμοί. Μία εμπειρία Namaste.',
+        twoDestinations:'Δύο προορισμοί.Μια ξεχωριστή εμπειρία φιλοξενίας από τη Namaste',
         journeyQuestion:'Από την ενέργεια της πόλης στη γαλήνη του Αιγαίου.',
         journeyCopy:'Ξεκινήστε με τον ζωντανό παλμό της Θεσσαλονίκης και συνεχίστε με πιο αργούς ρυθμούς δίπλα στο Αιγαίο, στη Χαλκιδική. Δύο διαφορετικές εμπειρίες διαμονής, ενωμένες σε μία εμπειρία Namaste.',
-        destinationOneLabel:'Προορισμός Ένα · Πόλη · Πολιτισμός · Παραλία',
-        destinationOneCopy:'Ξεκινήστε από τα Namaste Lofts και ζήστε τη ζωντανή, αστική πλευρά της εμπειρίας Namaste.',
-        destinationTwoLabel:'Προορισμός Δύο · Θάλασσα · Φύση · Χαλαροί ρυθμοί',
+        destinationOneLabel:'ΠΡΏΤΟΣ ΠΡΟΟΡΙΣΜΌΣ -ΠΟΛΗ-ΠΟΛΙΤΙΣΜΟΣ-ΠΑΡΑΛΙΑ',
+        destinationOneCopy:'Ξεκινήστε από τα Namaste Lofts και απολαύστε τον παλμό της Θεσσαλονίκης.',
+        destinationTwoLabel:'Δεύτερος προορισμός.Θάλασσα.Φυση.Χαλαροι ρυθμοί.',
         destinationTwoCopy:'Συνεχίστε στο Sea Breeze Paradise και αφεθείτε στη γαλήνια ομορφιά του Αιγαίου.',
         destinationEnter:'Δείτε περισσότερα',
+        journeyCityName:'Θεσσαλονίκη',
+        journeySeaName:'Παλιούρι,Κασσάνδρα, Χαλκιδικής',
         aboutTitle:'Σχετικά με το Namaste Homes',
         aboutP1:'Από το 2019, το Namaste Homes προσφέρει ξεχωριστές εμπειρίες διαμονής στη Θεσσαλονίκη και τη Χαλκιδική, όπου ο προσεγμένος σχεδιασμός, η άνεση και η αυθεντική φιλοξενία συνδυάζονται αρμονικά.',
         aboutP2:'Εμπνευσμένοι από τον ινδικό χαιρετισμό Namaste, μια παραδοσιακή έκφραση σεβασμού και καλωσορίσματος, πιστεύουμε ότι κάθε διαμονή πρέπει να αποπνέει ζεστασιά, να είναι ξεκούραστη και αξέχαστη. Η άνεση, οι ανάγκες και η συνολική εμπειρία των επισκεπτών μας βρίσκονται στο επίκεντρο όσων κάνουμε, με προσοχή στη λεπτομέρεια και προσωπική φροντίδα σε κάθε κατάλυμα.',
@@ -1302,6 +1306,7 @@
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.dataset.i18n;
         if(t[key] !== undefined) el.textContent = t[key];
+        else if(translations.en[key] !== undefined) el.textContent = translations.en[key];
       });
 
       document.title = t.title;
