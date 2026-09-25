@@ -649,6 +649,37 @@
     }
     footer a{display:block;margin:8px 0;font-size:.89rem}
 
+    .social-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-top:16px;
+    }
+    .social-link{
+      width:40px;
+      height:40px;
+      margin:0;
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      background:rgba(255,255,255,.04);
+      transition:transform .2s ease,background .2s ease,border-color .2s ease;
+    }
+    .social-link:hover{
+      transform:translateY(-2px);
+      background:rgba(202,166,100,.14);
+      border-color:rgba(202,166,100,.72);
+    }
+    .social-link svg{
+      width:18px;
+      height:18px;
+      display:block;
+      fill:currentColor;
+    }
+
     .footer-bottom{
       margin-top:38px;
       padding-top:20px;
@@ -771,6 +802,8 @@
       footer{padding-top:44px}
       footer h4{font-size:.72rem}
       footer a{font-size:.82rem}
+      .social-links{margin-top:14px;gap:9px}
+      .social-link{width:38px;height:38px}
 .footer-bottom{flex-direction:column;text-align:center;gap:7px;margin-top:30px}
     }
 
@@ -943,6 +976,30 @@
           <a href="mailto:namastehomes.gr@gmail.com">namastehomes.gr@gmail.com</a>
           <a class="legal-page-link" data-page="privacy.html" href="privacy.html" data-i18n="privacyPolicy">Privacy Policy</a>
           <a class="legal-page-link" data-page="terms.html" href="terms.html" data-i18n="termsConditions">Terms &amp; Conditions</a>
+
+          <div class="social-links" aria-label="Namaste Homes social media">
+            <a class="social-link"
+               href="https://www.facebook.com/share/1actb2GhXL/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Namaste Homes on Facebook"
+               title="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M13.5 22v-9h3l.45-3.5H13.5V7.26c0-1.01.28-1.7 1.73-1.7H17V2.44c-.31-.04-1.38-.14-2.62-.14-2.59 0-4.36 1.58-4.36 4.49V9.5H7v3.5h3.02v9H13.5z"/>
+              </svg>
+            </a>
+
+            <a class="social-link"
+               href="https://www.instagram.com/namastehomes.gr?stkn=MXVzbHgxaXVmczZjMQ=="
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Namaste Homes on Instagram"
+               title="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M7.7 2h8.6A5.7 5.7 0 0 1 22 7.7v8.6a5.7 5.7 0 0 1-5.7 5.7H7.7A5.7 5.7 0 0 1 2 16.3V7.7A5.7 5.7 0 0 1 7.7 2zm0 2A3.7 3.7 0 0 0 4 7.7v8.6A3.7 3.7 0 0 0 7.7 20h8.6a3.7 3.7 0 0 0 3.7-3.7V7.7A3.7 3.7 0 0 0 16.3 4H7.7zm9.05 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
 <div class="footer-bottom">
