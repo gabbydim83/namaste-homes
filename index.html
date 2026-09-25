@@ -593,6 +593,39 @@
       letter-spacing:.14em;
     }
     footer a{display:block;margin:8px 0;font-size:.89rem}
+    .website-cta{
+      margin-top:34px;
+      padding:22px 24px;
+      border:1px solid rgba(202,166,100,.35);
+      border-radius:20px;
+      background:linear-gradient(135deg,rgba(202,166,100,.10),rgba(255,255,255,.03));
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .website-cta-text{
+      color:#fff;
+      font-family:var(--serif);
+      font-size:clamp(1.15rem,2vw,1.45rem);
+      line-height:1.2;
+    }
+    .website-cta-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 18px;
+      border-radius:999px;
+      background:var(--gold);
+      color:#21190d;
+      font-weight:900;
+      font-size:.8rem;
+      white-space:nowrap;
+      transition:transform .2s ease,background .2s ease;
+    }
+    .website-cta-btn:hover{transform:translateY(-2px);background:var(--gold-soft)}
+
     .footer-bottom{
       margin-top:38px;
       padding-top:20px;
@@ -707,6 +740,13 @@
       footer{padding-top:44px}
       footer h4{font-size:.72rem}
       footer a{font-size:.82rem}
+      .website-cta{
+        margin-top:28px;
+        padding:20px 16px;
+        flex-direction:column;
+        text-align:center;
+      }
+      .website-cta-btn{width:100%;max-width:290px}
       .footer-bottom{flex-direction:column;text-align:center;gap:7px;margin-top:30px}
     }
 
@@ -875,6 +915,15 @@
         </div>
       </div>
 
+      <div class="website-cta">
+        <div class="website-cta-text" data-i18n="websiteCta">Want a website like this?</div>
+        <a class="website-cta-btn"
+           href="https://wa.me/40755687296?text=I%27m%20intrested%20about%20a%20website%21"
+           target="_blank"
+           rel="noopener"
+           data-i18n="websiteCtaButton">Contact on WhatsApp</a>
+      </div>
+
       <div class="footer-bottom">
         <span>© <span id="year"></span> Namaste Homes</span>
         <span class="footer-tagline" data-i18n="twoDestinations">Two Destinations. One Namaste Experience.</span>
@@ -976,7 +1025,9 @@
         aboutP3:'From stylish city lofts to peaceful seaside escapes, discover thoughtfully designed spaces that invite you to relax, explore and feel at home.',
         since2019:'Creating memorable stays since 2019',
         footerIntro:'Distinctive stays in Thessaloniki and Halkidiki.',
-        explore:'Explore'
+        explore:'Explore',
+        websiteCta:'Want a website like this?',
+        websiteCtaButton:'Contact on WhatsApp'
       },
       el:{
         title:'Namaste Homes | Θεσσαλονίκη & Χαλκιδική',
@@ -1009,7 +1060,9 @@
         aboutP3:'Από κομψά city lofts μέχρι ήρεμες αποδράσεις δίπλα στη θάλασσα, ανακαλύψτε χώρους σχεδιασμένους με φροντίδα που σας προσκαλούν να χαλαρώσετε, να εξερευνήσετε και να νιώσετε σαν στο σπίτι σας.',
         since2019:'Δημιουργούμε αξέχαστες διαμονές από το 2019',
         footerIntro:'Ξεχωριστές διαμονές στη Θεσσαλονίκη και τη Χαλκιδική.',
-        explore:'Ανακαλύψτε'
+        explore:'Ανακαλύψτε',
+        websiteCta:'Θέλετε μια ιστοσελίδα σαν αυτή;',
+        websiteCtaButton:'Επικοινωνία στο WhatsApp'
       },
       de:{
         title:'Namaste Homes | Thessaloniki & Chalkidiki',
@@ -1042,7 +1095,9 @@
         aboutP3:'Von stilvollen City-Lofts bis zu ruhigen Rückzugsorten am Meer: Entdecken Sie durchdacht gestaltete Räume, die zum Entspannen, Erkunden und Wohlfühlen einladen.',
         since2019:'Unvergessliche Aufenthalte seit 2019',
         footerIntro:'Besondere Unterkünfte in Thessaloniki und Chalkidiki.',
-        explore:'Entdecken'
+        explore:'Entdecken',
+        websiteCta:'Möchten Sie eine Website wie diese?',
+        websiteCtaButton:'Kontakt über WhatsApp'
       },
       ro:{
         title:'Namaste Homes | Salonic & Halkidiki',
@@ -1075,7 +1130,9 @@
         aboutP3:'De la lofturi urbane elegante la refugii liniștite lângă mare, descoperă spații atent concepute care te invită să te relaxezi, să explorezi și să te simți ca acasă.',
         since2019:'Creăm șederi memorabile din 2019',
         footerIntro:'Cazări deosebite în Salonic și Halkidiki.',
-        explore:'Explorează'
+        explore:'Explorează',
+        websiteCta:'Vrei un website ca acesta?',
+        websiteCtaButton:'Contact pe WhatsApp'
       },
       sr:{
         title:'Namaste Homes | Solun & Halkidiki',
@@ -1108,7 +1165,9 @@
         aboutP3:'Od elegantnih gradskih loftova do mirnih utočišta kraj mora, otkrijte pažljivo osmišljene prostore koji vas pozivaju da se opustite, istražujete i osećate kao kod kuće.',
         since2019:'Stvaramo nezaboravne boravke od 2019.',
         footerIntro:'Posebni smeštaji u Solunu i na Halkidikiju.',
-        explore:'Istražite'
+        explore:'Istražite',
+        websiteCta:'Želite ovakav sajt?',
+        websiteCtaButton:'Kontakt preko WhatsApp-a'
       },
       bg:{
         title:'Namaste Homes | Солун & Халкидики',
@@ -1141,7 +1200,9 @@
         aboutP3:'От стилни градски лофтове до спокойни морски убежища, открийте внимателно проектирани пространства, които ви канят да се отпуснете, да разгледате и да се почувствате като у дома си.',
         since2019:'Създаваме запомнящи се престои от 2019 г.',
         footerIntro:'Отличителни места за настаняване в Солун и Халкидики.',
-        explore:'Разгледайте'
+        explore:'Разгледайте',
+        websiteCta:'Искате сайт като този?',
+        websiteCtaButton:'Контакт в WhatsApp'
       }
     };
 
